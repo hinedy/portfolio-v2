@@ -68,7 +68,7 @@ function BlogIndex() {
         ) : null}
 
         <ol className="border-t border-rule">
-          {posts.map((post, i) => (
+          {posts.map((post: PostMeta, i: number) => (
             <li key={post.slug} className="border-b border-rule">
               <Link
                 to="/blog/$slug"
