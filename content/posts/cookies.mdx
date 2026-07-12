@@ -1,0 +1,118 @@
+---
+title: "HTTP Cookies Demystified: A Web Developer's Guide"
+publishedAt: "2024-09-08"
+summary: "Understanding HTTP Cookies in Web Development."
+---
+
+# Understanding HTTP Cookies in Web Development
+
+## Introduction
+
+In this article, we'll explore the ins and outs of HTTP cookies, their significance in web development, and how they compare to alternatives like localStorage. Whether you're new to web development or looking to refine your skills, understanding cookies is key to building robust, efficient, and secure web applications.
+
+HTTP cookies are small pieces of data stored on a user's device by the web browser that can be used for managing user sessions, tracking user behavior, and enhancing the overall user experience.
+
+Cookies are regular headers. On a Request, they are stored in the `Cookie` header. On a Response they are in the `Set-Cookie` header
+
+## Cookies vs localStorage
+
+When it comes to client-side storage, developers often choose between cookies and localStorage. Let's compare these options:
+
+**Localstorage** is designed to be accessible by javascript, which makes it convenient for storing client-side data. However, this accessibility comes with a significant drawback: it doesn't provide any protection against Cross-Site Scripting (XSS) attacks. There are multiple ways an attacker could exploit an XSS vulnerability to access data stored in localStorage.
+
+On the other hand, **cookies** have security flags that make them more secure for storing sensitive data:
+
+- **_HttpOnly_** flag prevents client-side JavaScript from accessing the cookie, mitigating XSS risks.
+- **_Secure_** flag ensures that the browser only transfers the cookie over SSL, protecting against man-in-the-middle attacks.
+- **_SameSite_** flag helps prevent Cross-Site Request Forgery (CSRF) attacks by ensuring that the cookie is only sent to the origin site.
+
+So cookies are a more secure choice for storing authentication data. However, localStorage can be more appropriate for storing non-sensitive client-side data like user preferences or cached content.localStorage offers larger storage capacity (usually 5-10MB compared to 4KB for cookies) and easier JavaScript access, making it suitable for improving application performance and user experience in scenarios where the enhanced security of cookies isn't necessary.
+
+## How does Cookies Work
+
+![Capture](/cookies-mindmap.jpg)
+
+1. **Setting the Cookie**: When a user visits a website, the backend server can send a cookie to the browser. This is done via the `Set-Cookie` header in the HTTP response.
+2. **Storing the Cookie**: The browser automatically stores these cookies. As a developer, you don't need to write any client-side code to save the cookie.
+3. **Accessing Cookies**: On the client side, you can access some of the cookies _(not **HttpsOnly**)_ using `document.cookie`. For example:
+   ```javascript
+   console.log(document.cookie);
+   // Output: "username=John Doe; session_id=1234567890"
+   ```
+4. **Sending Cookies**: The browser automatically sends all relevant cookies (based on domain and path) with every request to the server. This includes regular page loads, AJAX calls, and resource requests like images or scripts from the same domain.
+
+However, there's an important exception to note: cookies are not automatically sent with cross-origin POST requests. To include cookies with cross-origin requests, you need to enable the `withCredentials` option in your client-side API request headers, as shown
+
+```javascript
+axios
+  .post(
+    "https://api.example.com/data",
+    {
+      key: "value",
+    },
+    {
+      withCredentials: true,
+    }
+  )
+  .then((response) => console.log(response))
+  .catch((error) => console.error("Error:", error));
+```
+
+Keep in mind that this requires the server to respond with the appropriate CORS headers, including `Access-Control-Allow-Credentials: true`. If the server does not allow credentials, the browser will still prevent the inclusion of cookies, even if you set `withCredentials: true` on the client side.
+
+## Cookie Attributes
+
+Cookies can have various attributes that control their behavior:
+
+- **Expires**: Determines how long the cookie should last.
+- **Domain**: Specifies which domains the cookie is valid for.
+- **Path**: Limits the cookie to a specific path on the server.
+- **Secure**: Ensures the cookie is only sent over HTTPS.
+- **HttpOnly**: Prevents JavaScript from accessing the cookie.
+- **SameSite**: Controls how the cookie is sent with cross-site requests.
+
+IETF Standards provide the definitive guide to cookies.
+[Learn more](https://www.ietf.org/archive/id/draft-ietf-httpbis-rfc6265bis-07.html).
+
+## Setting Cookies
+
+The method of setting a cookie depends on the context:
+
+#### HTTP Headers
+
+This is the common server-side approach. Servers send a `Set-Cookie` header in the response, containing cookie details such as name, value, and various attributes like expiry time and domain. This is typically done in server-side languages like PHP, Python, or JavaScript(Express).
+
+```javascript
+app.get("/set-cookie", (req, res) => {
+  res.setHeader("Set-Cookie", [
+    "user=John; HttpOnly; Secure; SameSite=Strict",
+    "session=1234567890; HttpOnly; Secure; SameSite=Strict; Max-Age=3600",
+  ]);
+  res.send("Cookies are set");
+});
+```
+
+#### JavaScript
+
+JavaScript, through the `document.cookie` property, allows you to set cookies directly on the client-side.
+
+```javascript
+document.cookie =
+  "username=John Doe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
+```
+
+However, this approach has limitations as it cannot set certain attributes like **_HttpOnly_** which are crucial for security.
+
+You can refer to [MDN's Extensive documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) on cookies for more details and examples.
+
+## Best Practices for Using Cookies
+
+When working with cookies, consider these best practices:
+
+1. Use the HttpOnly flag for session cookies to prevent XSS attacks.
+2. Use the Secure flag to ensure cookies are only transmitted over HTTPS.
+3. Implement proper CSRF protection for cookies that are used for session management.
+4. Use the SameSite attribute to prevent CSRF and information leakage.
+5. Don't store sensitive information in cookies unless it's absolutely necessary.
+6. Be mindful of cookie size limitations (generally 4KB per cookie).
+7. Consider the implications of EU cookie laws and obtain user consent when necessary.
