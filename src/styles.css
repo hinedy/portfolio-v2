@@ -129,8 +129,9 @@
 @utility ascii-portrait {
   font-family: var(--font-mono);
   font-size: 6px;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: 0;
+  text-align: center;
   white-space: pre;
   color: var(--color-ink);
   user-select: none;
