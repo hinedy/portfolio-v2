@@ -61,7 +61,7 @@ function BlogIndex() {
         {mismatches.length > 0 ? (
           <div className="border border-accent bg-paper p-6 mb-12 font-mono text-xs text-ink space-y-2">
             <div className="uppercase tracking-widest text-accent">// frontmatter ⇔ content.ts mismatch</div>
-            {mismatches.map((m) => (
+            {mismatches.map((m: string) => (
               <div key={m}>{m}</div>
             ))}
           </div>
