@@ -1,0 +1,199 @@
+---
+title: "The Hidden Cost of “Best Practices” in Frontend Systems"
+publishedAt: "2026-01-27"
+summary: "Why practices optimized for code review often break under real product change"
+---
+
+# The Hidden Cost of “Best Practices” in Frontend Systems
+
+_A decision framework for adopting, keeping, or retiring frontend practices in systems under change._
+
+## 1. Best practices aren’t stupid. but they age
+
+_Why following them is necessary early, and insufficient later_
+
+Best practices are taught for a reason.
+
+When you’re early in your career. or new to a codebase. they’re often the fastest way to become effective. They compress hard‑won lessons into usable rules. They reduce obvious mistakes. They help you ship something reasonable before you fully understand the system you’re working in.
+
+Learning and applying best practices is often the shortest path to competence.
+
+Learning when they no longer fit is what comes later.
+
+That second skill isn’t rebellion. It’s not contrarianism. It’s what emerges once you’ve seen the same practice succeed, struggle, and eventually get in the way across different systems.
+
+The problem isn’t that these practices are wrong.
+
+Frontend best practices rarely fail because they’re incorrect. they fail because the system they were optimized for no longer exists.
+
+---
+
+## 2. The optimization mismatch
+
+_Review-time clarity versus change over time_
+
+This isn’t about taste, preference, or engineers disagreeing about style. It’s about what different systems are optimized for.
+
+Many frontend best practices are designed to optimize for moments of inspection:
+
+- clarity during code review
+- visible consistency across files and teams
+- confidence that the current state is "correct"
+
+These are real needs. They reduce friction and make systems easier to reason about.
+
+Frontend products, however, are governed by something else entirely:
+
+- long stretches of continuous change
+- requirements that evolve faster than documentation
+- UX and workflows that are reshaped incrementally
+
+Most frontend best practices are optimized for how code looks at review time.
+Frontend products are governed by how code behaves over months of change.
+
+When those optimization targets diverge, tension is inevitable. Practices rarely fail loudly. they simply stop fitting the system they’re embedded in.
+
+---
+
+When practices optimized for inspection meet systems governed by change, the stress shows up first at the edges.
+
+## 3. Why frontend absorbs change differently
+
+_Where product churn concentrates first_
+
+Frontend sits at an unstable intersection.
+
+It’s where product decisions land, design iterates, backend inconsistencies surface, and edge cases become user-visible.
+
+UI boundaries rarely stay fixed. Flows evolve. Screens merge. State that once felt local needs to be shared. Components quietly turn into systems.
+
+As a result, frontend absorbs churn earlier and more often than most layers.
+
+Practices that resist change. or assume stable boundaries. fail fastest here. This isn’t accidental. It’s structural.
+
+---
+
+## 4. How reasonable practices turn into liabilities
+
+_When decisions harden into constraints_
+
+Most frontend practices don’t start as dogma. They start as solutions.
+
+A team hits a real problem. unreadable code, regressions, slow reviews, duplicated logic. and introduces structure to relieve that pain. In that moment, the decision is usually correct.
+
+Many frontend architecture decisions don’t fail immediately. They fail once the original context disappears.
+
+Early on, shared understanding substitutes for documentation. The team is small, the constraints are obvious, and everyone knows _why_ certain choices exist. Patterns are applied with judgment because the reasoning is still alive.
+
+As the product evolves, that context fades. New engineers copy patterns without knowing which problems they were meant to solve. The code still works, but the assumptions behind its structure are no longer visible.
+
+Eventually, someone asks: _“Why is this done this way?”_ And no one can answer.
+
+At that point, the practice hasn’t failed. it has hardened. The system has changed, but the constraint remains. Change becomes slower, estimates become conditional, and teams start navigating structure instead of solving user problems.
+
+The issue isn’t that the original decision was wrong. It’s that it stopped being treated as a decision at all.
+
+---
+
+## 5. The common failure pattern (tool-agnostic)
+
+_Why this repeats across frameworks and eras_
+
+This isn’t about frameworks or trends. The tools change every few years. The failure mode doesn’t.
+
+The recurring issue:
+
+- **Early abstraction hardens assumptions**
+  Structure is introduced to reduce ambiguity and make the system legible. In the moment, this is usually the right call.
+
+- **Product evolution invalidates those assumptions**
+  Requirements shift, flows merge, and edge cases accumulate. The system changes in ways the original abstraction didn’t anticipate.
+
+- **The abstraction remains because removal is expensive**
+  By the time the mismatch is visible, the structure is deeply embedded. Changing it risks regressions, rewrites, and coordination overhead.
+
+The result isn’t immediate failure. It’s slow friction.
+
+Teams spend more time navigating structure than solving user problems. The issue isn’t the tools. it’s what the system was designed to optimize.
+
+---
+
+## 6. Quality vs adaptability
+
+_Why clean code can still be expensive to change_
+
+This is where many frontend teams get stuck.
+
+Practices that once reduced chaos start being used as proof of quality. Clean structure, strict rules, and strong guardrails become proxies for correctness.
+
+In frontend systems, quality only reveals itself over time. when requirements shift, flows merge, and assumptions quietly break.
+
+Some practices improve readability and safety today while increasing fragility tomorrow. They make the current state feel orderly, but raise the cost of the next meaningful change.
+
+This is why a frontend codebase can look immaculate and still feel slow to work in.
+
+Good frontend code isn’t just easy to read or hard to misuse.
+
+It’s code that tolerates change without forcing rewrites, architectural debates, or cascading refactors every time the product evolves.
+
+Adaptability isn’t a lack of discipline.
+
+It’s a different definition of quality. one that accounts for time, churn, and uncertainty.
+
+---
+
+## 7. This is not an argument against standards
+
+_Why ownership matters more than rigidity_
+
+Standards matter. Without them, teams drift and duplicate effort.
+
+The problem isn’t standards. it’s standards that can’t be renegotiated.
+
+The opposite of rigid best practices isn’t chaos. It’s active ownership.
+
+Healthy teams treat practices as agreements: revisable, removable, and owned.
+
+---
+
+## 8. A better definition of “best practice”
+
+_A decision filter, not a checklist_
+
+Instead of a checklist, treat best practices as a filter.
+
+A frontend practice is “best” if it lowers the total cost of the _next change_.
+
+Not just the next pull request. the next product adjustment or shift in direction.
+
+Helpful tests:
+
+- Does it survive product churn?
+- Can a new hire understand why it exists?
+- Can it be removed without destabilizing the system?
+
+If not, the practice may still help. but it isn’t universally best.
+
+---
+
+## 9. Renegotiation is the work
+
+_Why maturity shows up in what teams revisit_
+
+This doesn’t produce a new checklist. It changes how teams relate to the practices they already have.
+
+Useful questions:
+
+- Which practices exist only because no one has questioned them recently?
+- What would break first if the roadmap doubled?
+- What would you remove to make onboarding faster?
+
+These questions surface hidden costs without prescribing solutions.
+
+The best frontend teams don’t follow best practices blindly. They continuously renegotiate them as the product evolves.
+
+That renegotiation isn’t inconsistency. it’s professionalism in a system defined by change.
+
+Frontend best practices don’t fail because teams are careless. They fail when practices stop being treated as decisions and start being treated as facts.
+
+Knowing when that shift has happened. and having the judgment to respond. is one of the most valuable frontend skills there is.

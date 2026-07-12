@@ -1,0 +1,140 @@
+---
+title: "How We Cut Our React App's Bundle Size in Half"
+publishedAt: "2025-02-20"
+summary: "Why Bundle Size Matters?"
+---
+
+# How We Cut Our React App's Bundle Size in Half
+
+Our React application's bundle size had reached 1.54MB (gzipped). The app worked fine, but loading times kept increasing. This post explains the steps we took to reduce the bundle size in half and its impact on performance.
+
+## Understanding the Problem
+
+Lighthouse and Chrome DevTools painted a clear picture:
+
+- Pages took too long to become interactive
+- Mobile users faced significant load delays
+- Users downloaded and parsed more code than they needed for basic interactions
+
+## The Optimization Strategy
+
+### 1. Route-Based Code Splitting
+
+In our app using `createBrowserRouter` from React Router 6, we implemented route-based code-splitting to defer code loading until a user navigates to the relevant route:
+
+```javascript
+import React, { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const LazyLoadedPage = lazy(() => import("./LazyLoadedPage"));
+
+const router = createBrowserRouter([
+  {
+    path: "/feature",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyLoadedPage />
+      </Suspense>
+    ),
+  },
+]);
+```
+
+### 2. Strategic Library Loading
+
+Heavy dependencies don't need to load immediately. The key is to move imports inside the functions that use them:
+
+```javascript
+// Before - importing at the top level
+import { PDFDocument } from "@react-pdf/renderer";
+import * as XLSX from "xlsx";
+
+// After - inline imports when needed
+async function generatePDF(data) {
+  const { PDFDocument } = await import("@react-pdf/renderer");
+  // PDF generation logic
+}
+
+async function exportToExcel(data) {
+  const XLSX = await import("xlsx");
+  // Excel export logic
+}
+```
+
+We applied this pattern to several large dependencies:
+
+- PDF generation (`@react-pdf`, ~450KB) → loads only during PDF exports
+- Spreadsheet functionality (`xlsx`, ~214KB) → waits for export operations
+- Date handling → moved to lighter alternatives for common operations
+
+Other common libraries worth deferring in React apps:
+
+- Rich text editors (`draft-js`, `quill`) → load when editing starts
+- Chart libraries (`chart.js`, `recharts`) → load when viewing data visualizations
+- Complex UI components (`@mui/x-data-grid`, `ag-grid`) → load when data tables mount
+- Image manipulation (`sharp`, `jimp`) → load when editing starts
+
+The pattern remains consistent: identify when users need the functionality, and load it at that moment. This approach is particularly helpful during initial page loads.
+
+### 3. Measurement-Driven Optimization
+
+Three tools drove our decisions:
+
+- `source-map-explorer` analyzed dependency sizes
+- Chrome DevTools' Performance tab showed load behavior
+- Regular Lighthouse audits tracked improvements
+
+## The Results
+
+| Metric                 | Improvement |
+| ---------------------- | ----------- |
+| Main Bundle Size       | -49.5%      |
+| First Contentful Paint | +28.5%      |
+| Total Blocking Time    | +20%        |
+| Speed Index            | +46.4%      |
+
+## Key Learnings
+
+1. Target the right components for code splitting. Focus on larger features that deliver meaningful impact.
+
+2. Performance tools reveal opportunities you might miss otherwise. Regular bundle analysis became essential to our process.
+
+3. Performance optimization doesn't stop. Each improvement reveals new opportunities.
+
+## Maintaining Performance
+
+Three practices keep our bundle size in check:
+
+- Regular bundle analysis during development
+- Performance budgets for new feature development, including:
+
+  - Maximum initial bundle size: 500KB after gzip
+  - Route-level budgets: 200KB per lazy-loaded route
+  - Time-to-Interactive budget: < 3.5s on 4G connections
+  - First Contentful Paint target: < 1.8s
+  - Third-party script size limit: 100KB total
+  - Image size budgets: 200KB max per image, WebP format required
+  - These budgets are enforced through:
+  - webpack configuration using `performance.hints`
+  - `size-limit` checks in CI
+  - Lighthouse performance scoring thresholds
+
+- Automated performance testing in our CI pipeline using:
+
+  - Lighthouse CI for performance metrics
+  - Bundle size tracking with `bundlewatch`
+  - Jest Timer snapshots for runtime performance
+  - `webpack-bundle-analyzer` in build pipelines
+  - GitHub Actions workflows triggered on PR deployments
+
+## Conclusion
+
+Performance optimization delivers real user value. We reduced our bundle size by carefully analyzing and making targeted improvements, improving every key performance indicator.
+
+Three steps can start your optimization journey:
+
+1. Measure your current state
+2. Split code strategically
+3. Monitor consistently
+
+Every kilobyte impacts user experience. Start measuring yours today.
