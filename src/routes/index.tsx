@@ -43,21 +43,21 @@ function TopBar() {
   ];
   return (
     <div className="border-b border-rule">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-12 md:gap-x-6 py-4 items-baseline">
-        <a href="#top" className="min-w-0 truncate md:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-12 lg:gap-x-6 py-4 items-baseline">
+        <a href="#top" className="min-w-0 truncate lg:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
           Ahmed Hinedy
         </a>
-        <div className="hidden md:block md:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
+        <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
           Frontend Software Engineer · Alexandria, EG
         </div>
-        <nav className="hidden md:flex md:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
+        <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
           {navItems.map((it) => (
             <a key={it.href} href={it.href} className="hover:text-accent transition-colors">
               {it.label}
             </a>
           ))}
         </nav>
-        <div className="md:hidden justify-self-end">
+        <div className="lg:hidden justify-self-end">
           <MobileNav items={navItems} />
         </div>
       </div>
