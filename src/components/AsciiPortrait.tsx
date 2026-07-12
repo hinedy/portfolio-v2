@@ -44,32 +44,43 @@ function render(progress: number): string {
   return out.join("");
 }
 
-export function AsciiPortrait() {
+export function AsciiPortrait({ onDone }: { onDone?: () => void } = {}) {
   const [text, setText] = useState<string>(() => {
     // SSR-safe: render initial faint state
     return render(0);
   });
   const rafRef = useRef<number | null>(null);
+  const doneRef = useRef(false);
 
   useEffect(() => {
+    const finish = () => {
+      if (doneRef.current) return;
+      doneRef.current = true;
+      onDone?.();
+    };
     const reduced =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
       setText(ASCII_PORTRAIT);
+      finish();
       return;
     }
     const start = performance.now();
     const tick = (now: number) => {
       const p = Math.min(1, (now - start) / DURATION);
       setText(render(p));
-      if (p < 1) rafRef.current = requestAnimationFrame(tick);
+      if (p < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        finish();
+      }
     };
     rafRef.current = requestAnimationFrame(tick);
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [onDone]);
 
   return (
     <pre

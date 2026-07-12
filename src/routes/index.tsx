@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
 import { AsciiPortrait } from "@/components/AsciiPortrait";
 import { Annotation } from "@/components/Annotation";
+import { MobileNav } from "@/components/MobileNav";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -32,28 +34,39 @@ function SectionHeader({
 }
 
 function TopBar() {
+  const navItems = [
+    { label: "Position", href: "#position" },
+    { label: "Evidence", href: "#evidence" },
+    { label: "Decisions", href: "#decisions" },
+    { label: "Writing", href: "#writing" },
+    { label: "Contact", href: "#contact" },
+  ];
   return (
     <div className="border-b border-rule">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-12 gap-x-6 py-4 items-baseline">
-        <a href="#top" className="col-span-6 md:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-12 md:gap-x-6 py-4 items-baseline">
+        <a href="#top" className="min-w-0 truncate md:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
           Ahmed Hinedy
         </a>
-        <div className="hidden md:block col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
+        <div className="hidden md:block md:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
           Frontend Software Engineer · Alexandria, EG
         </div>
-        <nav className="col-span-6 md:col-span-3 flex justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
-          <a href="#position" className="hover:text-accent transition-colors">Position</a>
-          <a href="#evidence" className="hover:text-accent transition-colors">Evidence</a>
-          <a href="#decisions" className="hover:text-accent transition-colors">Decisions</a>
-          <a href="#writing" className="hover:text-accent transition-colors">Writing</a>
-          <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+        <nav className="hidden md:flex md:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
+          {navItems.map((it) => (
+            <a key={it.href} href={it.href} className="hover:text-accent transition-colors">
+              {it.label}
+            </a>
+          ))}
         </nav>
+        <div className="md:hidden justify-self-end">
+          <MobileNav items={navItems} />
+        </div>
       </div>
     </div>
   );
 }
 
 function Hero() {
+  const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="border-b border-rule">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28">
@@ -70,11 +83,18 @@ function Hero() {
         <div className="col-span-12 md:col-span-5 mt-12 md:mt-0 flex flex-col items-end">
           <div className="w-full overflow-hidden border border-rule bg-paper p-2">
             <div className="overflow-hidden">
-              <AsciiPortrait />
+              <AsciiPortrait onDone={() => setPortraitDone(true)} />
             </div>
           </div>
-          <div className="mt-3 self-start md:self-end">
-            <Annotation>{hero.portraitAnnotation}</Annotation>
+          <div
+            className="mt-3 self-start md:self-end min-h-[1.2em]"
+            aria-live="polite"
+          >
+            {portraitDone && (
+              <div className="animate-fade-in">
+                <Annotation>{hero.portraitAnnotation}</Annotation>
+              </div>
+            )}
           </div>
           <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full md:w-auto">
             <dt>character set</dt><dd className="text-ink">. - + #</dd>

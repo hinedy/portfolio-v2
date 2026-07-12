@@ -142,6 +142,17 @@
   .ascii-animating { animation: none !important; }
 }
 
+@keyframes annotation-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@utility animate-fade-in {
+  animation: annotation-fade-in 320ms ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in { animation: none !important; }
+}
+
 /* Blog post typography — Inter body, spec-sheet accents (no rounded chrome).
    Applied to the container that holds marked-parsed HTML. */
 .prose-post {
