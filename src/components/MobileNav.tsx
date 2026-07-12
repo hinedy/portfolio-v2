@@ -34,7 +34,7 @@ export function MobileNav({ items }: { items: MobileNavItem[] }) {
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
-        className="font-mono text-[11px] uppercase tracking-widest text-ink hover:text-accent transition-colors md:hidden"
+        className="font-mono text-[11px] uppercase tracking-widest text-ink hover:text-accent transition-colors lg:hidden"
       >
         [ menu ]
       </button>
@@ -44,7 +44,7 @@ export function MobileNav({ items }: { items: MobileNavItem[] }) {
           role="dialog"
           aria-modal="true"
           aria-label="Site navigation"
-          className="fixed inset-0 z-50 bg-background text-ink md:hidden flex flex-col"
+          className="fixed inset-0 z-50 bg-background text-ink lg:hidden flex flex-col"
         >
           <div className="border-b border-rule">
             <div className="px-6 grid grid-cols-2 py-4 items-baseline">
