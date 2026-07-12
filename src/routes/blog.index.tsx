@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
 import { BlogShell } from "@/components/BlogShell";
-import { listPosts, diffAgainstContentPosts } from "@/lib/posts";
+import { listPosts, diffAgainstContentPosts, type PostMeta } from "@/lib/posts";
 
 export const Route = createFileRoute("/blog/")({
   loader: () => {
