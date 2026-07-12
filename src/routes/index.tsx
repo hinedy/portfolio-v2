@@ -14,21 +14,13 @@ const { hero, position, evidence, decisions, signal, writing, contact, footer } 
 /* Shared page frame — a 12-col grid site with visible outer rules,
    mono-labeled section breaks, no rounded corners, no card chrome. */
 
-function SectionHeader({
-  label,
-  question,
-}: {
-  label: string;
-  question: string;
-}) {
+function SectionHeader({ label, question }: { label: string; question: string }) {
   return (
     <header className="grid grid-cols-12 gap-x-6 border-t border-rule pt-8 pb-14 md:pt-12 md:pb-20">
       <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
         <div className="section-label">{label}</div>
       </div>
-      <h2 className="col-span-12 md:col-span-9 font-display text-[clamp(2.75rem,7vw,6rem)] text-ink">
-        {question}
-      </h2>
+      <h2 className="col-span-12 md:col-span-9 font-display text-[clamp(2.75rem,7vw,6rem)] text-ink">{question}</h2>
     </header>
   );
 }
@@ -75,21 +67,16 @@ function Hero() {
           <h1 className="font-display text-[clamp(3.5rem,11vw,10.5rem)] text-ink">
             Software gets complicated long before it gets big.
           </h1>
-          <p className="mt-10 max-w-xl text-lg md:text-xl leading-snug text-ink/85">
-            {hero.sub}
-          </p>
+          <p className="mt-10 max-w-xl text-lg md:text-xl leading-snug text-ink/85">{hero.sub}</p>
         </div>
 
         <div className="col-span-12 md:col-span-5 mt-12 md:mt-0 flex flex-col items-end">
           <div className="w-full overflow-hidden border border-rule bg-paper p-2">
-            <div className="overflow-hidden">
+            <div className="flex justify-center overflow-hidden">
               <AsciiPortrait onDone={() => setPortraitDone(true)} />
             </div>
           </div>
-          <div
-            className="mt-3 self-start md:self-end min-h-[1.2em]"
-            aria-live="polite"
-          >
+          <div className="mt-3 self-start md:self-end min-h-[1.2em]" aria-live="polite">
             {portraitDone && (
               <div className="animate-fade-in">
                 <Annotation>{hero.portraitAnnotation}</Annotation>
@@ -97,10 +84,14 @@ function Hero() {
             )}
           </div>
           <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full md:w-auto">
-            <dt>character set</dt><dd className="text-ink">. - + #</dd>
-            <dt>grid</dt><dd className="text-ink">93 × 175</dd>
-            <dt>render</dt><dd className="text-ink">client, on load</dd>
-            <dt>duration</dt><dd className="text-ink">1.35s</dd>
+            <dt>character set</dt>
+            <dd className="text-ink">. - + #</dd>
+            <dt>grid</dt>
+            <dd className="text-ink">93 × 175</dd>
+            <dt>render</dt>
+            <dd className="text-ink">client, on load</dd>
+            <dt>duration</dt>
+            <dd className="text-ink">1.35s</dd>
           </dl>
         </div>
       </div>
@@ -135,13 +126,7 @@ function Position() {
   );
 }
 
-function CaseStudy({
-  cs,
-  index,
-}: {
-  cs: (typeof evidence.caseStudies)[number];
-  index: number;
-}) {
+function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; index: number }) {
   const num = String(index + 1).padStart(2, "0");
   return (
     <article className="grid grid-cols-12 gap-x-6 border-t border-rule py-14 md:py-20">
@@ -170,9 +155,7 @@ function CaseStudy({
       </aside>
 
       <div className="col-span-12 md:col-span-9 space-y-10">
-        <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink">
-          {cs.thesis}
-        </p>
+        <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink">{cs.thesis}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
           <Field label="Context" body={cs.context} />
@@ -183,9 +166,7 @@ function CaseStudy({
 
         <div className="border-l-2 border-accent pl-5 py-1">
           <Annotation>{cs.tradeoffs.annotation}</Annotation>
-          <p className="mt-3 text-base md:text-lg text-ink/90 max-w-3xl">
-            {cs.tradeoffs.detail}
-          </p>
+          <p className="mt-3 text-base md:text-lg text-ink/90 max-w-3xl">{cs.tradeoffs.detail}</p>
         </div>
 
         <Field label="What I'd Do Differently" body={cs.whatIdDoDifferently} />
@@ -197,9 +178,7 @@ function CaseStudy({
 function Field({ label, body }: { label: string; body: string }) {
   return (
     <div>
-      <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
-        {label}
-      </div>
+      <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">{label}</div>
       <p className="text-[15px] md:text-base leading-relaxed text-ink/90">{body}</p>
     </div>
   );
@@ -224,17 +203,12 @@ function Decisions() {
       <SectionHeader label={decisions.sectionLabel} question={decisions.question} />
       <ol className="border-t border-rule pb-24 md:pb-32">
         {decisions.items.map((d, i) => (
-          <li
-            key={d.category}
-            className="grid grid-cols-12 gap-x-6 border-b border-rule py-8 md:py-10 items-baseline"
-          >
+          <li key={d.category} className="grid grid-cols-12 gap-x-6 border-b border-rule py-8 md:py-10 items-baseline">
             <div className="col-span-2 md:col-span-1 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
               {String(i + 1).padStart(2, "0")}
             </div>
             <div className="col-span-10 md:col-span-9">
-              <p className="font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.05] text-ink">
-                {d.statement}
-              </p>
+              <p className="font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.05] text-ink">{d.statement}</p>
               <div className="mt-3">
                 <Annotation>{d.category.toLowerCase()}</Annotation>
               </div>
@@ -255,10 +229,7 @@ function Signal() {
       <SectionHeader label={signal.sectionLabel} question={signal.question} />
       <div className="grid grid-cols-12 gap-x-6 gap-y-14 pb-24 md:pb-32">
         {signal.quotes.map((q, i) => (
-          <figure
-            key={q.name}
-            className="col-span-12 md:col-span-6 border-t border-rule pt-6"
-          >
+          <figure key={q.name} className="col-span-12 md:col-span-6 border-t border-rule pt-6">
             <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-4">
               Quote {String(i + 1).padStart(2, "0")}
             </div>
@@ -301,9 +272,7 @@ function Writing() {
                   <div className="font-display text-2xl md:text-4xl text-ink group-hover:text-accent transition-colors leading-[1.05]">
                     {p.title}
                   </div>
-                  <div className="mt-3 text-sm md:text-base text-ink/75 max-w-2xl">
-                    {p.summary}
-                  </div>
+                  <div className="mt-3 text-sm md:text-base text-ink/75 max-w-2xl">{p.summary}</div>
                 </div>
                 <div className="hidden md:block col-span-2 text-right font-mono text-[11px] uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors">
                   read →
@@ -323,9 +292,7 @@ function Contact() {
       <SectionHeader label={contact.sectionLabel} question={contact.question} />
       <div className="grid grid-cols-12 gap-x-6 pb-24 md:pb-32">
         <div className="col-span-12 md:col-span-8">
-          <p className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] text-ink">
-            {contact.line}
-          </p>
+          <p className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] text-ink">{contact.line}</p>
           <a
             href={`mailto:${contact.email}`}
             className="mt-10 inline-block font-mono text-lg md:text-2xl text-ink border-b-2 border-accent hover:text-accent transition-colors"
@@ -335,15 +302,11 @@ function Contact() {
         </div>
         <div className="col-span-12 md:col-span-4 mt-12 md:mt-0 space-y-6">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
-              Direct
-            </div>
+            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">Direct</div>
             <div className="text-ink font-mono">{contact.tel}</div>
           </div>
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
-              Elsewhere
-            </div>
+            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">Elsewhere</div>
             <ul className="space-y-1">
               {Object.entries(contact.social).map(([k, v]) => (
                 <li key={k} className="flex items-baseline gap-3">
