@@ -160,9 +160,9 @@ function CaseStudy({
         </div>
         <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
           <dt>owned</dt>
-          <dd className="text-ink normal-case tracking-normal break-words min-w-0">Frontend architecture, delivery</dd>
+          <dd className="text-ink normal-case tracking-normal break-words min-w-0">{cs.owned}</dd>
           <dt>surface</dt>
-          <dd className="text-ink normal-case tracking-normal break-words min-w-0">React, Next.js, TypeScript</dd>
+          <dd className="text-ink normal-case tracking-normal break-words min-w-0">{cs.decisionSurface.join(", ")}</dd>
           <dt>link</dt>
           <dd className="min-w-0">
             <a
@@ -252,7 +252,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
           <div role="columnheader" className="col-span-3" />
         </div>
         {decisions.items.map((d) => {
-          const hasRef = d.evidenceRef !== null;
+          const hasRef = d.evidenceRefs.length > 0;
           const commonCells = (
             <>
               <div
@@ -273,7 +273,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
               <div role="cell" className="hidden md:flex col-span-3 items-center justify-end min-h-[1.2em]">
                 {hasRef && (
                   <span className="opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
-                    <Annotation>{`// evidence: ${d.evidenceRef}`}</Annotation>
+                    <Annotation>{`// evidence: ${d.evidenceRefs.join(", ")}`}</Annotation>
                   </span>
                 )}
               </div>
@@ -285,7 +285,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
                 key={d.category}
                 type="button"
                 role="row"
-                onClick={() => onEvidenceRef(d.evidenceRef as string)}
+                onClick={() => onEvidenceRef(d.evidenceRefs[0])}
                 className="group grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-center w-full text-left -mx-6 md:-mx-10 px-6 md:px-10 hover:bg-paper focus-visible:bg-paper focus:outline-none transition-colors cursor-pointer"
               >
                 {commonCells}
