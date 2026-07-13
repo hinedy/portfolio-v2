@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
 import { AsciiPortrait } from "@/components/AsciiPortrait";
