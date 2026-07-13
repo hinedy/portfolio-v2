@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const { hero, position, evidence, decisions, signal, writing, contact, footer } = CONTENT;
+const { hero, position, evidence, decisions, signal, writing, currentWork, contact, footer } = CONTENT;
 
 /* Shared page frame — a 12-col grid site with visible outer rules,
    mono-labeled section breaks, no rounded corners, no card chrome. */
@@ -40,7 +40,7 @@ function TopBar() {
           Ahmed Hinedy
         </a>
         <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
-          Frontend Software Engineer · Alexandria, EG
+          Product Frontend Engineer · Alexandria, EG
         </div>
         <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
           {navItems.map((it) => (
@@ -370,6 +370,50 @@ function Writing() {
   );
 }
 
+function CurrentWork() {
+  return (
+    <section id="current-work" className="mx-auto max-w-[1440px] px-6 md:px-10">
+      <SectionHeader label={currentWork.sectionLabel} question={currentWork.question} />
+      <ul className="border-t border-rule pb-24 md:pb-32">
+        {currentWork.items.map((item) => (
+          <li key={item.title} className="grid grid-cols-12 gap-x-6 border-b border-rule py-8 md:py-10 items-baseline">
+            <div className="col-span-12 md:col-span-3 mb-3 md:mb-0 flex items-baseline gap-3">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">status</span>
+              <Annotation>{`// ${item.status}`}</Annotation>
+            </div>
+            <div className="col-span-12 md:col-span-9 min-w-0">
+              <div className="font-display text-3xl md:text-5xl text-ink leading-[1.05] break-words">
+                {item.title}
+              </div>
+              <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/85 max-w-3xl break-words">
+                {item.description}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-ink hover:text-accent transition-colors underline-offset-4 hover:underline"
+                >
+                  GitHub ↗
+                </a>
+                <a
+                  href={item.npmUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-ink hover:text-accent transition-colors underline-offset-4 hover:underline"
+                >
+                  npm ↗
+                </a>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-[1440px] px-6 md:px-10">
@@ -447,6 +491,7 @@ function HomePage() {
       <Decisions onEvidenceRef={handleEvidenceRef} />
       <Signal />
       <Writing />
+      <CurrentWork />
       <Contact />
       <Footer />
     </main>

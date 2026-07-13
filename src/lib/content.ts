@@ -9,7 +9,7 @@
 export const CONTENT = {
   meta: {
     name: "Ahmed Hinedy",
-    role: "Frontend Software Engineer",
+    role: "Product Frontend Engineer",
     location: "Alexandria, Egypt",
     url: "https://hinedy.vercel.app",
   },
@@ -41,7 +41,11 @@ export const CONTENT = {
       "I care less about frameworks than the decisions behind them.",
       "Most frontend problems aren't visual problems. They're problems of ownership, complexity, changing requirements, and keeping a product understandable as it grows.",
       "That's why I spend more time thinking about architecture, state boundaries, constraints, and tradeoffs than collecting libraries.",
+      "Lately I've been more interested in how software gets built than in what gets built — which is part of why I started digging into how repositories evolve over time.",
     ],
+    // Last line intentionally points at a real artifact (commit-insights, see 06/CURRENT WORK)
+    // rather than announcing a career shift in the abstract — the work should carry the signal,
+    // not a stated pivot. Do not add "recently I've been moving into..." framing here or elsewhere.
   },
 
   evidence: {
@@ -59,7 +63,7 @@ export const CONTENT = {
         context:
           "MedX is a multi-role healthcare operations platform coordinating medical service orders between providers, patients, and administrators — handling onboarding, scheduling, escrow-style payments, claims/remits, notifications, and real-time operational workflows in a highly dynamic environment.",
         theProblem:
-          "The platform needed a dynamic service builder letting healthcare practices define their own service types, pricing, intake forms, and conditional workflow logic at runtime — plus strict role-based access across every protected operational area, layered on top of a legacy frontend that had accumulated inconsistent patterns under rapidly changing requirements.",
+          "The platform needed a dynamic service builder letting healthcare practices define their own service types, pricing, intake forms, and conditional workflow logic at runtime — plus strict role-based access across every protected operational area, layered on top of a legacy frontend that had accumulated inconsistent patterns under rapidly changing requirements. Requirements themselves were refined collaboratively with stakeholders rather than handed down as a fixed spec, which meant frontend decisions doubled as part of the requirements-definition process, not just its implementation.",
         whyThisWasDifficult:
           "The service builder needed real runtime \"if-this-then-that\" logic — dynamically adding charges, revealing questions, requiring documentation — so the UI had to interpret configuration as behavior, not just render static forms. That had to work alongside RBAC-gated workflows, long-lived authenticated sessions, and live SignalR updates synchronized against Stripe-powered escrow payments, without disrupting a system already handling real financial and medical operations.",
         whatWeChanged:
@@ -144,7 +148,15 @@ export const CONTENT = {
       { category: "Performance", statement: "Measure first. Optimize second.", evidenceRefs: ["MedX"] },
       { category: "TypeScript", statement: "Types should remove ambiguity, not create ceremony.", evidenceRefs: [] },
       { category: "APIs", statement: "Normalize inconsistency once instead of handling it everywhere.", evidenceRefs: ["MedX"] },
+      { category: "Requirements", statement: "Ambiguous requirements aren't a blocker — they're the actual design input.", evidenceRefs: ["MedX"] },
+      { category: "Scope", statement: "I'd rather validate the business case than build the feature that assumes it.", evidenceRefs: ["SupplyTech"] },
     ],
+    // Requirements and Scope added deliberately as the only two product/business rows —
+    // capped at two on purpose, more would dilute what makes this section sharp. Both are
+    // backed by real case-study text, not added as positioning flavor: Requirements ties to
+    // MedX's stakeholder-collaborative requirements process (see evidence.caseStudies[0].theProblem),
+    // Scope ties to SupplyTech's tradeoff about not building booking/payments UI before the
+    // business model was validated.
     // Rows with evidenceRefs.length > 0 render at higher visual weight and get a hover
     // annotation callout ("// evidence: {evidenceRefs.join(', ')}") that scrolls to and
     // highlights the relevant line in that case study. Rows with an empty array render at
@@ -210,8 +222,32 @@ export const CONTENT = {
     ],
   },
 
+  currentWork: {
+    sectionLabel: "06 / CURRENT WORK",
+    question: "What's next?",
+    // Deliberately NOT called "Research" or "Explorations" — those overclaim for what's
+    // actually here. "Current Work" is modest and accurate while still signaling motion.
+    // Ships with exactly ONE entry on purpose: only commit-insights has a real artifact
+    // behind it right now. Do not pad this with interest-area entries ("Frontend Systems",
+    // "AI-assisted Engineering") that don't point at something concrete — add them only when
+    // there's an actual post, prototype, or tool to point to, not before.
+    // Maintenance note: the "active" status below is a live claim, not a one-time label —
+    // if this stalls, an untouched "active" tag reads as abandoned, which is a worse signal
+    // than no section at all. Keep it honest or pull the section.
+    items: [
+      {
+        title: "commit-insights",
+        description:
+          "Studying how repositories evolve over time — not to measure productivity, but to surface architectural change, ownership boundaries, and development patterns conventional metrics miss.",
+        status: "active",
+        url: "https://github.com/hinedy/commit-insights",
+        npmUrl: "https://www.npmjs.com/package/commit-insights",
+      },
+    ],
+  },
+
   contact: {
-    sectionLabel: "06 / CONTACT",
+    sectionLabel: "07 / CONTACT",
     question: "Want to solve another hard problem?",
     line: "If you're building something complex, I'd like to hear about it.",
     email: "ahmedhinedy@gmail.com",

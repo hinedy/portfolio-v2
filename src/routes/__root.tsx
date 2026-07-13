@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ahmed Hinedy — Frontend Software Engineer" },
+      { title: "Ahmed Hinedy — Product Frontend Engineer" },
       {
         name: "description",
         content:
-          "Spec sheet portfolio of Ahmed Hinedy — frontend engineer designing interfaces around constraints, tradeoffs, and the people who maintain them.",
+          "Spec sheet portfolio of Ahmed Hinedy — product frontend engineer designing interfaces around constraints, tradeoffs, and the people who maintain them.",
       },
       { name: "author", content: "Ahmed Hinedy" },
-      { property: "og:title", content: "Ahmed Hinedy — Frontend Software Engineer" },
+      { property: "og:title", content: "Ahmed Hinedy — Product Frontend Engineer" },
       {
         property: "og:description",
         content:
-          "Software gets complicated long before it gets big. Case studies, decisions, and writing from a frontend engineer.",
+          "Software gets complicated long before it gets big. Case studies, decisions, and writing from a product frontend engineer.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
