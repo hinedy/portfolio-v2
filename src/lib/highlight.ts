@@ -68,6 +68,6 @@ export async function highlightCode(code: string, lang: string | undefined): Pro
   return hl.codeToHtml(code, {
     lang: language,
     themes: { light: "spec-light", dark: "spec-dark" },
-    defaultColor: false,
+    defaultColor: "light",
   });
 }
