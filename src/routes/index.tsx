@@ -285,7 +285,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
                 key={d.category}
                 type="button"
                 role="row"
-                onClick={() => onEvidenceRef(d.evidenceRefs[0])}
+                onClick={() => onEvidenceRef(d.evidenceRefs[0]!)}
                 className="group grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-center w-full text-left -mx-6 md:-mx-10 px-6 md:px-10 hover:bg-paper focus-visible:bg-paper focus:outline-none transition-colors cursor-pointer"
               >
                 {commonCells}
