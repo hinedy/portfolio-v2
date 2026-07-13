@@ -1,15 +1,32 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { marked } from "marked";
+import { Marked } from "marked";
 import { BlogShell } from "@/components/BlogShell";
 import { getPost } from "@/lib/posts";
+import { highlightCode } from "@/lib/highlight";
 
-marked.setOptions({ gfm: true, breaks: false });
+const marked = new Marked({ gfm: true, breaks: false, async: true });
+marked.use({
+  async: true,
+  async walkTokens(token) {
+    if (token.type === "code") {
+      const code = token as { type: "code"; text: string; lang?: string; escaped?: boolean };
+      code.text = await highlightCode(code.text, code.lang);
+      code.escaped = true;
+    }
+  },
+  renderer: {
+    code(token) {
+      // `text` was replaced by walkTokens with Shiki's ready-to-render <pre>…</pre>.
+      return (token as { text: string }).text;
+    },
+  },
+});
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const post = getPost(params.slug);
     if (!post) throw notFound();
-    const html = marked.parse(post.body, { async: false }) as string;
+    const html = (await marked.parse(post.body)) as string;
     return { post, html };
   },
   head: ({ loaderData }) => {
