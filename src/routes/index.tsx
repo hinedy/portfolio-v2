@@ -134,19 +134,21 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
         <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           Case {num} / {cs.category}
         </div>
-        <div className="font-display text-6xl md:text-5xl lg:text-6xl xl:text-7xl text-ink break-words">{cs.title}</div>
-        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+        <div className="font-display text-6xl md:text-5xl lg:text-6xl xl:text-7xl text-ink break-words hyphens-auto">
+          {cs.title}
+        </div>
+        <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
           <dt>owned</dt>
-          <dd className="text-ink normal-case tracking-normal">Frontend architecture, delivery</dd>
+          <dd className="text-ink normal-case tracking-normal break-words min-w-0">Frontend architecture, delivery</dd>
           <dt>surface</dt>
-          <dd className="text-ink normal-case tracking-normal">React, Next.js, TypeScript</dd>
+          <dd className="text-ink normal-case tracking-normal break-words min-w-0">React, Next.js, TypeScript</dd>
           <dt>link</dt>
-          <dd>
+          <dd className="min-w-0">
             <a
               href={cs.url}
               target="_blank"
               rel="noreferrer"
-              className="text-accent hover:underline underline-offset-4 normal-case tracking-normal"
+              className="text-accent hover:underline underline-offset-4 normal-case tracking-normal break-all"
             >
               {cs.url.replace(/^https?:\/\//, "")}
             </a>
@@ -154,8 +156,10 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
         </dl>
       </aside>
 
-      <div className="col-span-12 md:col-span-9 space-y-10">
-        <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink">{cs.thesis}</p>
+      <div className="col-span-12 md:col-span-9 min-w-0 space-y-10">
+        <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink break-words hyphens-auto">
+          {cs.thesis}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
           <Field label="Context" body={cs.context} />
@@ -166,7 +170,9 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
 
         <div className="border-l-2 border-accent pl-5 py-1">
           <Annotation>{cs.tradeoffs.annotation}</Annotation>
-          <p className="mt-3 text-base md:text-lg text-ink/90 max-w-3xl">{cs.tradeoffs.detail}</p>
+          <p className="mt-3 text-base md:text-lg text-ink/90 max-w-3xl break-words hyphens-auto">
+            {cs.tradeoffs.detail}
+          </p>
         </div>
 
         <Field label="What I'd Do Differently" body={cs.whatIdDoDifferently} />
@@ -177,9 +183,9 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
 
 function Field({ label, body }: { label: string; body: string }) {
   return (
-    <div>
+    <div className="min-w-0">
       <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">{label}</div>
-      <p className="text-[15px] md:text-base leading-relaxed text-ink/90">{body}</p>
+      <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">{body}</p>
     </div>
   );
 }
