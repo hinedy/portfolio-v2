@@ -130,11 +130,11 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
   const num = String(index + 1).padStart(2, "0");
   return (
     <article className="grid grid-cols-12 gap-x-6 border-t border-rule py-14 md:py-20">
-      <aside className="col-span-12 md:col-span-3 space-y-5 mb-8 md:mb-0">
+      <aside className="col-span-12 md:col-span-3 min-w-0 space-y-5 mb-8 md:mb-0">
         <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           Case {num} / {cs.category}
         </div>
-        <div className="font-display text-6xl md:text-7xl text-ink">{cs.title}</div>
+        <div className="font-display text-6xl md:text-5xl lg:text-6xl xl:text-7xl text-ink break-words">{cs.title}</div>
         <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
           <dt>owned</dt>
           <dd className="text-ink normal-case tracking-normal">Frontend architecture, delivery</dd>

@@ -1,40 +1,22 @@
-## Add syntax highlighting to blog code blocks
+## Fix SupplyTech title overflow on tablet
 
-Yes — we can add it without breaking the spec-sheet look. The trick is picking a highlighter and theme that respect the current `pre`/`code` styling (paper background, 1px rule border, Space Mono, no rounded corners) instead of injecting a stock IDE theme.
+### Root cause
+In `CaseStudy` (src/routes/index.tsx ~L129-155), at the `md` breakpoint (768px):
+- `aside` is `md:col-span-3` — roughly ~170px wide inside the 12-col grid with gaps.
+- `cs.title` renders at `md:text-7xl` (~72px display font).
 
-### Approach
+"SupplyTech" (10 chars) at 72px overflows a ~170px column and visually bleeds into the right-hand `col-span-9` case body. "MedX" and "Revixir" happen to fit, so only SupplyTech is visibly broken.
 
-Use **Shiki** at build/render time via `marked-shiki` (or a small custom marked extension). Shiki tokenizes with TextMate grammars and outputs plain `<span style="color:…">`, so:
-- No client-side JS bundle for highlighting (runs in the loader, already SSR-friendly).
-- No injected background/font/border — our existing `.prose-post pre` rules keep the paper background, mono font, and hairline border intact.
-- Only token colors are added inline.
+Nothing constrains the title (no `break-words`, no `min-w-0`, no responsive size step between mobile and desktop).
 
-Alternative considered: `highlight.js` / `prism` — both ship opinionated themes with backgrounds, paddings, and rounded chrome that would fight the design system. Rejected.
+### Fix
+Scoped to the case-study left column only:
 
-### Theme
-
-Custom minimal palette derived from the site tokens, not a stock theme:
-- comments → `--muted-foreground`
-- keywords / tags → `--ink` bold
-- strings → `--accent` (signal orange)
-- numbers / constants → `--ink`
-- functions / types → `--ink` with subtle weight shift
-- everything else → `--ink`
-
-Implemented as a Shiki `ThemeRegistration` object (light + dark variants using `--shiki-light` / `--shiki-dark` CSS vars so it follows the `.dark` class).
-
-### Scope of changes
-
-1. `bun add shiki` (pure JS, works in the Worker/SSR runtime).
-2. `src/lib/highlight.ts` — new: singleton Shiki highlighter with the two custom themes and the languages already used in the three posts (`javascript`, `typescript`, `bash`, `sql`, plus `text` fallback).
-3. `src/routes/blog.$slug.tsx` — swap the current `marked.parse` call for a marked instance with a `code` renderer that calls the Shiki highlighter; keep the loader synchronous by pre-loading the highlighter once at module scope.
-4. `src/styles.css` — small additions inside `.prose-post pre`: ensure inline `color` from Shiki wins, add `.dark .prose-post pre span[style]` override hook for the dark theme via CSS variables. No changes to padding, border, background, or font.
-
-### Ambiguity resolved
-
-The brief doesn't mention code styling explicitly. Choosing the option most consistent with the spec-sheet system: monochrome tokens + one accent color for strings, no separate code-block chrome. Rejecting typical portfolio patterns (colorful VSCode themes, traffic-light window headers, copy buttons).
+1. Add a middle size step so the title matches the narrower `md` column:
+   `text-6xl md:text-5xl lg:text-6xl xl:text-7xl`.
+2. Add `break-words` (and `min-w-0` on the aside) so any future longer title wraps inside the column instead of overflowing.
+3. Keep everything else — layout, spacing, font, colors — untouched.
 
 ### Out of scope
-
-- Line numbers, copy-to-clipboard, filename headers — all read as "IDE/dashboard" per the brief.
-- Client-side highlighting or language auto-detection.
+- No changes to grid ratios, no changes to the right column, no design-system changes.
+- No changes to `content.ts`.
