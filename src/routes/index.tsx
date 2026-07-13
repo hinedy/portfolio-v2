@@ -434,13 +434,17 @@ function Footer() {
 }
 
 function HomePage() {
+  const [pulse, setPulse] = useState<{ title: string; nonce: number } | null>(null);
+  const handleEvidenceRef = (title: string) => {
+    setPulse({ title, nonce: Date.now() });
+  };
   return (
     <main className="min-h-screen bg-background text-ink">
       <TopBar />
       <Hero />
       <Position />
-      <Evidence />
-      <Decisions />
+      <Evidence pulse={pulse} />
+      <Decisions onEvidenceRef={handleEvidenceRef} />
       <Signal />
       <Writing />
       <Contact />
