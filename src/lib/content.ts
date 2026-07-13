@@ -54,23 +54,23 @@ export const CONTENT = {
         url: "https://medxsvc.com",
         image: "/medx-preview.png",
         owned: "Frontend Engineer",
-        decisionSurface: ["Next.js", "React Hook Form", "SignalR", "Server Components"],
-        thesis: "Building healthcare software means correctness matters more than elegance.",
+        decisionSurface: ["Zustand", "React Query", "React Hook Form", "SignalR", "MSAL", "Stripe"],
+        thesis: "Building healthcare operations software means correctness matters more than elegance.",
         context:
-          "MedX is a production medical services platform managing healthcare workflows across multiple stakeholders, operating in a regulated environment where reliability and clarity directly affect real users and operations.",
+          "MedX is a multi-role healthcare operations platform coordinating medical service orders between providers, patients, and administrators — handling onboarding, scheduling, escrow-style payments, claims/remits, notifications, and real-time operational workflows in a highly dynamic environment.",
         theProblem:
-          "The existing frontend codebase was unstable under active development, with unclear structure and requirements that kept shifting as the product evolved.",
+          "The platform needed a dynamic service builder letting healthcare practices define their own service types, pricing, intake forms, and conditional workflow logic at runtime — plus strict role-based access across every protected operational area, layered on top of a legacy frontend that had accumulated inconsistent patterns under rapidly changing requirements.",
         whyThisWasDifficult:
-          "Correctness and reliability directly affected real users and operations, so any refactor had to happen without disrupting a system already in production — while requirements were loosely defined and needed daily translation into technical decisions.",
+          "The service builder needed real runtime \"if-this-then-that\" logic — dynamically adding charges, revealing questions, requiring documentation — so the UI had to interpret configuration as behavior, not just render static forms. That had to work alongside RBAC-gated workflows, long-lived authenticated sessions, and live SignalR updates synchronized against Stripe-powered escrow payments, without disrupting a system already handling real financial and medical operations.",
         whatWeChanged:
-          "Introduced clearer frontend structure and reusable UI patterns (tables, trees, tabs, form elements, hooks), built authentication with dynamic token rotation, implemented dynamic forms with React Hook Form, and migrated initial page fetching to server components for performance.",
+          "Organized the frontend around feature domains to isolate workflow-heavy business logic, implemented layered state management (Zustand, React Context, React Hook Form, React Query), and built a centralized auth/network layer handling token refresh, retry flows, and cross-tab synchronization. Improved responsiveness through route-based code splitting and lazy loading, particularly for export and reporting workflows — contributing to a ~49.5% reduction in main bundle size, improved First Contentful Paint, and lower Total Blocking Time.",
         tradeoffs: {
-          annotation: "// tradeoff: incremental refactor over rewrite",
+          annotation: "// tradeoff: one centralized network layer over per-feature handling",
           detail:
-            "Chose targeted, incremental refactors over a rewrite — slower short-term velocity in exchange for not destabilizing a live system multiple stakeholders depended on.",
+            "Invested in a single centralized auth/network layer rather than letting each feature handle its own token refresh and retry logic — more upfront architecture work in exchange for not duplicating fragile synchronization logic across a dozen different screens.",
         },
         whatIdDoDifferently:
-          "Push for a shared component library earlier — some of the reusable patterns were built reactively, after duplication had already spread across the codebase.",
+          "Push for the feature-domain organization earlier — some of the legacy inconsistency I inherited could have been avoided if domain boundaries had been established before the codebase grew past a certain size.",
       },
       {
         title: "Revixir",
@@ -78,44 +78,48 @@ export const CONTENT = {
         url: "https://revixir.com",
         image: "/revixir-preview.png",
         owned: "Frontend Engineer",
-        decisionSurface: ["Next.js", "Server Components", "Role-based Access Control"],
+        decisionSurface: ["Next.js 14", "Zod", "Framer Motion", "RBAC (420+ permissions)"],
         thesis: "Fast iteration only works when the architecture expects change.",
         context:
-          "Revixir was a provider credentialing system managing onboarding, verification, and access control for healthcare providers in a multi-tenant environment.",
+          "Revixir is a multi-tenant healthcare credentialing platform for organizations managing provider verification, onboarding, compliance, and administration — supporting three application contexts: a central admin portal, tenant-specific client environments, and impersonation sessions for support operations.",
         theProblem:
-          "The product needed to move fast in its early stage, but multi-tenant credentialing carries real security and correctness requirements that don't tolerate move-fast shortcuts.",
+          "The platform needed subdomain-based tenant isolation, JWT auth with middleware-level token rotation and impersonation handling, and a granular RBAC system — 420+ permissions — governing what every user could see and do across three distinct application contexts.",
         whyThisWasDifficult:
-          "Balancing rapid iteration with secure, role-based access control meant the architecture had to anticipate change rather than get patched after each new requirement.",
+          "Navigation, layouts, and permissions all needed to change dynamically depending on whether someone was in the admin portal, a tenant environment, or an impersonation session — while credentialing records carried large amounts of operational and compliance data that had to stay usable rather than overwhelming, and requirements kept evolving in parallel with backend contract changes.",
         whatWeChanged:
-          "Built a multi-tenant frontend architecture on Next.js and server components, implemented secure authentication and role-based access, and designed reusable patterns for complex, conditional credentialing workflows.",
+          "Built the frontend on Next.js 14 App Router with middleware-level tenant resolution and auth, implemented the 420+ permission RBAC system, and built reusable infrastructure — form layouts, modal flows, toast notifications, loading skeletons, permission-aware rendering — used across onboarding, provider management, and entity administration instead of building each module in isolation. Used Zod-based schema validation with React Hook Form so validation logic lived with the form, not scattered across API error handling.",
         tradeoffs: {
-          annotation: "// tradeoff: upfront design time over later rebuild",
+          annotation: "// tradeoff: shared infrastructure over shipping isolated pages",
           detail:
-            "Invested in performance and maintainability from the outset rather than retrofitting later — added upfront design time in exchange for not having to rebuild auth and access patterns mid-flight.",
+            "Spent time building reusable form, modal, and table infrastructure instead of shipping each workflow as its own isolated page — slower to the first module, faster for every module after it, since onboarding, provider management, and entity administration all reused the same underlying patterns.",
         },
         whatIdDoDifferently:
-          "Document the multi-tenant patterns earlier as shared reference — without it, onboarding new contributors into the credentialing logic took longer than it should have.",
+          "Document the tenant-resolution and impersonation-session logic earlier — it's the part of the system where getting it wrong is easy and expensive, and it deserved a written reference sooner than it got one.",
       },
       {
         title: "SupplyTech",
         category: "MVP",
         url: "https://supplytechsyg.com/",
         image: "/supplytech-preview.png",
-        owned: "Lead Frontend Engineer",
-        decisionSurface: ["React", "Framer Motion", "Role-based Dashboards"],
+        // RESOLVED: this was a freelance engagement with a team of three developers with
+        // intersecting responsibilities — "Lead Frontend Engineer" overstates solo ownership,
+        // plain "Frontend Developer" undersells the architecture work documented below. Using
+        // the literal external title, with team context now stated explicitly in theProblem.
+        owned: "Frontend Developer",
+        decisionSurface: ["Next.js", "Zustand", "Radix UI", "TanStack Table"],
         thesis: "Marketplace products become operational products faster than people expect.",
         context:
-          "SupplyTech is an early-stage B2B marketplace connecting warehouse providers with clients through discovery and onboarding.",
+          "SupplyTech is a logistics and warehouse operations platform supporting warehouse discovery, onboarding, operational management, and future booking infrastructure for warehouse providers and clients.",
         theProblem:
-          "The product needed to communicate value to a non-technical audience and validate market assumptions before the product itself had matured.",
+          "The platform needed multi-role dashboards, warehouse onboarding, and operational tooling built during the MVP and product-definition stage — as a freelance engagement with a three-person dev team and intersecting responsibilities, while product direction and stakeholder requirements were still actively changing.",
         whyThisWasDifficult:
-          "Building discovery and onboarding flows before product-market fit meant designing for flexibility without over-engineering an MVP — every architectural choice had to earn its complexity.",
+          "Every architectural choice had to earn its complexity in a greenfield codebase with evolving requirements — balancing reusable component architecture against the risk of over-engineering before the product direction had settled, while still supporting role-based rendering, localization (Arabic and English), and data-heavy operational views across desktop and mobile.",
         whatWeChanged:
-          "Built an animated landing page to communicate positioning, warehouse onboarding flows with admin verification, a searchable and filterable client discovery experience, and role-based dashboard structures ready for future booking and payments.",
+          "Built on Next.js and TypeScript with Zustand for state, Radix UI and TanStack Table for the component layer, and React Hook Form for forms. Implemented JWT authentication with protected routes and persistent sessions, SSR for public-facing SEO pages, and reusable UI primitives shared across onboarding, warehouse management, and admin tooling.",
         tradeoffs: {
-          annotation: "// tradeoff: extensible structure over full build-out",
+          annotation: "// tradeoff: reusable primitives over one-off screens",
           detail:
-            "Kept the frontend structure deliberately extensible rather than fully built out — avoided investing in booking and payments UI before the business model was validated.",
+            "Built shared component primitives — tables, forms, loading states — even at MVP stage rather than one-off screens per workflow. Slightly more setup cost early, but it meant new operational views could be assembled instead of rebuilt as requirements kept shifting.",
         },
         whatIdDoDifferently:
           "Instrument usage earlier — decisions about what to build next were made on stakeholder intuition rather than actual discovery-flow data, because analytics weren't wired in from day one.",
@@ -126,16 +130,28 @@ export const CONTENT = {
   decisions: {
     sectionLabel: "03 / DECISIONS",
     question: "What principles repeat across projects?",
+    // Rendered as a table, not a list — see PORTFOLIO.md §12.
+    // evidenceRefs (array) links to caseStudy titles in `evidence.caseStudies` — only set where
+    // the case study text genuinely substantiates the claim. Do not add a ref without checking
+    // the actual case study content first (§12 explains why). Schema changed from a single
+    // `evidenceRef` string to `evidenceRefs` array now that some principles are honestly
+    // demonstrated across more than one project.
     items: [
-      { category: "State", statement: "Zustand until complexity proves I need Redux Toolkit.", evidenceRef: null },
-      { category: "Forms", statement: "Validation belongs where users make mistakes, not where APIs reject them.", evidenceRef: "MedX" },
-      { category: "Animation", statement: "Motion should explain state changes, not decorate them.", evidenceRef: null },
-      { category: "Components", statement: "I optimize for change before I optimize for reuse.", evidenceRef: "MedX" },
-      { category: "Performance", statement: "Measure first. Optimize second.", evidenceRef: "MedX" },
-      { category: "TypeScript", statement: "Types should remove ambiguity, not create ceremony.", evidenceRef: null },
-      { category: "APIs", statement: "Normalize inconsistency once instead of handling it everywhere.", evidenceRef: null },
+      { category: "State", statement: "Zustand until complexity proves I need Redux Toolkit.", evidenceRefs: ["MedX"] },
+      { category: "Forms", statement: "Validation belongs where users make mistakes, not where APIs reject them.", evidenceRefs: ["Revixir"] },
+      { category: "Animation", statement: "Motion should explain state changes, not decorate them.", evidenceRefs: [] },
+      { category: "Components", statement: "I optimize for change before I optimize for reuse.", evidenceRefs: ["Revixir", "MedX"] },
+      { category: "Performance", statement: "Measure first. Optimize second.", evidenceRefs: ["MedX"] },
+      { category: "TypeScript", statement: "Types should remove ambiguity, not create ceremony.", evidenceRefs: [] },
+      { category: "APIs", statement: "Normalize inconsistency once instead of handling it everywhere.", evidenceRefs: ["MedX"] },
     ],
-    // Each item renders with its category as the annotation-motif label underneath — PORTFOLIO.md §4.
+    // Rows with evidenceRefs.length > 0 render at higher visual weight and get a hover
+    // annotation callout ("// evidence: {evidenceRefs.join(', ')}") that scrolls to and
+    // highlights the relevant line in that case study. Rows with an empty array render at
+    // standard weight, no hover state, no callout — PORTFOLIO.md §12.
+    // Animation and TypeScript remain unlinked: tool usage is documented (Framer Motion,
+    // TypeScript across all three projects) but none of the case studies discuss an actual
+    // *decision* about motion or typing — presence of a tool isn't evidence of a principle.
   },
 
   signal: {
@@ -144,7 +160,10 @@ export const CONTENT = {
     quotes: [
       {
         name: "Simon Dobretsov",
-        provenance: "AHS — chief executive officer",
+        // RESOLVED: both titles are real — CEO of AHS (the company) and CTO of MedX (the
+        // product/project). AHS as a company is no longer active; MedX remains in production.
+        // Using the project-context title since this quote sits alongside the MedX case study.
+        provenance: "MedX — CTO",
         quote:
           "Ahmed was a critical member of a UI/UX design team for a major project being developed from the ground up in the healthcare space. His technical contributions were notable and his ability to work on a highly-dynamic and evolving project and team were even more noteworthy. Developers that produce good technical work and can function in a team environment with pressure from ever-changing client requirements are hard to find, and you will not go wrong with selecting Ahmed for any of your front end project needs. He produces timely and high quality work even in a higher pressure and time constrained environment.",
       },
