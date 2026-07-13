@@ -289,6 +289,18 @@
   padding: 0;
   font-size: inherit;
 }
+/* Shiki output: strip its inline background so our paper chrome wins,
+   and swap light/dark token colors via the `.dark` class. */
+.prose-post pre.shiki,
+.prose-post pre.shiki code {
+  background: transparent !important;
+  color: var(--color-ink);
+}
+.dark .prose-post .shiki span {
+  color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+}
 .prose-post img {
   max-width: 100%;
   border: 1px solid var(--color-rule);
