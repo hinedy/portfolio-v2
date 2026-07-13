@@ -60,7 +60,7 @@ function TopBar() {
 function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
-    <section id="top" className="border-b border-rule">
+    <section id="top" className="">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="col-span-12 md:col-span-7 flex flex-col justify-between">
           <div className="section-label mb-10">00 / Hero — spec sheet v2</div>
@@ -243,10 +243,16 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
       <SectionHeader label={decisions.sectionLabel} question={decisions.question} />
       <div role="table" className="border-t border-rule pb-24 md:pb-32">
         <div role="row" className="hidden md:grid grid-cols-12 gap-x-6 border-b border-rule py-3">
-          <div role="columnheader" className="col-span-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          <div
+            role="columnheader"
+            className="col-span-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground"
+          >
             Category
           </div>
-          <div role="columnheader" className="col-span-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          <div
+            role="columnheader"
+            className="col-span-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground"
+          >
             Statement
           </div>
           <div role="columnheader" className="col-span-3" />
@@ -382,9 +388,7 @@ function CurrentWork() {
               <Annotation>{`// ${item.status}`}</Annotation>
             </div>
             <div className="col-span-12 md:col-span-9 min-w-0">
-              <div className="font-display text-3xl md:text-5xl text-ink leading-[1.05] break-words">
-                {item.title}
-              </div>
+              <div className="font-display text-3xl md:text-5xl text-ink leading-[1.05] break-words">{item.title}</div>
               <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/85 max-w-3xl break-words">
                 {item.description}
               </p>
