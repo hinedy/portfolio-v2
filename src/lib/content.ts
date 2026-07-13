@@ -53,6 +53,8 @@ export const CONTENT = {
         category: "Production",
         url: "https://medxsvc.com",
         image: "/medx-preview.png",
+        owned: "Frontend Engineer",
+        decisionSurface: ["Next.js", "React Hook Form", "SignalR", "Server Components"],
         thesis: "Building healthcare software means correctness matters more than elegance.",
         context:
           "MedX is a production medical services platform managing healthcare workflows across multiple stakeholders, operating in a regulated environment where reliability and clarity directly affect real users and operations.",
@@ -75,6 +77,8 @@ export const CONTENT = {
         category: "Discontinued",
         url: "https://revixir.com",
         image: "/revixir-preview.png",
+        owned: "Frontend Engineer",
+        decisionSurface: ["Next.js", "Server Components", "Role-based Access Control"],
         thesis: "Fast iteration only works when the architecture expects change.",
         context:
           "Revixir was a provider credentialing system managing onboarding, verification, and access control for healthcare providers in a multi-tenant environment.",
@@ -97,6 +101,8 @@ export const CONTENT = {
         category: "MVP",
         url: "https://supplytechsyg.com/",
         image: "/supplytech-preview.png",
+        owned: "Lead Frontend Engineer",
+        decisionSurface: ["React", "Framer Motion", "Role-based Dashboards"],
         thesis: "Marketplace products become operational products faster than people expect.",
         context:
           "SupplyTech is an early-stage B2B marketplace connecting warehouse providers with clients through discovery and onboarding.",
