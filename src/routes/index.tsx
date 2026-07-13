@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const { hero, position, evidence, decisions, signal, writing, contact, footer } = CONTENT;
+const { hero, position, evidence, decisions, signal, writing, currentWork, contact, footer } = CONTENT;
 
 /* Shared page frame — a 12-col grid site with visible outer rules,
    mono-labeled section breaks, no rounded corners, no card chrome. */
@@ -40,7 +40,7 @@ function TopBar() {
           Ahmed Hinedy
         </a>
         <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
-          Frontend Software Engineer · Alexandria, EG
+          Product Frontend Engineer · Alexandria, EG
         </div>
         <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
           {navItems.map((it) => (
