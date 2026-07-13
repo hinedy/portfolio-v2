@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
 import { AsciiPortrait } from "@/components/AsciiPortrait";
@@ -126,8 +126,29 @@ function Position() {
   );
 }
 
-function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; index: number }) {
+function CaseStudy({
+  cs,
+  index,
+  pulse,
+}: {
+  cs: (typeof evidence.caseStudies)[number];
+  index: number;
+  pulse: { title: string; nonce: number } | null;
+}) {
   const num = String(index + 1).padStart(2, "0");
+  const whatWeChangedRef = useRef<HTMLDivElement | null>(null);
+  const [flash, setFlash] = useState(false);
+
+  useEffect(() => {
+    if (!pulse || pulse.title !== cs.title) return;
+    const el = whatWeChangedRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    setFlash(true);
+    const t = setTimeout(() => setFlash(false), 1800);
+    return () => clearTimeout(t);
+  }, [pulse, cs.title]);
+
   return (
     <article className="grid grid-cols-12 gap-x-6 border-t border-rule py-14 md:py-20">
       <aside className="col-span-12 md:col-span-3 min-w-0 space-y-5 mb-8 md:mb-0">
@@ -165,7 +186,20 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
           <Field label="Context" body={cs.context} />
           <Field label="The Problem" body={cs.theProblem} />
           <Field label="Why This Was Difficult" body={cs.whyThisWasDifficult} />
-          <Field label="What We Changed" body={cs.whatWeChanged} />
+          <div
+            ref={whatWeChangedRef}
+            className={
+              "min-w-0 -m-2 p-2 transition-colors duration-500 " +
+              (flash ? "bg-accent/15 outline outline-2 outline-accent" : "")
+            }
+          >
+            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
+              What We Changed
+            </div>
+            <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">
+              {cs.whatWeChanged}
+            </p>
+          </div>
         </div>
 
         <div className="border-l-2 border-accent pl-5 py-1">
@@ -190,41 +224,85 @@ function Field({ label, body }: { label: string; body: string }) {
   );
 }
 
-function Evidence() {
+function Evidence({ pulse }: { pulse: { title: string; nonce: number } | null }) {
   return (
     <section id="evidence" className="mx-auto max-w-[1440px] px-6 md:px-10">
       <SectionHeader label={evidence.sectionLabel} question={evidence.question} />
       <div className="pb-20">
         {evidence.caseStudies.map((cs, i) => (
-          <CaseStudy key={cs.title} cs={cs} index={i} />
+          <CaseStudy key={cs.title} cs={cs} index={i} pulse={pulse} />
         ))}
       </div>
     </section>
   );
 }
 
-function Decisions() {
+function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }) {
   return (
     <section id="decisions" className="mx-auto max-w-[1440px] px-6 md:px-10">
       <SectionHeader label={decisions.sectionLabel} question={decisions.question} />
-      <ol className="border-t border-rule pb-24 md:pb-32">
-        {decisions.items.map((d, i) => (
-          <li key={d.category} className="grid grid-cols-12 gap-x-6 border-b border-rule py-8 md:py-10 items-baseline">
-            <div className="col-span-2 md:col-span-1 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-              {String(i + 1).padStart(2, "0")}
-            </div>
-            <div className="col-span-10 md:col-span-9">
-              <p className="font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.05] text-ink">{d.statement}</p>
-              <div className="mt-3">
-                <Annotation>{d.category.toLowerCase()}</Annotation>
+      <div role="table" className="border-t border-rule pb-24 md:pb-32">
+        <div role="row" className="hidden md:grid grid-cols-12 gap-x-6 border-b border-rule py-3">
+          <div role="columnheader" className="col-span-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            Category
+          </div>
+          <div role="columnheader" className="col-span-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            Statement
+          </div>
+          <div role="columnheader" className="col-span-3" />
+        </div>
+        {decisions.items.map((d) => {
+          const hasRef = d.evidenceRef !== null;
+          const commonCells = (
+            <>
+              <div
+                role="cell"
+                className="col-span-12 md:col-span-3 font-mono text-[13px] uppercase tracking-wider text-ink mb-2 md:mb-0"
+              >
+                {d.category}
               </div>
+              <div
+                role="cell"
+                className={
+                  "col-span-12 md:col-span-6 text-lg md:text-xl leading-snug text-ink " +
+                  (hasRef ? "font-semibold" : "font-normal")
+                }
+              >
+                {d.statement}
+              </div>
+              <div role="cell" className="hidden md:flex col-span-3 items-center justify-end min-h-[1.2em]">
+                {hasRef && (
+                  <span className="opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
+                    <Annotation>{`// evidence: ${d.evidenceRef}`}</Annotation>
+                  </span>
+                )}
+              </div>
+            </>
+          );
+          if (hasRef) {
+            return (
+              <button
+                key={d.category}
+                type="button"
+                role="row"
+                onClick={() => onEvidenceRef(d.evidenceRef as string)}
+                className="group grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-center w-full text-left -mx-6 md:-mx-10 px-6 md:px-10 hover:bg-paper focus-visible:bg-paper focus:outline-none transition-colors cursor-pointer"
+              >
+                {commonCells}
+              </button>
+            );
+          }
+          return (
+            <div
+              key={d.category}
+              role="row"
+              className="grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-center"
+            >
+              {commonCells}
             </div>
-            <div className="hidden md:block col-span-2 text-right font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-              decision
-            </div>
-          </li>
-        ))}
-      </ol>
+          );
+        })}
+      </div>
     </section>
   );
 }
@@ -356,13 +434,17 @@ function Footer() {
 }
 
 function HomePage() {
+  const [pulse, setPulse] = useState<{ title: string; nonce: number } | null>(null);
+  const handleEvidenceRef = (title: string) => {
+    setPulse({ title, nonce: Date.now() });
+  };
   return (
     <main className="min-h-screen bg-background text-ink">
       <TopBar />
       <Hero />
       <Position />
-      <Evidence />
-      <Decisions />
+      <Evidence pulse={pulse} />
+      <Decisions onEvidenceRef={handleEvidenceRef} />
       <Signal />
       <Writing />
       <Contact />
