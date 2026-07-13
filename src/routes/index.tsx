@@ -126,8 +126,29 @@ function Position() {
   );
 }
 
-function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; index: number }) {
+function CaseStudy({
+  cs,
+  index,
+  pulse,
+}: {
+  cs: (typeof evidence.caseStudies)[number];
+  index: number;
+  pulse: { title: string; nonce: number } | null;
+}) {
   const num = String(index + 1).padStart(2, "0");
+  const whatWeChangedRef = useRef<HTMLDivElement | null>(null);
+  const [flash, setFlash] = useState(false);
+
+  useEffect(() => {
+    if (!pulse || pulse.title !== cs.title) return;
+    const el = whatWeChangedRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    setFlash(true);
+    const t = setTimeout(() => setFlash(false), 1800);
+    return () => clearTimeout(t);
+  }, [pulse, cs.title]);
+
   return (
     <article className="grid grid-cols-12 gap-x-6 border-t border-rule py-14 md:py-20">
       <aside className="col-span-12 md:col-span-3 min-w-0 space-y-5 mb-8 md:mb-0">
@@ -165,7 +186,20 @@ function CaseStudy({ cs, index }: { cs: (typeof evidence.caseStudies)[number]; i
           <Field label="Context" body={cs.context} />
           <Field label="The Problem" body={cs.theProblem} />
           <Field label="Why This Was Difficult" body={cs.whyThisWasDifficult} />
-          <Field label="What We Changed" body={cs.whatWeChanged} />
+          <div
+            ref={whatWeChangedRef}
+            className={
+              "min-w-0 -m-2 p-2 transition-colors duration-500 " +
+              (flash ? "bg-accent/15 outline outline-2 outline-accent" : "")
+            }
+          >
+            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
+              What We Changed
+            </div>
+            <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">
+              {cs.whatWeChanged}
+            </p>
+          </div>
         </div>
 
         <div className="border-l-2 border-accent pl-5 py-1">
@@ -190,13 +224,13 @@ function Field({ label, body }: { label: string; body: string }) {
   );
 }
 
-function Evidence() {
+function Evidence({ pulse }: { pulse: { title: string; nonce: number } | null }) {
   return (
     <section id="evidence" className="mx-auto max-w-[1440px] px-6 md:px-10">
       <SectionHeader label={evidence.sectionLabel} question={evidence.question} />
       <div className="pb-20">
         {evidence.caseStudies.map((cs, i) => (
-          <CaseStudy key={cs.title} cs={cs} index={i} />
+          <CaseStudy key={cs.title} cs={cs} index={i} pulse={pulse} />
         ))}
       </div>
     </section>
