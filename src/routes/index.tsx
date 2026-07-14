@@ -29,7 +29,7 @@ function TopBar() {
   const navItems = [
     { label: "Position", href: "#position" },
     { label: "Evidence", href: "#evidence" },
-    { label: "Decisions", href: "#decisions" },
+    { label: "How I Decide", href: "#decisions" },
     { label: "Writing", href: "#writing" },
     { label: "Contact", href: "#contact" },
   ];
@@ -241,6 +241,14 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
   return (
     <section id="decisions" className="mx-auto max-w-[1440px] px-6 md:px-10">
       <SectionHeader label={decisions.sectionLabel} question={decisions.question} />
+      <div className="grid grid-cols-12 gap-x-6 pb-10 md:pb-14">
+        <div className="col-span-12 md:col-span-3 mb-4 md:mb-0">
+          <Annotation>epigraph</Annotation>
+        </div>
+        <p className="col-span-12 md:col-span-9 font-display text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.05] text-ink max-w-4xl">
+          {decisions.epigraph}
+        </p>
+      </div>
       <div role="table" className="border-t border-rule pb-24 md:pb-32">
         <div role="row" className="hidden md:grid grid-cols-12 gap-x-6 border-b border-rule py-3">
           <div
@@ -259,6 +267,14 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
         </div>
         {decisions.items.map((d) => {
           const hasRef = d.evidenceRefs.length > 0;
+          const w = d.weight ?? 3;
+          // Continuous weight scaling: 0-5 maps to font-weight 400-700 and a subtle size bump.
+          const statementStyle = {
+            fontWeight: Math.round(400 + (w / 5) * 300),
+            fontSize: `${1.0625 + (w / 5) * 0.375}rem`,
+            lineHeight: 1.25,
+          } as const;
+          const note = (d as { note?: string }).note;
           const commonCells = (
             <>
               <div
@@ -267,16 +283,20 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
               >
                 {d.category}
               </div>
-              <div
-                role="cell"
-                className={
-                  "col-span-12 md:col-span-6 text-lg md:text-xl leading-snug text-ink " +
-                  (hasRef ? "font-semibold" : "font-normal")
-                }
-              >
-                {d.statement}
+              <div role="cell" className="col-span-12 md:col-span-6 min-w-0">
+                <div className="text-ink" style={statementStyle}>
+                  {d.statement}
+                </div>
+                <p className="mt-2 text-sm md:text-base leading-relaxed text-ink/75 max-w-2xl">
+                  {d.explanation}
+                </p>
+                {note && (
+                  <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                    {note}
+                  </p>
+                )}
               </div>
-              <div role="cell" className="hidden md:flex col-span-3 items-center justify-end min-h-[1.2em]">
+              <div role="cell" className="hidden md:flex col-span-3 items-start justify-end pt-1 min-h-[1.2em]">
                 {hasRef && (
                   <span className="opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
                     <Annotation>{`// evidence: ${d.evidenceRefs.join(", ")}`}</Annotation>
@@ -292,7 +312,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
                 type="button"
                 role="row"
                 onClick={() => onEvidenceRef(d.evidenceRefs[0]!)}
-                className="group grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-center w-full text-left -mx-6 md:-mx-10 px-6 md:px-10 hover:bg-paper focus-visible:bg-paper focus:outline-none transition-colors cursor-pointer"
+                className="group grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-start w-full text-left -mx-6 md:-mx-10 px-6 md:px-10 hover:bg-paper focus-visible:bg-paper focus:outline-none transition-colors cursor-pointer"
               >
                 {commonCells}
               </button>
@@ -302,7 +322,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
             <div
               key={d.category}
               role="row"
-              className="grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-center"
+              className="grid grid-cols-12 gap-x-6 border-b border-rule py-6 md:py-7 items-baseline md:items-start"
             >
               {commonCells}
             </div>
