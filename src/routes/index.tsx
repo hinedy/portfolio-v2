@@ -305,21 +305,25 @@ function Signal() {
   return (
     <section id="signal" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={signal.sectionLabel} question={signal.question} />
-      <div className="grid grid-cols-12 gap-x-6 gap-y-14 pb-24 md:pb-32">
+      <div className="grid grid-cols-12 gap-x-6 pb-24 md:pb-32">
         {signal.quotes.map((q, i) => (
-          <figure key={q.name} className="col-span-12 md:col-span-6 border-t border-rule pt-6">
-            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-4">
-              Quote {String(i + 1).padStart(2, "0")}
-            </div>
-            <blockquote className="font-display text-[clamp(1.25rem,1.9vw,1.75rem)] leading-[1.15] text-ink">
-              &ldquo;{q.quote}&rdquo;
-            </blockquote>
-            <figcaption className="mt-5">
-              <div className="text-ink font-medium">{q.name}</div>
-              <div className="mt-1">
-                <Annotation>{q.provenance}</Annotation>
+          <figure key={q.name} className="col-span-12 border-t border-rule pt-8 pb-10">
+            <div className="grid grid-cols-12 gap-x-6">
+              <div className="col-span-12 md:col-span-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-3 md:mb-0">
+                Quote {String(i + 1).padStart(2, "0")}
               </div>
-            </figcaption>
+              <div className="col-span-12 md:col-span-8">
+                <blockquote className="font-sans text-base md:text-lg leading-relaxed text-ink/90">
+                  &ldquo;{q.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5">
+                  <div className="text-ink font-medium">{q.name}</div>
+                  <div className="mt-1">
+                    <Annotation>{q.provenance}</Annotation>
+                  </div>
+                </figcaption>
+              </div>
+            </div>
           </figure>
         ))}
       </div>
@@ -343,10 +347,10 @@ function Writing() {
                 href={`/blog/${p.slug}`}
                 className="group grid grid-cols-12 gap-x-6 py-8 md:py-10 items-baseline hover:bg-paper transition-colors -mx-6 md:-mx-10 px-6 md:px-10"
               >
-                <div className="col-span-3 md:col-span-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                <div className="col-span-3 md:col-span-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                   {y}.{m}.{d}
                 </div>
-                <div className="col-span-9 md:col-span-8">
+                <div className="col-span-9 md:col-span-7">
                   <div className="font-display text-2xl md:text-4xl text-ink group-hover:text-accent transition-colors leading-[1.05]">
                     {p.title}
                   </div>
