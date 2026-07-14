@@ -1,0 +1,12 @@
+{
+  "name": "Ahmed Hinedy — Product Frontend Engineer",
+  "short_name": "Hinedy",
+  "description": "Software gets complicated long before it gets big.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf5f6",
+  "theme_color": "#ed5f18",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
