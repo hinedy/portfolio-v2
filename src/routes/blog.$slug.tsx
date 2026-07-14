@@ -43,6 +43,10 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: post.summary },
         { property: "og:type", content: "article" },
         { property: "article:published_time", content: post.publishedAt },
+        {
+          property: "og:image",
+          content: `https://hinedy.vercel.app/api/og?title=${encodeURIComponent(post.title)}`,
+        },
       ],
       links: [{ rel: "canonical", href: `https://hinedy.vercel.app/blog/${post.slug}` }],
       scripts: [

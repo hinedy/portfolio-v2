@@ -176,6 +176,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Software gets complicated long before it gets big. Case studies, decisions, and writing from a product frontend engineer.",
       },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "https://hinedy.vercel.app/og-default.png",
+      },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
