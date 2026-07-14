@@ -49,7 +49,7 @@ function BlogIndex() {
       <section className="mx-auto max-w-[1440px] px-6 md:px-10">
         <header className="grid grid-cols-12 gap-x-6 pt-12 pb-14 md:pt-16 md:pb-20">
           <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
-            <div className="section-label">05 / Writing</div>
+            <div className="section-label">{CONTENT.writing.sectionLabel}</div>
           </div>
           <div className="col-span-12 md:col-span-9">
             <h1 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.95] text-ink">
