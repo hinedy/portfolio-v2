@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
+import { PageShell } from "@/components/PageShell";
 import { AsciiPortrait } from "@/components/AsciiPortrait";
 import { Annotation } from "@/components/Annotation";
-import { MobileNav } from "@/components/MobileNav";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const { hero, position, evidence, decisions, signal, writing, currentWork, contact, footer } = CONTENT;
+const { hero, position, evidence, decisions, signal, writing, currentWork, contact } = CONTENT;
 
 /* Shared page frame — a 12-col grid site with visible outer rules,
    mono-labeled section breaks, no rounded corners, no card chrome. */
@@ -25,43 +25,11 @@ function SectionHeader({ label, question }: { label: string; question: string })
   );
 }
 
-function TopBar() {
-  const navItems = [
-    { label: "Position", href: "#position" },
-    { label: "Evidence", href: "#evidence" },
-    { label: "How I Decide", href: "#decisions" },
-    { label: "Writing", href: "/blog" },
-    { label: "Contact", href: "#contact" },
-  ];
-  return (
-    <div className="border-b border-rule">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-12 lg:gap-x-6 py-4 items-baseline">
-        <a href="#top" className="min-w-0 truncate lg:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
-          Ahmed Hinedy
-        </a>
-        <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
-          Product Frontend Engineer · Alexandria, EG
-        </div>
-        <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase whitespace-nowrap">
-          {navItems.map((it) => (
-            <a key={it.href} href={it.href} className="hover:text-accent transition-colors">
-              {it.label}
-            </a>
-          ))}
-        </nav>
-        <div className="lg:hidden justify-self-end">
-          <MobileNav items={navItems} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
-    <section id="top" className="">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28">
+    <section id="top" className="scroll-mt-12">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="col-span-12 md:col-span-7 flex flex-col justify-between">
           <div className="section-label mb-10">00 / Hero — spec sheet v2</div>
           <h1 className="font-display text-[clamp(3.5rem,11vw,10.5rem)] text-ink">
@@ -101,7 +69,7 @@ function Hero() {
 
 function Position() {
   return (
-    <section id="position" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="position" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={position.sectionLabel} question={position.question} />
       <div className="grid grid-cols-12 gap-x-6 pb-24 md:pb-32">
         <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
@@ -226,7 +194,7 @@ function Field({ label, body }: { label: string; body: string }) {
 
 function Evidence({ pulse }: { pulse: { title: string; nonce: number } | null }) {
   return (
-    <section id="evidence" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="evidence" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={evidence.sectionLabel} question={evidence.question} />
       <div className="pb-20">
         {evidence.caseStudies.map((cs, i) => (
@@ -239,7 +207,7 @@ function Evidence({ pulse }: { pulse: { title: string; nonce: number } | null })
 
 function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }) {
   return (
-    <section id="decisions" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="decisions" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={decisions.sectionLabel} question={decisions.question} />
       <div className="grid grid-cols-12 gap-x-6 pb-10 md:pb-14">
         <div className="col-span-12 md:col-span-3 mb-4 md:mb-0">
@@ -335,7 +303,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
 
 function Signal() {
   return (
-    <section id="signal" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="signal" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={signal.sectionLabel} question={signal.question} />
       <div className="grid grid-cols-12 gap-x-6 gap-y-14 pb-24 md:pb-32">
         {signal.quotes.map((q, i) => (
@@ -361,7 +329,7 @@ function Signal() {
 
 function Writing() {
   return (
-    <section id="writing" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="writing" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={writing.sectionLabel} question={writing.question} />
       <ul className="border-t border-rule pb-24 md:pb-32">
         {writing.posts.map((p) => {
@@ -398,7 +366,7 @@ function Writing() {
 
 function CurrentWork() {
   return (
-    <section id="current-work" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="current-work" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={currentWork.sectionLabel} question={currentWork.question} />
       <ul className="border-t border-rule pb-24 md:pb-32">
         {currentWork.items.map((item) => (
@@ -440,7 +408,7 @@ function CurrentWork() {
 
 function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-[1440px] px-6 md:px-10">
+    <section id="contact" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
       <SectionHeader label={contact.sectionLabel} question={contact.question} />
       <div className="grid grid-cols-12 gap-x-6 pb-24 md:pb-32">
         <div className="col-span-12 md:col-span-8">
@@ -483,32 +451,13 @@ function Contact() {
   );
 }
 
-function Footer() {
-  const year = new Date().getFullYear();
-  return (
-    <footer className="border-t border-rule">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 py-10 grid grid-cols-12 gap-x-6 gap-y-6 items-end">
-        <div className="col-span-12 md:col-span-6 space-y-2">
-          {footer.colophon.map((line) => (
-            <Annotation key={line}>{line.replace("[date — fill in at deploy]", `${year}`)}</Annotation>
-          ))}
-        </div>
-        <div className="col-span-12 md:col-span-6 md:text-right font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-          © {year} Ahmed Hinedy · Alexandria, EG
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 function HomePage() {
   const [pulse, setPulse] = useState<{ title: string; nonce: number } | null>(null);
   const handleEvidenceRef = (title: string) => {
     setPulse({ title, nonce: Date.now() });
   };
   return (
-    <main className="min-h-screen bg-background text-ink">
-      <TopBar />
+    <PageShell>
       <Hero />
       <Position />
       <Evidence pulse={pulse} />
@@ -517,7 +466,6 @@ function HomePage() {
       <Writing />
       <CurrentWork />
       <Contact />
-      <Footer />
-    </main>
+    </PageShell>
   );
 }
