@@ -32,7 +32,11 @@ function TopBar() {
     <>
       <div className="sticky top-0 z-50 border-b border-rule bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-12">
         <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-12 lg:gap-x-6 items-center h-full">
-          <Link to="/" hash="top" className="min-w-0 truncate lg:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
+          <Link
+            to="/"
+            hash="top"
+            className="min-w-0 truncate lg:col-span-3 font-mono text-xs tracking-widest uppercase text-ink"
+          >
             Ahmed Hinedy
           </Link>
           <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">

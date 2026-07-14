@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
 import { BlogShell } from "@/components/BlogShell";
+import { BlogIndexSkeleton } from "@/components/skeletons";
 import { listPosts, diffAgainstContentPosts, type PostMeta } from "@/lib/posts";
 
 export const Route = createFileRoute("/blog/")({
@@ -33,6 +34,7 @@ export const Route = createFileRoute("/blog/")({
     ],
   }),
   component: BlogIndex,
+  pendingComponent: BlogIndexSkeleton,
 });
 
 function formatDate(iso: string) {
