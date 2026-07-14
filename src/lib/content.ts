@@ -19,7 +19,7 @@ export const CONTENT = {
     items: [
       { href: "/#position", label: "Position" },
       { href: "/#evidence", label: "Evidence" },
-      { href: "/#decisions", label: "Decisions" },
+      { href: "/#decisions", label: "How I Decide" }, // anchor id kept stable on purpose — only the visible label changed
       { href: "/blog", label: "Writing" },
       { href: "/#contact", label: "Contact" },
     ],
@@ -41,11 +41,13 @@ export const CONTENT = {
       "I care less about frameworks than the decisions behind them.",
       "Most frontend problems aren't visual problems. They're problems of ownership, complexity, changing requirements, and keeping a product understandable as it grows.",
       "That's why I spend more time thinking about architecture, state boundaries, constraints, and tradeoffs than collecting libraries.",
-      "Lately I've been more interested in how software gets built than in what gets built — which is part of why I started digging into how repositories evolve over time.",
+      "Complex systems don't have to look complicated — the taste and care that go into small details are part of the work, not decoration on top of it.",
     ],
-    // Last line intentionally points at a real artifact (commit-insights, see 06/CURRENT WORK)
-    // rather than announcing a career shift in the abstract — the work should carry the signal,
-    // not a stated pivot. Do not add "recently I've been moving into..." framing here or elsewhere.
+    // Back to 4 lines, matching the original "2-4 sentences" spec (§6). The systems-thinking/
+    // commit-insights bridge line was removed entirely, not folded elsewhere — the connection
+    // to commit-insights doesn't need to live in Position now that 06/CURRENT WORK exists as
+    // its own standalone section with its own framing question ("What's next?"). No dangling
+    // reference to clean up elsewhere.
   },
 
   evidence: {
@@ -65,9 +67,9 @@ export const CONTENT = {
         theProblem:
           "The platform needed a dynamic service builder letting healthcare practices define their own service types, pricing, intake forms, and conditional workflow logic at runtime — plus strict role-based access across every protected operational area, layered on top of a legacy frontend that had accumulated inconsistent patterns under rapidly changing requirements. Requirements themselves were refined collaboratively with stakeholders rather than handed down as a fixed spec, which meant frontend decisions doubled as part of the requirements-definition process, not just its implementation.",
         whyThisWasDifficult:
-          "The service builder needed real runtime \"if-this-then-that\" logic — dynamically adding charges, revealing questions, requiring documentation — so the UI had to interpret configuration as behavior, not just render static forms. That had to work alongside RBAC-gated workflows, long-lived authenticated sessions, and live SignalR updates synchronized against Stripe-powered escrow payments, without disrupting a system already handling real financial and medical operations.",
+          "The service builder needed real runtime \"if-this-then-that\" logic — implemented as a custom formula and rules engine supporting variable bindings, nCalc-compatible operators, and live expression testing — so the UI had to interpret configuration as behavior, not just render static forms. That had to work alongside RBAC-gated workflows, long-lived authenticated sessions, and live SignalR updates synchronized against Stripe-powered escrow payments, without disrupting a system already handling real financial and medical operations.",
         whatWeChanged:
-          "Organized the frontend around feature domains to isolate workflow-heavy business logic, implemented layered state management (Zustand, React Context, React Hook Form, React Query), and built a centralized auth/network layer handling token refresh, retry flows, and cross-tab synchronization. Improved responsiveness through route-based code splitting and lazy loading, particularly for export and reporting workflows — contributing to a ~49.5% reduction in main bundle size, improved First Contentful Paint, and lower Total Blocking Time.",
+          "Organized the frontend around feature domains to isolate workflow-heavy business logic, implemented layered state management (Zustand, React Context, React Hook Form, React Query), and built a centralized auth/network layer handling token refresh, retry flows, and cross-tab synchronization. The service configuration wizard — question types, conditions, rule actions, JSON schema migration — became the architectural backbone the rest of the platform built on, with several dependent workstreams branching off it in parallel; I planned and coordinated that workload across five developers by task type and dependency, which kept parallel branches mergeable instead of colliding. Improved responsiveness through route-based code splitting and lazy loading, particularly for export and reporting workflows — contributing to a ~49.5% reduction in main bundle size, improved First Contentful Paint, and lower Total Blocking Time.",
         tradeoffs: {
           annotation: "// tradeoff: one centralized network layer over per-feature handling",
           detail:
@@ -132,38 +134,106 @@ export const CONTENT = {
   },
 
   decisions: {
-    sectionLabel: "03 / DECISIONS",
+    sectionLabel: "03 / HOW I DECIDE",
     question: "What principles repeat across projects?",
+    // Epigraph: the single thesis every row in this table exists to support. Render prominently
+    // above the table — this is the strongest, most quotable line in the whole content set on
+    // purpose, per Ahmed's own framing: "if I only want a visitor to remember three ideas after
+    // leaving my portfolio, I'd make them these" — the other two are the Performance and
+    // Architecture row statements below, not separate content.
+    epigraph: "Every technical decision optimizes something — and taxes something else.",
     // Rendered as a table, not a list — see PORTFOLIO.md §12.
+    // Each row now has THREE parts, not one: category (mono label), statement (the headline
+    // claim), and explanation (1-2 sentences of reasoning). State also carries an optional
+    // `note` for a current-tooling preference that's secondary to the principle itself.
     // evidenceRefs (array) links to caseStudy titles in `evidence.caseStudies` — only set where
     // the case study text genuinely substantiates the claim. Do not add a ref without checking
-    // the actual case study content first (§12 explains why). Schema changed from a single
-    // `evidenceRef` string to `evidenceRefs` array now that some principles are honestly
-    // demonstrated across more than one project.
+    // the actual case study content first (§12 explains why).
+    // Order is now AUTHORIAL, set directly by Ahmed — not weight-derived like the previous
+    // version. `weight` (0-5) is still tracked per row and still drives continuous visual
+    // weight in the table (statement type size/boldness), but it no longer determines row
+    // position. See PORTFOLIO.md §12 for the weight scoring rationale, now decoupled from order.
     items: [
-      { category: "State", statement: "Zustand until complexity proves I need Redux Toolkit.", evidenceRefs: ["MedX"] },
-      { category: "Forms", statement: "Validation belongs where users make mistakes, not where APIs reject them.", evidenceRefs: ["Revixir"] },
-      { category: "Animation", statement: "Motion should explain state changes, not decorate them.", evidenceRefs: [] },
-      { category: "Components", statement: "I optimize for change before I optimize for reuse.", evidenceRefs: ["Revixir", "MedX"] },
-      { category: "Performance", statement: "Measure first. Optimize second.", evidenceRefs: ["MedX"] },
-      { category: "TypeScript", statement: "Types should remove ambiguity, not create ceremony.", evidenceRefs: [] },
-      { category: "APIs", statement: "Normalize inconsistency once instead of handling it everywhere.", evidenceRefs: ["MedX"] },
-      { category: "Requirements", statement: "Ambiguous requirements aren't a blocker — they're the actual design input.", evidenceRefs: ["MedX"] },
-      { category: "Scope", statement: "I'd rather validate the business case than build the feature that assumes it.", evidenceRefs: ["SupplyTech"] },
+      {
+        category: "Performance",
+        statement: "Measure first. Optimize second.",
+        explanation: "Performance work starts with evidence, not intuition. Profiling comes before optimization, and every change should improve a metric — not just satisfy a hunch.",
+        evidenceRefs: ["MedX"],
+        weight: 5,
+      },
+      {
+        category: "Architecture",
+        statement: "Architecture should absorb change, not predict it.",
+        explanation: "I don't design for every possible future. I design for the next likely one, so the system can evolve without being rewritten.",
+        evidenceRefs: ["Revixir", "SupplyTech"],
+        weight: 5,
+      },
+      {
+        category: "Product",
+        statement: "I'd rather validate the business case than build the feature that assumes it.",
+        explanation: "Shipping the wrong feature efficiently is still wasted effort. The constraint worth solving first is whether the problem actually exists.",
+        evidenceRefs: ["SupplyTech"],
+        weight: 4.5,
+      },
+      {
+        category: "Requirements",
+        statement: "Ambiguous requirements aren't a blocker — they're the design input.",
+        explanation: "Most product work begins with uncertainty. The job is to expose assumptions, reduce ambiguity, and turn vague requirements into decisions.",
+        evidenceRefs: ["MedX"],
+        weight: 3.5,
+      },
+      {
+        category: "Teams",
+        statement: "Map the dependencies before splitting the work.",
+        explanation: "Parallel development succeeds when ownership and system boundaries are clear. Good planning prevents merge conflicts long before Git ever sees them.",
+        evidenceRefs: ["MedX"],
+        weight: 4.5,
+      },
+      {
+        category: "State",
+        statement: "State belongs where it naturally changes.",
+        explanation: "Local interaction state and remote server state have different lifecycles. I separate them before introducing a larger abstraction.",
+        note: "Current preference: Zustand for client state, React Query for server state.",
+        evidenceRefs: ["MedX"],
+        weight: 4,
+      },
+      {
+        category: "Code",
+        statement: "Obvious beats clever.",
+        explanation: "Code should be easier to understand six months from now than it was to write today. Readability compounds in long-lived systems.",
+        evidenceRefs: ["MedX"],
+        weight: 4,
+      },
+      {
+        category: "APIs",
+        statement: "Cross-cutting concerns should have one home.",
+        explanation: "Authentication, retries, token refresh, and error handling belong in shared infrastructure — not scattered across the application.",
+        evidenceRefs: ["MedX"],
+        weight: 4.5,
+      },
+      {
+        category: "Components",
+        statement: "Optimize for change before reuse.",
+        explanation: "Reusable components are the result of recurring problems, not the starting point. I prefer small, adaptable building blocks over premature abstraction.",
+        evidenceRefs: ["Revixir", "MedX"],
+        weight: 4,
+      },
+      {
+        category: "Forms",
+        statement: "Validation belongs where users make mistakes, not where APIs reject them.",
+        explanation: "The best validation prevents errors before they become requests. Backend validation remains the source of truth, but good UX catches problems earlier.",
+        evidenceRefs: ["Revixir"],
+        weight: 5,
+      },
     ],
-    // Requirements and Scope added deliberately as the only two product/business rows —
-    // capped at two on purpose, more would dilute what makes this section sharp. Both are
-    // backed by real case-study text, not added as positioning flavor: Requirements ties to
-    // MedX's stakeholder-collaborative requirements process (see evidence.caseStudies[0].theProblem),
-    // Scope ties to SupplyTech's tradeoff about not building booking/payments UI before the
-    // business model was validated.
-    // Rows with evidenceRefs.length > 0 render at higher visual weight and get a hover
-    // annotation callout ("// evidence: {evidenceRefs.join(', ')}") that scrolls to and
-    // highlights the relevant line in that case study. Rows with an empty array render at
-    // standard weight, no hover state, no callout — PORTFOLIO.md §12.
-    // Animation and TypeScript remain unlinked: tool usage is documented (Framer Motion,
-    // TypeScript across all three projects) but none of the case studies discuss an actual
-    // *decision* about motion or typing — presence of a tool isn't evidence of a principle.
+    // Requirements and Product remain the only two non-technical rows, capped at two — same
+    // discipline as before, just renamed (Product was "Scope", same evidence, tightened wording).
+    // Teams (was "Team") evidenced two ways: Ahmed's own account of coordinating 5 devs on
+    // MedX's service wizard refactor, AND independently by the commit-history structure —
+    // MEDX-1090 had three dependent tickets branching off it in parallel.
+    // Rows scale visual weight continuously by `weight` (0-5), not a binary linked/unlinked
+    // toggle. Rows also get a hover annotation callout ("// evidence: {evidenceRefs.join(', ')}")
+    // that scrolls to and highlights the relevant line in that case study — PORTFOLIO.md §12.
   },
 
   signal: {
