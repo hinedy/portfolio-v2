@@ -33,6 +33,15 @@ export const Route = createFileRoute("/blog/")({
         property: "og:image",
         content: "https://hinedy.vercel.app/og-default.png",
       },
+      { name: "twitter:image", content: "https://hinedy.vercel.app/og-default.png" },
+      { name: "twitter:title", content: "Writing — Ahmed Hinedy" },
+      {
+        name: "twitter:description",
+        content:
+          "Essays on frontend architecture, tradeoffs, and the decisions behind the interfaces.",
+      },
+      { property: "og:site_name", content: "Ahmed Hinedy" },
+      { property: "og:url", content: "https://hinedy.vercel.app/blog" },
     ],
     links: [{ rel: "canonical", href: "https://hinedy.vercel.app/blog" }],
   }),

@@ -181,6 +181,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "https://hinedy.vercel.app/og-default.png",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://hinedy.vercel.app/og-default.png" },
+      { name: "twitter:title", content: "Ahmed Hinedy — Product Frontend Engineer" },
+      {
+        name: "twitter:description",
+        content:
+          "Software gets complicated long before it gets big. Case studies, decisions, and writing from a product frontend engineer.",
+      },
+      { property: "og:site_name", content: "Ahmed Hinedy" },
+      { property: "og:url", content: "https://hinedy.vercel.app" },
     ],
     links: [
       { rel: "canonical", href: "https://hinedy.vercel.app" },
