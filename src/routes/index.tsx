@@ -42,7 +42,7 @@ function TopBar() {
         <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
           Product Frontend Engineer · Alexandria, EG
         </div>
-        <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
+        <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase whitespace-nowrap">
           {navItems.map((it) => (
             <a key={it.href} href={it.href} className="hover:text-accent transition-colors">
               {it.label}
