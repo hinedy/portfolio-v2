@@ -1,6 +1,7 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { Marked } from "marked";
 import { BlogShell } from "@/components/BlogShell";
+import { BlogPostSkeleton } from "@/components/skeletons";
 import { getPost } from "@/lib/posts";
 import { highlightCode } from "@/lib/highlight";
 
@@ -84,6 +85,7 @@ export const Route = createFileRoute("/blog/$slug")({
     </BlogShell>
   ),
   component: BlogPost,
+  pendingComponent: BlogPostSkeleton,
 });
 
 function formatDate(iso: string) {

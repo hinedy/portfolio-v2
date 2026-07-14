@@ -7,30 +7,112 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { PageShell } from "@/components/PageShell";
+import { Annotation } from "@/components/Annotation";
 
 function NotFoundComponent() {
+  const [pathname, setPathname] = useState("");
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
+    <PageShell>
+      <section className="mx-auto max-w-[1440px] px-6 md:px-10 py-24 md:py-32">
+        <div className="grid grid-cols-12 gap-x-6">
+          <div className="col-span-12 md:col-span-8 md:col-start-3 space-y-14">
+            {/* 404 */}
+            <div className="space-y-5">
+              <h1 className="font-display text-[clamp(5rem,15vw,12rem)] text-ink leading-[0.85]">
+                404
+              </h1>
+              <p className="font-mono text-[13px] md:text-sm uppercase tracking-widest text-muted-foreground">
+                Requested resource not found.
+              </p>
+              <p className="text-base md:text-lg text-ink/75 max-w-2xl leading-relaxed">
+                The reference points to a route that no longer exists, or never existed. The rest of
+                the document is still available.
+              </p>
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-ink hover:text-accent transition-colors underline underline-offset-4"
+              >
+                → Return to the index
+              </Link>
+            </div>
+
+            <hr className="border-rule" />
+
+            {/* Dependency graph */}
+            <div className="flex justify-center">
+              <svg
+                viewBox="0 0 180 200"
+                className="w-full max-w-[160px] text-ink/80"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <line x1="25" y1="40" x2="85" y2="40" />
+                <line x1="85" y1="40" x2="145" y2="40" />
+                <line x1="85" y1="46" x2="85" y2="80" />
+                <line x1="85" y1="92" x2="85" y2="125" />
+                <line x1="85" y1="131" x2="85" y2="160" strokeDasharray="2 3" strokeOpacity="0.4" />
+
+                <circle cx="25" cy="40" r="5" />
+                <circle cx="85" cy="40" r="5" />
+                <circle cx="145" cy="40" r="5" />
+                <circle
+                  cx="85"
+                  cy="86"
+                  r="6"
+                  className="fill-accent stroke-accent animate-node-pulse-once"
+                />
+                <circle cx="85" cy="125" r="5" />
+
+                <text
+                  x="85"
+                  y="178"
+                  textAnchor="middle"
+                  className="fill-ink/50 font-mono"
+                  stroke="none"
+                  fontSize="12"
+                >
+                  ✕
+                </text>
+              </svg>
+            </div>
+
+            <div className="flex justify-center">
+              <Annotation>// unresolved reference</Annotation>
+            </div>
+
+            <div className="border-t border-rule pt-8">
+              <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                <dt>status</dt>
+                <dd className="text-ink normal-case tracking-normal">404</dd>
+                <dt>resource</dt>
+                <dd className="text-ink normal-case tracking-normal break-all">{pathname}</dd>
+                <dt>expected</dt>
+                <dd className="text-ink normal-case tracking-normal">valid route</dd>
+                <dt>resolution</dt>
+                <dd className="text-ink">
+                  <Link
+                    to="/"
+                    className="hover:text-accent transition-colors normal-case tracking-normal underline underline-offset-4"
+                  >
+                    Return to the index
+                  </Link>
+                </dd>
+              </dl>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </PageShell>
   );
 }
 
@@ -42,33 +124,34 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+    <main className="min-h-screen bg-background text-ink grid place-items-center px-6">
+      <div className="text-center">
+        <div className="section-label mb-6">Error</div>
+        <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-ink">
           This page didn't load
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <p className="mt-6 text-base text-ink/75 max-w-md mx-auto">
+          Something went wrong. You can try again or head back home.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <div className="mt-10 flex flex-wrap justify-center gap-6">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="font-mono text-[11px] uppercase tracking-widest text-ink hover:text-accent transition-colors"
           >
-            Try again
+            try again →
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          <Link
+            to="/"
+            className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors"
           >
-            Go home
-          </a>
+            ← back to index
+          </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
