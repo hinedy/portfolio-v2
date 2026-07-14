@@ -167,6 +167,19 @@
   }
 }
 
+@keyframes node-pulse-once {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@utility animate-node-pulse-once {
+  animation: node-pulse-once 1.5s ease-in-out 1;
+}
+
 /* Blog post typography — Inter body, spec-sheet accents (no rounded chrome).
    Applied to the container that holds marked-parsed HTML. */
 .prose-post {
