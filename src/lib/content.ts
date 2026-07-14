@@ -292,26 +292,34 @@ export const CONTENT = {
     ],
   },
 
-  currentWork: {
-    sectionLabel: "06 / CURRENT WORK",
-    question: "What's next?",
-    // Deliberately NOT called "Research" or "Explorations" — those overclaim for what's
-    // actually here. "Current Work" is modest and accurate while still signaling motion.
-    // Ships with exactly ONE entry on purpose: only commit-insights has a real artifact
-    // behind it right now. Do not pad this with interest-area entries ("Frontend Systems",
-    // "AI-assisted Engineering") that don't point at something concrete — add them only when
-    // there's an actual post, prototype, or tool to point to, not before.
-    // Maintenance note: the "active" status below is a live claim, not a one-time label —
-    // if this stalls, an untouched "active" tag reads as abandoned, which is a worse signal
-    // than no section at all. Keep it honest or pull the section.
+  lab: {
+    sectionLabel: "06 / LAB",
+    question: "What are you exploring now?",
     items: [
       {
         title: "commit-insights",
         description:
           "Studying how repositories evolve over time — not to measure productivity, but to surface architectural change, ownership boundaries, and development patterns conventional metrics miss.",
-        status: "active",
+        meta: [
+          { label: "artifact", value: "commit-insights" },
+          { label: "category", value: "engineering research" },
+          { label: "state", value: "active" },
+        ],
         url: "https://github.com/hinedy/commit-insights",
         npmUrl: "https://www.npmjs.com/package/commit-insights",
+      },
+      {
+        title: "image-wave-reveal",
+        description:
+          "Exploring how subtle interaction can communicate depth without overwhelming the interface. Built with React Three Fiber and later featured on 21st.dev.",
+        meta: [
+          { label: "artifact", value: "image-wave-reveal" },
+          { label: "category", value: "interaction experiment" },
+          { label: "state", value: "published" },
+        ],
+        url: "https://github.com/hinedy/image-wave-reveal",
+        demoUrl: "https://image-wave-reveal.vercel.app/",
+        showcaseUrl: "https://21st.dev/@hinedy/components/reveal-wave-image",
       },
     ],
   },

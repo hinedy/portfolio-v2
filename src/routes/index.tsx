@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTENT } from "@/lib/content";
 import { PageShell } from "@/components/PageShell";
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const { hero, position, evidence, decisions, signal, writing, currentWork, contact } = CONTENT;
+const { hero, position, evidence, decisions, signal, writing, lab, contact } = CONTENT;
 
 /* Shared page frame — a 12-col grid site with visible outer rules,
    mono-labeled section breaks, no rounded corners, no card chrome. */
@@ -20,7 +20,9 @@ function SectionHeader({ label, question }: { label: string; question: string })
       <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
         <div className="section-label">{label}</div>
       </div>
-      <h2 className="col-span-12 md:col-span-9 font-display text-[clamp(2.75rem,7vw,6rem)] text-ink">{question}</h2>
+      <h2 className="col-span-12 md:col-span-9 font-display text-[clamp(2.75rem,7vw,6rem)] text-ink">
+        {question}
+      </h2>
     </header>
   );
 }
@@ -130,7 +132,9 @@ function CaseStudy({
           <dt>owned</dt>
           <dd className="text-ink normal-case tracking-normal break-words min-w-0">{cs.owned}</dd>
           <dt>surface</dt>
-          <dd className="text-ink normal-case tracking-normal break-words min-w-0">{cs.decisionSurface.join(", ")}</dd>
+          <dd className="text-ink normal-case tracking-normal break-words min-w-0">
+            {cs.decisionSurface.join(", ")}
+          </dd>
           <dt>link</dt>
           <dd className="min-w-0">
             <a
@@ -186,8 +190,12 @@ function CaseStudy({
 function Field({ label, body }: { label: string; body: string }) {
   return (
     <div className="min-w-0">
-      <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">{label}</div>
-      <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">{body}</p>
+      <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
+        {label}
+      </div>
+      <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">
+        {body}
+      </p>
     </div>
   );
 }
@@ -264,7 +272,10 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
                   </p>
                 )}
               </div>
-              <div role="cell" className="hidden md:flex col-span-3 items-start justify-end pt-1 min-h-[1.2em]">
+              <div
+                role="cell"
+                className="hidden md:flex col-span-3 items-start justify-end pt-1 min-h-[1.2em]"
+              >
                 {hasRef && (
                   <span className="opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
                     <Annotation>{`// evidence: ${d.evidenceRefs.join(", ")}`}</Annotation>
@@ -368,19 +379,30 @@ function Writing() {
   );
 }
 
-function CurrentWork() {
+function Lab() {
   return (
-    <section id="current-work" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
-      <SectionHeader label={currentWork.sectionLabel} question={currentWork.question} />
+    <section id="lab" className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12">
+      <SectionHeader label={lab.sectionLabel} question={lab.question} />
       <ul className="border-t border-rule pb-24 md:pb-32">
-        {currentWork.items.map((item) => (
-          <li key={item.title} className="grid grid-cols-12 gap-x-6 border-b border-rule py-8 md:py-10 items-baseline">
-            <div className="col-span-12 md:col-span-3 mb-3 md:mb-0 flex items-baseline gap-3">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">status</span>
-              <Annotation>{`// ${item.status}`}</Annotation>
+        {lab.items.map((item) => (
+          <li
+            key={item.title}
+            className="grid grid-cols-12 gap-x-6 border-b border-rule py-8 md:py-10 items-baseline"
+          >
+            <div className="col-span-12 md:col-span-3 mb-3 md:mb-0">
+              <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                {item.meta.map((m) => (
+                  <Fragment key={m.label}>
+                    <dt>{m.label}</dt>
+                    <dd className="text-ink normal-case tracking-normal">{m.value}</dd>
+                  </Fragment>
+                ))}
+              </dl>
             </div>
             <div className="col-span-12 md:col-span-9 min-w-0">
-              <div className="font-display text-3xl md:text-5xl text-ink leading-[1.05] break-words">{item.title}</div>
+              <div className="font-display text-3xl md:text-5xl text-ink leading-[1.05] break-words">
+                {item.title}
+              </div>
               <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/85 max-w-3xl break-words">
                 {item.description}
               </p>
@@ -393,14 +415,36 @@ function CurrentWork() {
                 >
                   GitHub ↗
                 </a>
-                <a
-                  href={item.npmUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-ink hover:text-accent transition-colors underline-offset-4 hover:underline"
-                >
-                  npm ↗
-                </a>
+                {"npmUrl" in item && item.npmUrl && (
+                  <a
+                    href={item.npmUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-ink hover:text-accent transition-colors underline-offset-4 hover:underline"
+                  >
+                    npm ↗
+                  </a>
+                )}
+                {"demoUrl" in item && item.demoUrl && (
+                  <a
+                    href={item.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-ink hover:text-accent transition-colors underline-offset-4 hover:underline"
+                  >
+                    Demo ↗
+                  </a>
+                )}
+                {"showcaseUrl" in item && item.showcaseUrl && (
+                  <a
+                    href={item.showcaseUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-ink hover:text-accent transition-colors underline-offset-4 hover:underline"
+                  >
+                    21st.dev ↗
+                  </a>
+                )}
               </div>
             </div>
           </li>
@@ -416,7 +460,9 @@ function Contact() {
       <SectionHeader label={contact.sectionLabel} question={contact.question} />
       <div className="grid grid-cols-12 gap-x-6 pb-24 md:pb-32">
         <div className="col-span-12 md:col-span-8">
-          <p className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] text-ink">{contact.line}</p>
+          <p className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] text-ink">
+            {contact.line}
+          </p>
           <a
             href={`mailto:${contact.email}`}
             className="mt-10 inline-block font-mono text-lg md:text-2xl text-ink border-b-2 border-accent hover:text-accent transition-colors"
@@ -426,11 +472,15 @@ function Contact() {
         </div>
         <div className="col-span-12 md:col-span-4 mt-12 md:mt-0 space-y-6">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">Direct</div>
+            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
+              Direct
+            </div>
             <div className="text-ink font-mono">{contact.tel}</div>
           </div>
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">Elsewhere</div>
+            <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
+              Elsewhere
+            </div>
             <ul className="space-y-1">
               {Object.entries(contact.social).map(([k, v]) => (
                 <li key={k} className="flex items-baseline gap-3">
@@ -468,7 +518,7 @@ function HomePage() {
       <Decisions onEvidenceRef={handleEvidenceRef} />
       <Signal />
       <Writing />
-      <CurrentWork />
+      <Lab />
       <Contact />
     </PageShell>
   );
