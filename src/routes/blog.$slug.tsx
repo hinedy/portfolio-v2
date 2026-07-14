@@ -43,6 +43,19 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:published_time", content: post.publishedAt },
       ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.summary,
+            datePublished: post.publishedAt,
+            author: { "@type": "Person", name: "Ahmed Hinedy" },
+          }),
+        },
+      ],
     };
   },
   notFoundComponent: () => (
