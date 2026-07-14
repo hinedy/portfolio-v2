@@ -40,7 +40,7 @@ function TopBar() {
             Ahmed Hinedy
           </Link>
           <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
-            Frontend Software Engineer · Alexandria, EG
+            {CONTENT.meta.role} · Alexandria, EG
           </div>
           <DesktopNav />
           <div className="lg:hidden justify-self-end">
