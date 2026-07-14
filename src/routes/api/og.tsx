@@ -2,15 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ImageResponse } from "@vercel/og";
 import { OgCard } from "@/components/og-card";
 
-const BIG_SHOULDERS_URL =
-  "https://fonts.gstatic.com/s/bigshouldersdisplay/v24/fC1MPZJEZG-e9gHhdI4-NBbfd2ys3SjJCx12wPgf9g-_3F0YdSY8JF4.ttf";
-const SPACE_MONO_URL =
-  "https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRUEY.ttf";
+const FONT_PATHS = ["/fonts/BigShouldersDisplay-Black.ttf", "/fonts/SpaceMono-Regular.ttf"];
 
-const fontsPromise = Promise.all([
-  fetch(BIG_SHOULDERS_URL).then((r) => r.arrayBuffer()),
-  fetch(SPACE_MONO_URL).then((r) => r.arrayBuffer()),
-]).then(([bigShoulders, spaceMono]) => ({ bigShoulders, spaceMono }));
+const makeFontUrl = (path: string, reqUrl: string) => new URL(path, reqUrl).href;
 
 export const Route = createFileRoute("/api/og")({
   server: {
@@ -18,7 +12,10 @@ export const Route = createFileRoute("/api/og")({
       GET: async ({ request }) => {
         const { searchParams } = new URL(request.url);
         const title = searchParams.get("title") || undefined;
-        const { bigShoulders, spaceMono } = await fontsPromise;
+
+        const [bigShoulders, spaceMono] = await Promise.all(
+          FONT_PATHS.map((p) => fetch(makeFontUrl(p, request.url)).then((r) => r.arrayBuffer())),
+        );
 
         return new ImageResponse(<OgCard title={title} />, {
           width: 1200,

@@ -42,6 +42,29 @@
   --color-ring: var(--accent);
 }
 
+/* Self-hosted fonts (previously loaded from Google Fonts) */
+@font-face {
+  font-family: "Big Shoulders Display";
+  src: url("/fonts/big-shoulders-display-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("/fonts/space-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Paper-warm off-white; ink near-black with slight warmth */
   --background: oklch(0.975 0.006 85);
@@ -194,6 +217,7 @@
 .prose-post h3,
 .prose-post h4 {
   font-family: var(--font-display);
+  font-weight: 900;
   color: var(--color-ink);
   letter-spacing: -0.01em;
   line-height: 1.05;
