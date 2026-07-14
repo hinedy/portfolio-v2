@@ -30,7 +30,7 @@ function TopBar() {
     { label: "Position", href: "#position" },
     { label: "Evidence", href: "#evidence" },
     { label: "How I Decide", href: "#decisions" },
-    { label: "Writing", href: "#writing" },
+    { label: "Writing", href: "/blog" },
     { label: "Contact", href: "#contact" },
   ];
   return (
