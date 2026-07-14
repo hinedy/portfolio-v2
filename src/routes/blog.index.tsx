@@ -28,6 +28,9 @@ export const Route = createFileRoute("/blog/")({
         content: "Essays on frontend architecture, tradeoffs, and the decisions behind the interfaces.",
       },
     ],
+    links: [
+      { rel: "canonical", href: "https://hinedy.vercel.app/blog" },
+    ],
   }),
   component: BlogIndex,
 });

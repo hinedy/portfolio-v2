@@ -94,6 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "canonical", href: "https://hinedy.vercel.app" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -111,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Person",
           name: "Ahmed Hinedy",
           jobTitle: "Product Frontend Engineer",
-          url: "https://hinedy.lovable.app",
+          url: "https://hinedy.vercel.app",
         }),
       },
       {
@@ -120,7 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Ahmed Hinedy",
-          url: "https://hinedy.lovable.app",
+          url: "https://hinedy.vercel.app",
         }),
       },
     ],
