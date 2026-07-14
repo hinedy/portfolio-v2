@@ -8,6 +8,7 @@ import { MobileNav } from "@/components/MobileNav";
 const NAV_ITEMS = [
   { label: "Position", href: "/#position" },
   { label: "Evidence", href: "/#evidence" },
+  { label: "How I Decide", href: "/#decisions" },
   { label: "Writing", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -22,9 +23,10 @@ function TopBar() {
         <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
           Frontend Software Engineer · Alexandria, EG
         </div>
-        <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase">
+        <nav className="hidden lg:flex lg:col-span-3 justify-end gap-4 font-mono text-[11px] tracking-wider uppercase whitespace-nowrap">
           <Link to="/" hash="position" className="hover:text-accent transition-colors">Position</Link>
           <Link to="/" hash="evidence" className="hover:text-accent transition-colors">Evidence</Link>
+          <Link to="/" hash="decisions" className="hover:text-accent transition-colors">How I Decide</Link>
           <Link to="/blog" className="hover:text-accent transition-colors">Writing</Link>
           <Link to="/" hash="contact" className="hover:text-accent transition-colors">Contact</Link>
         </nav>
