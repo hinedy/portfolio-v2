@@ -68,8 +68,13 @@ function Footer() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 py-10 grid grid-cols-12 gap-x-6 gap-y-6 items-end">
         <div className="col-span-12 md:col-span-6 space-y-2">
           {CONTENT.footer.colophon.map((line) => (
-            <Annotation key={line}>{line} {year}</Annotation>
+            <div key={line}>
+              <Annotation>{line}</Annotation>
+            </div>
           ))}
+          <div>
+            <Annotation>// last shipped {year}</Annotation>
+          </div>
         </div>
         <div className="col-span-12 md:col-span-6 md:text-right font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           © {year} Ahmed Hinedy · Alexandria, EG
