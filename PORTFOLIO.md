@@ -48,18 +48,20 @@ own conclusions if shown real evidence.
 Monospaced `// like this` inline comments appear in specific places only:
 
 **Allowed:**
+
 - Hero portrait caption (`// rendered, not photographed`)
 - Tradeoff annotations inside each case study (`// tradeoff: …`)
 - Evidence hover callouts from Decisions rows (`// evidence: MedX, Revixir`)
 - Footer colophon (`// set in Big Shoulders Display, Inter, Space Mono`)
 
 **Banned:**
+
 - Top nav (would read as decoration)
 - Section headings
 - Blog post bodies
 - Anywhere the annotation would exceed one line
 
-Use the motif to signal *authorial commentary on the work*, not to style
+Use the motif to signal _authorial commentary on the work_, not to style
 random UI chrome.
 
 ---
@@ -69,15 +71,15 @@ random UI chrome.
 Seven sections on the index route. Nav exposes five; two (Signal, Lab) are
 scroll-only.
 
-| # | Section       | Anchor        | In nav |
-|---|---------------|---------------|--------|
-| 01 | POSITION      | `#position`   | Yes    |
-| 02 | EVIDENCE      | `#evidence`   | Yes    |
-| 03 | HOW I DECIDE  | `#decisions`  | Yes (label: "How I Decide") |
-| 04 | SIGNAL        | `#signal`     | No     |
-| 05 | WRITING       | `/blog`       | Yes (routes to blog index) |
-| 06 | LAB           | `#lab`        | No     |
-| 07 | CONTACT       | `#contact`    | Yes    |
+| #   | Section      | Anchor       | In nav                      |
+| --- | ------------ | ------------ | --------------------------- |
+| 01  | POSITION     | `#position`  | Yes                         |
+| 02  | EVIDENCE     | `#evidence`  | Yes                         |
+| 03  | HOW I DECIDE | `#decisions` | Yes (label: "How I Decide") |
+| 04  | SIGNAL       | `#signal`    | No                          |
+| 05  | WRITING      | `/blog`      | Yes (routes to blog index)  |
+| 06  | LAB          | `#lab`       | No                          |
+| 07  | CONTACT      | `#contact`   | Yes                         |
 
 The anchor id `#decisions` is intentionally kept even though the visible
 label is "How I Decide" — external links and prior conversation reference
@@ -104,11 +106,13 @@ See §2 for the allow/deny list. Additional rules:
 All copy lives in `src/lib/content.ts` under the `CONTENT` const.
 
 ### 01 / POSITION
+
 Four lines of body prose (`position.body: string[]`). Framing question:
 "How do you think?" No links, no lists, no annotation. If a fifth line is
 ever added, cut one first — four is the shape.
 
 ### 02 / EVIDENCE
+
 Framing question: "Can you prove it?" Three case studies, each following
 the same six-part structure:
 
@@ -127,23 +131,28 @@ Plus metadata: `title`, `category` ("Production" | "Discontinued" | "MVP"),
 Three case studies, in this order: MedX, Revixir, SupplyTech.
 
 ### 03 / HOW I DECIDE
+
 See §12 for the full spec — table layout is load-bearing here.
 
 ### 04 / SIGNAL
+
 Framing question: "Did other people notice?" Testimonial quotes with
 `name`, `provenance` (project + role, e.g. "MedX — CTO"), and `quote`.
 Provenance format is `"{project} — {role}"` with an em dash. Full quote
 text is preserved in content; truncation is a UI concern.
 
 ### 05 / WRITING
+
 Framing question: "Can you articulate your reasoning?" References blog
 posts by `slug`; actual content lives in `content/posts/*.mdx`. Do not
 duplicate post content into `content.ts`.
 
 ### 06 / LAB
+
 Framing question: "What are you exploring now?" See §13.
 
 ### 07 / CONTACT
+
 Framing question: "Want to solve another hard problem?" One line of prose,
 email, tel, and social links (GitHub, DEV, LinkedIn, Behance).
 
@@ -154,19 +163,20 @@ email, tel, and social links (GitHub, DEV, LinkedIn, Behance).
 Replace conventional resume/portfolio vocabulary with the terms below.
 These are locked — do not swap in synonyms.
 
-| Conventional     | Locked replacement    |
-|------------------|-----------------------|
-| Stack / Tools    | `chosen because...`   |
-| Role             | `owned`               |
-| Tech             | `decision surface`    |
-| Duration         | `time invested`       |
-| Outcome / Impact | `what changed`        |
+| Conventional     | Locked replacement  |
+| ---------------- | ------------------- |
+| Stack / Tools    | `chosen because...` |
+| Role             | `owned`             |
+| Tech             | `decision surface`  |
+| Duration         | `time invested`     |
+| Outcome / Impact | `what changed`      |
 
 `chosen because...` is rate-limited to 2–3 uses per page — it's a device,
 not a pattern. `owned` is the only role label; do not use "Lead", "Senior",
 "Contributor" as role synonyms unless it's the literal external title.
 
 Also locked:
+
 - `meta.role` = `"Product Frontend Engineer"` (not "Frontend Software
   Engineer", not "Senior Frontend Developer"). Feeds `<title>`, meta
   description, `og:title`, and the topbar.
@@ -194,6 +204,7 @@ Also locked:
 The most opinionated section on the site. Everything here is load-bearing.
 
 ### Epigraph
+
 A single line rendered above the table at `clamp(1.75rem, 4vw, 3.5rem)` in
 `Big Shoulders Display`:
 
@@ -206,6 +217,7 @@ soften it, or split it.
 ### Row schema
 
 Each row has:
+
 - `category` — mono label (e.g. "Performance", "Architecture"). Space Mono.
 - `statement` — the headline claim. Inter, weight/size scaled by `weight`.
 - `explanation` — 1–2 sentences of reasoning. Secondary weight.
@@ -266,6 +278,7 @@ Framing question: "What are you exploring now?" Small, honest list of
 in-progress or recently published side work.
 
 Row schema per item:
+
 - `title` — artifact name.
 - `description` — 1–2 sentences.
 - `meta` — array of `{ label, value }` pairs (artifact, category, state).

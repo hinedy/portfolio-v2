@@ -44,9 +44,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:published_time", content: post.publishedAt },
       ],
-      links: [
-        { rel: "canonical", href: `https://hinedy.vercel.app/blog/${post.slug}` },
-      ],
+      links: [{ rel: "canonical", href: `https://hinedy.vercel.app/blog/${post.slug}` }],
       scripts: [
         {
           type: "application/ld+json",
@@ -68,7 +66,10 @@ export const Route = createFileRoute("/blog/$slug")({
         <div className="section-label mb-6">404 / Not found</div>
         <h1 className="font-display text-[clamp(3rem,8vw,7rem)] text-ink">No post at that slug.</h1>
         <div className="mt-8">
-          <Link to="/blog" className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent">
+          <Link
+            to="/blog"
+            className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent"
+          >
             ← all writing
           </Link>
         </div>
@@ -91,7 +92,12 @@ export const Route = createFileRoute("/blog/$slug")({
 function formatDate(iso: string) {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00Z");
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
 }
 
 function BlogPost() {
@@ -123,7 +129,10 @@ function BlogPost() {
         </div>
 
         <div className="border-t border-rule py-10">
-          <Link to="/blog" className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors">
+          <Link
+            to="/blog"
+            className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors"
+          >
             ← all writing
           </Link>
         </div>

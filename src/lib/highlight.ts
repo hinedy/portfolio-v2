@@ -28,15 +28,39 @@ function buildTheme(
     type: name.endsWith("dark") ? "dark" : "light",
     colors: { "editor.background": paper, "editor.foreground": ink },
     tokenColors: [
-      { scope: ["comment", "punctuation.definition.comment"], settings: { foreground: muted, fontStyle: "italic" } },
-      { scope: ["string", "string.quoted", "punctuation.definition.string"], settings: { foreground: accent } },
-      { scope: ["constant.numeric", "constant.language", "constant.character"], settings: { foreground: ink } },
-      { scope: ["keyword", "storage", "storage.type", "keyword.control"], settings: { foreground: ink, fontStyle: "bold" } },
-      { scope: ["entity.name.function", "support.function", "meta.function-call"], settings: { foreground: ink } },
-      { scope: ["entity.name.type", "support.type", "support.class"], settings: { foreground: ink } },
-      { scope: ["variable", "variable.other", "meta.definition.variable"], settings: { foreground: ink } },
+      {
+        scope: ["comment", "punctuation.definition.comment"],
+        settings: { foreground: muted, fontStyle: "italic" },
+      },
+      {
+        scope: ["string", "string.quoted", "punctuation.definition.string"],
+        settings: { foreground: accent },
+      },
+      {
+        scope: ["constant.numeric", "constant.language", "constant.character"],
+        settings: { foreground: ink },
+      },
+      {
+        scope: ["keyword", "storage", "storage.type", "keyword.control"],
+        settings: { foreground: ink, fontStyle: "bold" },
+      },
+      {
+        scope: ["entity.name.function", "support.function", "meta.function-call"],
+        settings: { foreground: ink },
+      },
+      {
+        scope: ["entity.name.type", "support.type", "support.class"],
+        settings: { foreground: ink },
+      },
+      {
+        scope: ["variable", "variable.other", "meta.definition.variable"],
+        settings: { foreground: ink },
+      },
       { scope: ["punctuation", "meta.brace", "meta.delimiter"], settings: { foreground: muted } },
-      { scope: ["entity.name.tag", "punctuation.definition.tag"], settings: { foreground: ink, fontStyle: "bold" } },
+      {
+        scope: ["entity.name.tag", "punctuation.definition.tag"],
+        settings: { foreground: ink, fontStyle: "bold" },
+      },
       { scope: ["entity.other.attribute-name"], settings: { foreground: muted } },
     ],
   };

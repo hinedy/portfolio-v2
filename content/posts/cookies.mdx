@@ -52,7 +52,7 @@ axios
     },
     {
       withCredentials: true,
-    }
+    },
   )
   .then((response) => console.log(response))
   .catch((error) => console.error("Error:", error));
@@ -97,8 +97,7 @@ app.get("/set-cookie", (req, res) => {
 JavaScript, through the `document.cookie` property, allows you to set cookies directly on the client-side.
 
 ```javascript
-document.cookie =
-  "username=John Doe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
 ```
 
 However, this approach has limitations as it cannot set certain attributes like **_HttpOnly_** which are crucial for security.

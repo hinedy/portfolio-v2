@@ -9,6 +9,7 @@ PORTFOLIO.md has never lived in the codebase — you've been pasting it into cha
 Create a single file at the repo root: `PORTFOLIO.md`.
 
 It gets reconstructed from two inputs, in this order of authority:
+
 1. **Original direction** — the locked spec language you've referenced throughout (voice, IA, annotation motif rules, spec-sheet system, weight/order semantics, epigraph rule, cross-reference behavior, portrait treatment). This stays load-bearing and doesn't get rewritten to match code — code serves the spec, not the other way around.
 2. **Current state** — reconciled against `src/lib/content.ts`, `src/routes/index.tsx`, and `src/routes/__root.tsx` as they stand now, so section numbers, row lists, nav labels ("How I Decide", not "Decisions"), meta.role ("Product Frontend Engineer"), the 06 / LAB section, and the epigraph all match what's shipped.
 

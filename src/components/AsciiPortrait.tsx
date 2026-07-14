@@ -13,7 +13,7 @@ for (let i = 0; i < CHARS.length; i++) {
   if (c in STEP_INDEX) {
     FINAL_IDX[i] = STEP_INDEX[c];
     // Deterministic pseudo-random delay in [0, 0.55]
-    DELAY[i] = ((Math.sin(i * 12.9898) * 43758.5453) % 1 + 1) % 1 * 0.55;
+    DELAY[i] = ((((Math.sin(i * 12.9898) * 43758.5453) % 1) + 1) % 1) * 0.55;
   } else {
     FINAL_IDX[i] = -1;
     DELAY[i] = 0;
@@ -83,10 +83,7 @@ export function AsciiPortrait({ onDone }: { onDone?: () => void } = {}) {
   }, [onDone]);
 
   return (
-    <pre
-      className="ascii-portrait ascii-animating"
-      aria-label="ASCII portrait of Ahmed Hinedy"
-    >
+    <pre className="ascii-portrait ascii-animating" aria-label="ASCII portrait of Ahmed Hinedy">
       {text}
     </pre>
   );

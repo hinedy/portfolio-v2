@@ -68,9 +68,7 @@ export function MobileNav({
                 <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="font-display text-5xl text-ink leading-none">
-                  {item.label}
-                </span>
+                <span className="font-display text-5xl text-ink leading-none">{item.label}</span>
               </a>
             </li>
           ))}

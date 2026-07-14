@@ -26,12 +26,11 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: "Writing — Ahmed Hinedy" },
       {
         property: "og:description",
-        content: "Essays on frontend architecture, tradeoffs, and the decisions behind the interfaces.",
+        content:
+          "Essays on frontend architecture, tradeoffs, and the decisions behind the interfaces.",
       },
     ],
-    links: [
-      { rel: "canonical", href: "https://hinedy.vercel.app/blog" },
-    ],
+    links: [{ rel: "canonical", href: "https://hinedy.vercel.app/blog" }],
   }),
   component: BlogIndex,
   pendingComponent: BlogIndexSkeleton,
@@ -40,7 +39,12 @@ export const Route = createFileRoute("/blog/")({
 function formatDate(iso: string) {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00Z");
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
 }
 
 function BlogIndex() {
@@ -65,7 +69,9 @@ function BlogIndex() {
 
         {mismatches.length > 0 ? (
           <div className="border border-accent bg-paper p-6 mb-12 font-mono text-xs text-ink space-y-2">
-            <div className="uppercase tracking-widest text-accent">// frontmatter ⇔ content.ts mismatch</div>
+            <div className="uppercase tracking-widest text-accent">
+              // frontmatter ⇔ content.ts mismatch
+            </div>
             {mismatches.map((m: string) => (
               <div key={m}>{m}</div>
             ))}
@@ -100,7 +106,10 @@ function BlogIndex() {
         </ol>
 
         <div className="py-16">
-          <Link to="/" className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors">
+          <Link
+            to="/"
+            className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors"
+          >
             ← back to index
           </Link>
         </div>

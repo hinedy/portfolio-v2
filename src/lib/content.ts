@@ -61,13 +61,14 @@ export const CONTENT = {
         image: "/medx-preview.png",
         owned: "Frontend Engineer",
         decisionSurface: ["Zustand", "React Query", "React Hook Form", "SignalR", "MSAL", "Stripe"],
-        thesis: "Building healthcare operations software means correctness matters more than elegance.",
+        thesis:
+          "Building healthcare operations software means correctness matters more than elegance.",
         context:
           "MedX is a multi-role healthcare operations platform coordinating medical service orders between providers, patients, and administrators — handling onboarding, scheduling, escrow-style payments, claims/remits, notifications, and real-time operational workflows in a highly dynamic environment.",
         theProblem:
           "The platform needed a dynamic service builder letting healthcare practices define their own service types, pricing, intake forms, and conditional workflow logic at runtime — plus strict role-based access across every protected operational area, layered on top of a legacy frontend that had accumulated inconsistent patterns under rapidly changing requirements. Requirements themselves were refined collaboratively with stakeholders rather than handed down as a fixed spec, which meant frontend decisions doubled as part of the requirements-definition process, not just its implementation.",
         whyThisWasDifficult:
-          "The service builder needed real runtime \"if-this-then-that\" logic — implemented as a custom formula and rules engine supporting variable bindings, nCalc-compatible operators, and live expression testing — so the UI had to interpret configuration as behavior, not just render static forms. That had to work alongside RBAC-gated workflows, long-lived authenticated sessions, and live SignalR updates synchronized against Stripe-powered escrow payments, without disrupting a system already handling real financial and medical operations.",
+          'The service builder needed real runtime "if-this-then-that" logic — implemented as a custom formula and rules engine supporting variable bindings, nCalc-compatible operators, and live expression testing — so the UI had to interpret configuration as behavior, not just render static forms. That had to work alongside RBAC-gated workflows, long-lived authenticated sessions, and live SignalR updates synchronized against Stripe-powered escrow payments, without disrupting a system already handling real financial and medical operations.',
         whatWeChanged:
           "Organized the frontend around feature domains to isolate workflow-heavy business logic, implemented layered state management (Zustand, React Context, React Hook Form, React Query), and built a centralized auth/network layer handling token refresh, retry flows, and cross-tab synchronization. The service configuration wizard — question types, conditions, rule actions, JSON schema migration — became the architectural backbone the rest of the platform built on, with several dependent workstreams branching off it in parallel; I planned and coordinated that workload across five developers by task type and dependency, which kept parallel branches mergeable instead of colliding. Improved responsiveness through route-based code splitting and lazy loading, particularly for export and reporting workflows — contributing to a ~49.5% reduction in main bundle size, improved First Contentful Paint, and lower Total Blocking Time.",
         tradeoffs: {
@@ -157,42 +158,48 @@ export const CONTENT = {
       {
         category: "Performance",
         statement: "Measure first. Optimize second.",
-        explanation: "Performance work starts with evidence, not intuition. Profiling comes before optimization, and every change should improve a metric — not just satisfy a hunch.",
+        explanation:
+          "Performance work starts with evidence, not intuition. Profiling comes before optimization, and every change should improve a metric — not just satisfy a hunch.",
         evidenceRefs: ["MedX"],
         weight: 5,
       },
       {
         category: "Architecture",
         statement: "Architecture should absorb change, not predict it.",
-        explanation: "I don't design for every possible future. I design for the next likely one, so the system can evolve without being rewritten.",
+        explanation:
+          "I don't design for every possible future. I design for the next likely one, so the system can evolve without being rewritten.",
         evidenceRefs: ["Revixir", "SupplyTech"],
         weight: 5,
       },
       {
         category: "Product",
         statement: "I'd rather validate the business case than build the feature that assumes it.",
-        explanation: "Shipping the wrong feature efficiently is still wasted effort. The constraint worth solving first is whether the problem actually exists.",
+        explanation:
+          "Shipping the wrong feature efficiently is still wasted effort. The constraint worth solving first is whether the problem actually exists.",
         evidenceRefs: ["SupplyTech"],
         weight: 4.5,
       },
       {
         category: "Requirements",
         statement: "Ambiguous requirements aren't a blocker — they're the design input.",
-        explanation: "Most product work begins with uncertainty. The job is to expose assumptions, reduce ambiguity, and turn vague requirements into decisions.",
+        explanation:
+          "Most product work begins with uncertainty. The job is to expose assumptions, reduce ambiguity, and turn vague requirements into decisions.",
         evidenceRefs: ["MedX"],
         weight: 3.5,
       },
       {
         category: "Teams",
         statement: "Map the dependencies before splitting the work.",
-        explanation: "Parallel development succeeds when ownership and system boundaries are clear. Good planning prevents merge conflicts long before Git ever sees them.",
+        explanation:
+          "Parallel development succeeds when ownership and system boundaries are clear. Good planning prevents merge conflicts long before Git ever sees them.",
         evidenceRefs: ["MedX"],
         weight: 4.5,
       },
       {
         category: "State",
         statement: "State belongs where it naturally changes.",
-        explanation: "Local interaction state and remote server state have different lifecycles. I separate them before introducing a larger abstraction.",
+        explanation:
+          "Local interaction state and remote server state have different lifecycles. I separate them before introducing a larger abstraction.",
         note: "Current preference: Zustand for client state, React Query for server state.",
         evidenceRefs: ["MedX"],
         weight: 4,
@@ -200,28 +207,32 @@ export const CONTENT = {
       {
         category: "Code",
         statement: "Obvious beats clever.",
-        explanation: "Code should be easier to understand six months from now than it was to write today. Readability compounds in long-lived systems.",
+        explanation:
+          "Code should be easier to understand six months from now than it was to write today. Readability compounds in long-lived systems.",
         evidenceRefs: ["MedX"],
         weight: 4,
       },
       {
         category: "APIs",
         statement: "Cross-cutting concerns should have one home.",
-        explanation: "Authentication, retries, token refresh, and error handling belong in shared infrastructure — not scattered across the application.",
+        explanation:
+          "Authentication, retries, token refresh, and error handling belong in shared infrastructure — not scattered across the application.",
         evidenceRefs: ["MedX"],
         weight: 4.5,
       },
       {
         category: "Components",
         statement: "Optimize for change before reuse.",
-        explanation: "Reusable components are the result of recurring problems, not the starting point. I prefer small, adaptable building blocks over premature abstraction.",
+        explanation:
+          "Reusable components are the result of recurring problems, not the starting point. I prefer small, adaptable building blocks over premature abstraction.",
         evidenceRefs: ["Revixir", "MedX"],
         weight: 4,
       },
       {
         category: "Forms",
         statement: "Validation belongs where users make mistakes, not where APIs reject them.",
-        explanation: "The best validation prevents errors before they become requests. Backend validation remains the source of truth, but good UX catches problems earlier.",
+        explanation:
+          "The best validation prevents errors before they become requests. Backend validation remains the source of truth, but good UX catches problems earlier.",
         evidenceRefs: ["Revixir"],
         weight: 5,
       },
@@ -281,13 +292,15 @@ export const CONTENT = {
         slug: "bundle",
         title: "How We Cut Our React App's Bundle Size in Half",
         publishedAt: "2025-02-20",
-        summary: "How we cut a React app's bundle from 1.54MB gzipped roughly in half — code-splitting, lazy loading, and dependency audits that actually moved the needle.",
+        summary:
+          "How we cut a React app's bundle from 1.54MB gzipped roughly in half — code-splitting, lazy loading, and dependency audits that actually moved the needle.",
       },
       {
         slug: "cookies",
         title: "HTTP Cookies Demystified: A Web Developer's Guide",
         publishedAt: "2024-09-08",
-        summary: "A practical guide to HTTP cookies — how Set-Cookie and Cookie headers work, the security attributes that matter, and when to reach for localStorage instead.",
+        summary:
+          "A practical guide to HTTP cookies — how Set-Cookie and Cookie headers work, the security attributes that matter, and when to reach for localStorage instead.",
       },
     ],
   },
@@ -339,9 +352,7 @@ export const CONTENT = {
   },
 
   footer: {
-    colophon: [
-      "// set in Big Shoulders Display, Inter, Space Mono",
-    ],
+    colophon: ["// set in Big Shoulders Display, Inter, Space Mono"],
     // Footer is the one other confirmed placement for the annotation motif — PORTFOLIO.md §4.
     // Nav intentionally excluded.
   },
