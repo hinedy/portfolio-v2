@@ -333,7 +333,7 @@ export const CONTENT = {
   footer: {
     colophon: [
       "// set in Big Shoulders Display, Inter, Space Mono",
-      "// last shipped [date — fill in at deploy]",
+      "// last shipped",
     ],
     // Footer is the one other confirmed placement for the annotation motif — PORTFOLIO.md §4.
     // Nav intentionally excluded.
