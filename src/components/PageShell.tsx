@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { MobileNav } from "@/components/MobileNav";
 import { Annotation } from "@/components/Annotation";
 import { CONTENT } from "@/lib/content";
@@ -27,21 +27,37 @@ function DesktopNav() {
 }
 
 function TopBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="sticky top-0 z-50 border-b border-rule bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-12 lg:gap-x-6 py-4 items-baseline">
-        <Link to="/" hash="top" className="min-w-0 truncate lg:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
-          Ahmed Hinedy
-        </Link>
-        <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
-          Frontend Software Engineer · Alexandria, EG
-        </div>
-        <DesktopNav />
-        <div className="lg:hidden justify-self-end">
-          <MobileNav items={NAV_ITEMS.map((it) => ({ label: it.label, href: it.href }))} />
+    <>
+      <div className="sticky top-0 z-50 border-b border-rule bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-12">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-12 lg:gap-x-6 items-center h-full">
+          <Link to="/" hash="top" className="min-w-0 truncate lg:col-span-3 font-mono text-xs tracking-widest uppercase text-ink">
+            Ahmed Hinedy
+          </Link>
+          <div className="hidden lg:block lg:col-span-6 font-mono text-[11px] tracking-wider uppercase text-muted-foreground">
+            Frontend Software Engineer · Alexandria, EG
+          </div>
+          <DesktopNav />
+          <div className="lg:hidden justify-self-end">
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={menuOpen}
+              className="font-mono text-[11px] uppercase tracking-widest text-ink hover:text-accent transition-colors"
+            >
+              [ menu ]
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+      <MobileNav
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        items={NAV_ITEMS.map((it) => ({ label: it.label, href: it.href }))}
+      />
+    </>
   );
 }
 
