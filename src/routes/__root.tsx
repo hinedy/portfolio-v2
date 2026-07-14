@@ -103,6 +103,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Ahmed Hinedy",
+          jobTitle: "Product Frontend Engineer",
+          url: "https://hinedy.lovable.app",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Ahmed Hinedy",
+          url: "https://hinedy.lovable.app",
+        }),
+      },
+    ],
   }),
 
   shellComponent: RootShell,
