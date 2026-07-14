@@ -46,7 +46,10 @@ function Hero() {
               <AsciiPortrait onDone={() => setPortraitDone(true)} />
             </div>
           </div>
-          <div className="mt-3 self-start md:self-end min-h-[1.2em]" aria-live="polite">
+          <div
+            className="mt-3 self-start md:self-end min-h-[1.2em] text-[0.72rem]"
+            aria-live="polite"
+          >
             {portraitDone && (
               <div className="animate-fade-in">
                 <Annotation>{hero.portraitAnnotation}</Annotation>

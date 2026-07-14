@@ -51,12 +51,14 @@ export function AsciiPortrait({ onDone }: { onDone?: () => void } = {}) {
   });
   const rafRef = useRef<number | null>(null);
   const doneRef = useRef(false);
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
 
   useEffect(() => {
     const finish = () => {
       if (doneRef.current) return;
       doneRef.current = true;
-      onDone?.();
+      onDoneRef.current?.();
     };
     const reduced =
       typeof window !== "undefined" &&
@@ -80,7 +82,7 @@ export function AsciiPortrait({ onDone }: { onDone?: () => void } = {}) {
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [onDone]);
+  }, []);
 
   return (
     <pre className="ascii-portrait ascii-animating" aria-label="ASCII portrait of Ahmed Hinedy">
