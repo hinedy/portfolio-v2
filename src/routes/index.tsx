@@ -81,8 +81,8 @@ function Position() {
               key={i}
               className={
                 i === 0
-                  ? "font-display text-[clamp(1.75rem,3.6vw,3rem)] leading-[1.05] text-ink"
-                  : "text-lg md:text-xl leading-relaxed text-ink/85 max-w-3xl"
+                  ? "font-display text-[clamp(1.75rem,3.6vw,3rem)] leading-[1.05] text-ink text-pretty"
+                  : "text-lg md:text-xl leading-relaxed text-ink/85 max-w-3xl text-pretty"
               }
             >
               {p}
@@ -148,7 +148,7 @@ function CaseStudy({
       </aside>
 
       <div className="col-span-12 md:col-span-9 min-w-0 space-y-10">
-        <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink break-words hyphens-auto">
+        <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink break-words hyphens-auto text-pretty">
           {cs.thesis}
         </p>
 
@@ -166,15 +166,19 @@ function CaseStudy({
             <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
               What We Changed
             </div>
-            <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">
-              {cs.whatWeChanged}
-            </p>
+            <div className="space-y-3">
+              {(Array.isArray(cs.whatWeChanged) ? cs.whatWeChanged : [cs.whatWeChanged]).map((para, i) => (
+                <p key={i} className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words text-pretty max-w-3xl">
+                  {para}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="border-l-2 border-accent pl-5 py-1">
           <Annotation>{cs.tradeoffs.annotation}</Annotation>
-          <p className="mt-3 text-base md:text-lg text-ink/90 max-w-3xl break-words hyphens-auto">
+          <p className="mt-3 text-base md:text-lg text-ink/90 max-w-3xl break-words text-pretty">
             {cs.tradeoffs.detail}
           </p>
         </div>
@@ -185,15 +189,20 @@ function CaseStudy({
   );
 }
 
-function Field({ label, body }: { label: string; body: string }) {
+function Field({ label, body }: { label: string; body: string | readonly string[] }) {
+  const paragraphs = Array.isArray(body) ? body : [body];
   return (
     <div className="min-w-0">
       <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
         {label}
       </div>
-      <p className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words hyphens-auto">
-        {body}
-      </p>
+      <div className="space-y-3">
+        {paragraphs.map((para, i) => (
+          <p key={i} className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words text-pretty">
+            {para}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
@@ -219,7 +228,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
         <div className="col-span-12 md:col-span-3 mb-4 md:mb-0">
           <Annotation>epigraph</Annotation>
         </div>
-        <p className="col-span-12 md:col-span-9 font-display text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.05] text-ink max-w-4xl">
+        <p className="col-span-12 md:col-span-9 font-display text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.05] text-ink max-w-4xl text-pretty">
           {decisions.epigraph}
         </p>
       </div>
@@ -261,7 +270,7 @@ function Decisions({ onEvidenceRef }: { onEvidenceRef: (title: string) => void }
                 <div className="text-ink" style={statementStyle}>
                   {d.statement}
                 </div>
-                <p className="mt-2 text-sm md:text-base leading-relaxed text-ink/75 max-w-2xl">
+                <p className="mt-2 text-sm md:text-base leading-relaxed text-ink/75 max-w-2xl text-pretty">
                   {d.explanation}
                 </p>
                 {note && (
@@ -329,7 +338,7 @@ function Signal() {
                 Quote {String(i + 1).padStart(2, "0")}
               </div>
               <div className="col-span-12 md:col-span-8">
-                <blockquote className="font-sans text-base md:text-lg leading-relaxed text-ink/90">
+                <blockquote className="font-sans text-base md:text-lg leading-relaxed text-ink/90 text-pretty">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5">
@@ -408,7 +417,7 @@ function Lab() {
               <div className="font-display text-3xl md:text-5xl text-ink leading-[1.05] break-words">
                 {item.title}
               </div>
-              <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/85 max-w-3xl break-words">
+              <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/85 max-w-3xl break-words text-pretty">
                 {item.description}
               </p>
               <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest">
@@ -465,7 +474,7 @@ function Contact() {
       <SectionHeader label={contact.sectionLabel} question={contact.question} />
       <div className="grid grid-cols-12 gap-x-6 pb-24 md:pb-32">
         <div className="col-span-12 md:col-span-8">
-          <p className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] text-ink">
+          <p className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] text-ink text-pretty">
             {contact.line}
           </p>
           <a

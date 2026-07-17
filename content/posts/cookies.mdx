@@ -12,7 +12,7 @@ In this article, we'll explore the ins and outs of HTTP cookies, their significa
 
 HTTP cookies are small pieces of data stored on a user's device by the web browser that can be used for managing user sessions, tracking user behavior, and enhancing the overall user experience.
 
-Cookies are regular headers. On a Request, they are stored in the `Cookie` header. On a Response they are in the `Set-Cookie` header
+Cookies are regular headers. On a Request, they are stored in the `Cookie` header. On a Response, they are in the `Set-Cookie` header
 
 ## Cookies vs localStorage
 
@@ -26,15 +26,15 @@ On the other hand, **cookies** have security flags that make them more secure fo
 - **_Secure_** flag ensures that the browser only transfers the cookie over SSL, protecting against man-in-the-middle attacks.
 - **_SameSite_** flag helps prevent Cross-Site Request Forgery (CSRF) attacks by ensuring that the cookie is only sent to the origin site.
 
-So cookies are a more secure choice for storing authentication data. However, localStorage can be more appropriate for storing non-sensitive client-side data like user preferences or cached content.localStorage offers larger storage capacity (usually 5-10MB compared to 4KB for cookies) and easier JavaScript access, making it suitable for improving application performance and user experience in scenarios where the enhanced security of cookies isn't necessary.
+So cookies are a more secure choice for storing authentication data. However, localStorage can be more appropriate for storing non-sensitive client-side data like user preferences or cached content. It offers larger storage capacity (usually 5-10MB compared to 4KB for cookies) and easier JavaScript access, making it suitable for improving application performance and user experience in scenarios where the enhanced security of cookies isn't necessary.
 
-## How does Cookies Work
+## How Cookies Work
 
 ![Cookie exchange between client and server](/cookies-diagram.png)
 
 1. **Setting the Cookie**: When a user visits a website, the backend server can send a cookie to the browser. This is done via the `Set-Cookie` header in the HTTP response.
 2. **Storing the Cookie**: The browser automatically stores these cookies. As a developer, you don't need to write any client-side code to save the cookie.
-3. **Accessing Cookies**: On the client side, you can access some of the cookies _(not **HttpsOnly**)_ using `document.cookie`. For example:
+3. **Accessing Cookies**: On the client side, you can access some of the cookies _(not **HttpOnly**)_ using `document.cookie`. For example:
    ```javascript
    console.log(document.cookie);
    // Output: "username=John Doe; session_id=1234567890"

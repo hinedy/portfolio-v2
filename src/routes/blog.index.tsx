@@ -105,10 +105,10 @@ function BlogIndex() {
                   <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
                 </div>
                 <div className="col-span-12 md:col-span-9">
-                  <h2 className="font-display text-3xl md:text-5xl leading-[1.02] text-ink group-hover:text-accent transition-colors">
+                  <h2 className="font-display text-3xl md:text-5xl leading-[1.02] text-ink group-hover:text-accent transition-colors text-pretty">
                     {post.title}
                   </h2>
-                  <p className="mt-3 text-base md:text-lg text-ink/80 max-w-2xl">{post.summary}</p>
+                  <p className="mt-3 text-base md:text-lg text-ink/80 max-w-2xl text-pretty">{post.summary}</p>
                   <div className="mt-4 font-mono text-[11px] uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors">
                     read →
                   </div>

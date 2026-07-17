@@ -247,6 +247,7 @@
 }
 .prose-post p {
   color: var(--color-ink);
+  text-wrap: pretty;
 }
 .prose-post a {
   color: var(--color-accent);
