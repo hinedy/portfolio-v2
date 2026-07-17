@@ -119,7 +119,7 @@ function CaseStudy({
 
   return (
     <article className="grid grid-cols-12 gap-x-6 border-t border-rule py-14 md:py-20">
-      <aside className="col-span-12 md:col-span-3 min-w-0 space-y-5 mb-8 md:mb-0">
+      <aside className="col-span-12 lg:col-span-3 min-w-0 space-y-5 mb-8 lg:mb-0">
         <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           Case {num} / {cs.category}
         </div>
@@ -147,7 +147,7 @@ function CaseStudy({
         </dl>
       </aside>
 
-      <div className="col-span-12 md:col-span-9 min-w-0 space-y-10">
+      <div className="col-span-12 lg:col-span-9 min-w-0 space-y-10">
         <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] text-ink break-words hyphens-auto text-pretty">
           {cs.thesis}
         </p>
