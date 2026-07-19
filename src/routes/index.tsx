@@ -4,6 +4,7 @@ import { CONTENT } from "@/lib/content";
 import { PageShell } from "@/components/PageShell";
 import { AsciiPortrait } from "@/components/AsciiPortrait";
 import { Annotation } from "@/components/Annotation";
+import { MARKS, type MarkKey } from "@/components/marks";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -120,6 +121,12 @@ function CaseStudy({
   return (
     <article className="grid grid-cols-12 gap-x-6 border-t border-rule py-14 md:py-20">
       <aside className="col-span-12 lg:col-span-3 min-w-0 space-y-5 mb-8 lg:mb-0">
+        {cs.mark && MARKS[cs.mark as MarkKey] ? (
+          (() => {
+            const Mark = MARKS[cs.mark as MarkKey];
+            return <Mark className="h-12 w-12 lg:h-16 lg:w-16 text-ink/70" />;
+          })()
+        ) : null}
         <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           Case {num} / {cs.category}
         </div>
@@ -167,7 +174,7 @@ function CaseStudy({
               What We Changed
             </div>
             <div className="space-y-3">
-              {(Array.isArray(cs.whatWeChanged) ? cs.whatWeChanged : [cs.whatWeChanged]).map((para, i) => (
+              {((Array.isArray(cs.whatWeChanged) ? cs.whatWeChanged : [cs.whatWeChanged]) as readonly string[]).map((para: string, i: number) => (
                 <p key={i} className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words text-pretty max-w-3xl">
                   {para}
                 </p>

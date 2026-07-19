@@ -130,6 +130,26 @@ Plus metadata: `title`, `category` ("Production" | "Discontinued" | "MVP"),
 
 Three case studies, in this order: MedX, Revixir, SupplyTech.
 
+#### Case-study mark (optional)
+
+Each case study may set `mark: "medx" | "revixir" | "supplytech"`. It renders
+as an inline monochrome SVG at the top of the left aside (above the
+`Case NN / Category` label), 48×48px on mobile and 64×64px from `lg` up, in
+`text-ink/70`. Rules:
+
+- One mark component per case study, in `src/components/marks/`, resolved
+  through the `MARKS` map. Marks are identifiers, not branding.
+- `currentColor` strokes/fills only. Never the accent orange. No gradients.
+- No animation, no hover state.
+- Visual direction (locked):
+  - **MedX** — one larger node + 3–4 smaller nodes joined by thin lines
+    (abstract graph, not a medical cross).
+  - **Revixir** — a rectangle divided into 3–4 unequal regions by hairline
+    rules (not stacked cubes).
+  - **SupplyTech** — a row of 4–5 shapes joined by arrows, one node
+    visibly constricted to signal a bottleneck.
+- If `mark` is omitted, render nothing — no placeholder box.
+
 ### 03 / HOW I DECIDE
 
 See §12 for the full spec — table layout is load-bearing here.

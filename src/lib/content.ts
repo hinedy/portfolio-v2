@@ -57,6 +57,7 @@ export const CONTENT = {
       {
         title: "MedX",
         category: "Production",
+        mark: "medx",
         url: "https://medxsvc.com",
         image: "/medx-preview.png",
         owned: "Frontend Engineer",
@@ -87,6 +88,7 @@ export const CONTENT = {
       {
         title: "Revixir",
         category: "Discontinued",
+        mark: "revixir",
         url: "https://revixir.com",
         image: "/revixir-preview.png",
         owned: "Frontend Engineer",
@@ -113,6 +115,7 @@ export const CONTENT = {
       {
         title: "SupplyTech",
         category: "MVP",
+        mark: "supplytech",
         url: "https://supplytechsyg.com/",
         image: "/supplytech-preview.png",
         // RESOLVED: this was a freelance engagement with a team of three developers with
