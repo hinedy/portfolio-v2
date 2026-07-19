@@ -167,7 +167,7 @@ function CaseStudy({
               What We Changed
             </div>
             <div className="space-y-3">
-              {(Array.isArray(cs.whatWeChanged) ? cs.whatWeChanged : [cs.whatWeChanged]).map((para, i) => (
+              {((Array.isArray(cs.whatWeChanged) ? cs.whatWeChanged : [cs.whatWeChanged]) as readonly string[]).map((para: string, i: number) => (
                 <p key={i} className="text-[15px] md:text-base leading-relaxed text-ink/90 break-words text-pretty max-w-3xl">
                   {para}
                 </p>
