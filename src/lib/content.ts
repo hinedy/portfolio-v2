@@ -89,7 +89,6 @@ export const CONTENT = {
         title: "Revixir",
         category: "Discontinued",
         mark: "revixir",
-        url: "https://revixir.com",
         image: "/revixir-preview.png",
         owned: "Frontend Engineer",
         decisionSurface: ["Next.js 14", "Zod", "Framer Motion", "RBAC (420+ permissions)"],
