@@ -1,43 +1,47 @@
-# Add PORTFOLIO.md to the repo
+# Per-case-study marks in Evidence
 
-## What's going on
+Branch: `case-studies-visuals`
 
-PORTFOLIO.md has never lived in the codebase — you've been pasting it into chat as an external spec (referenced as §4, §6, §8, §11, §12, §13, plus ASSETS.md). Nothing on disk tracks it, so it can drift silently from what's actually shipped and there's no single source of truth to hand to future-you or an agent.
+## Scope
 
-## Plan
+Add a small monochrome SVG mark to each Evidence case study, placed at the top of the left aside (Option A). No other layout changes.
 
-Create a single file at the repo root: `PORTFOLIO.md`.
+## Changes
 
-It gets reconstructed from two inputs, in this order of authority:
+### 1. `src/components/marks/` (new)
 
-1. **Original direction** — the locked spec language you've referenced throughout (voice, IA, annotation motif rules, spec-sheet system, weight/order semantics, epigraph rule, cross-reference behavior, portrait treatment). This stays load-bearing and doesn't get rewritten to match code — code serves the spec, not the other way around.
-2. **Current state** — reconciled against `src/lib/content.ts`, `src/routes/index.tsx`, and `src/routes/__root.tsx` as they stand now, so section numbers, row lists, nav labels ("How I Decide", not "Decisions"), meta.role ("Product Frontend Engineer"), the 06 / LAB section, and the epigraph all match what's shipped.
+Three inline SVG components, each a 64×64 viewBox, `currentColor` strokes, no fills from accent orange. `role="img"` with `aria-label`. No animation.
 
-### Structure
+- `MedXMark.tsx` — one larger node + 3–4 smaller nodes joined by thin lines (abstract graph).
+- `RevixirMark.tsx` — a rectangle divided into 3–4 unequal regions by hairline rules.
+- `SupplyTechMark.tsx` — row of 4–5 shapes joined by arrows, one node visibly constricted (bottleneck).
+- `index.ts` — exports a `MARKS` map: `{ medx: MedXMark, revixir: RevixirMark, supplytech: SupplyTechMark }`.
 
-Numbered sections mirroring the ones you've cited, so existing "§N" references keep resolving:
+### 2. `src/lib/content.ts`
 
-- §1 Purpose & audience
-- §2 Voice & tone (systems-thinking, no marketing polish, annotation motif rules)
-- §3 Information architecture (the seven sections, nav vs scroll-only, anchor ids)
-- §4 Annotation motif — where it's allowed (hero portrait, tradeoffs, footer colophon, evidence hover callouts) and where it's banned (nav)
-- §6 Section-by-section content spec (Position 4 lines, Evidence six-part case study shape, Signal quote provenance, Writing, Lab, Contact)
-- §8 Microcopy lock ("owned", "decision surface", "time invested", "what changed", "chosen because…" cap)
-- §11 Hero layout, motion, ASCII portrait spec
-- §12 Decisions section — table layout, three-part rows, epigraph, authorial order, continuous weight styling (0–5 → font-weight + size), evidenceRefs hover/click-to-scroll behavior, why weight is decoupled from order
-- §13 Lab section spec (was called "Current Work" in an earlier turn — reconciled to Lab as shipped)
-- §14 Maintenance rule (new): any content or IA change updates content.ts, the affected route, AND PORTFOLIO.md in the same change. Add a short note in `AGENTS.md` pointing at PORTFOLIO.md as the canonical spec so future agent sessions read it.
+Add an optional `mark?: "medx" | "revixir" | "supplytech"` field to the case study type and set it on each of the three entries. No other content changes.
 
-Also add a one-line pointer at the top of `src/lib/content.ts` (comment only) noting that PORTFOLIO.md is the spec — no code change.
+### 3. `src/routes/index.tsx`
+
+In `CaseStudy`, insert the mark as the first child of the `<aside>` (above the `Case NN / Category` label):
+
+```text
+aside (space-y-5)
+  ├─ [new] Mark: 48×48 mobile, 64×64 lg, text-ink/70
+  ├─ mono "Case NN / Category" label
+  ├─ display title
+  └─ dl (owned / surface / link)
+```
+
+Resolved via `MARKS[study.mark]`; if `mark` is absent, render nothing (no placeholder box).
+
+### 4. `PORTFOLIO.md`
+
+Per §14, append a note under §6 EVIDENCE documenting the optional `mark` field, the three allowed values, the visual direction per mark, and the size/color rules (monochrome, `text-ink/70`, 48/64px, no animation, ink only — no accent orange).
 
 ## Non-goals
 
-- No visual/UI changes.
-- No content rewrites in `content.ts` — this is documentation of what already exists plus the locked direction behind it.
-- Not creating ASSETS.md (you've referenced it, but it's about specific asset decisions; can be a follow-up if you want it tracked too — say the word).
-
-## Deliverables
-
-- `PORTFOLIO.md` (new, repo root)
-- `AGENTS.md` — append a short "Canonical spec" pointer
-- `src/lib/content.ts` — add one-line header comment pointing at PORTFOLIO.md
+- No changes to Option B/C placements, no watermarks.
+- No changes to the right column, thesis line, tradeoffs block, or aside metadata.
+- No new dependencies, no asset files.
+- No animation.
