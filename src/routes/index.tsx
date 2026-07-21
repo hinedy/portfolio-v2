@@ -140,7 +140,7 @@ function CaseStudy({
           <dd className="text-ink normal-case tracking-normal break-words min-w-0">
             {cs.decisionSurface.join(", ")}
           </dd>
-          {cs.url && (
+          {"url" in cs && cs.url && (
             <>
               <dt>link</dt>
               <dd className="min-w-0">
