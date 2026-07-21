@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 // Engineering abstraction v2 — SupplyTech.
 // Field of strokes compressed to a single aperture. Orange stroke = throat.
 // Constraint decides what continues. Primitive: strokes only.
@@ -11,7 +12,7 @@ export function SupplyTechMarkV2({ className }: { className?: string }) {
   const cx = 32;
   const maxHalf = 26;
   const throatIndex = (rows - 1) / 2;
-  const lines: JSX.Element[] = [];
+  const lines: ReactElement[] = [];
   for (let i = 0; i < rows; i++) {
     if (i === throatIndex) continue;
     const t = Math.abs(i - throatIndex) / throatIndex; // 0 at throat, 1 at edge

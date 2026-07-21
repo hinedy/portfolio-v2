@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 // Engineering abstraction v2 (alt) — MedX.
 // One dense disc, one radial interruption. Alternative candidate.
 // Primitive: dots only (rings of dots forming a filled field).
@@ -5,7 +6,7 @@ export function MedXMarkV2Alt({ className }: { className?: string }) {
   const cx = 32;
   const cy = 32;
   const rings = [4, 9, 14, 19, 24];
-  const dots: JSX.Element[] = [];
+  const dots: ReactElement[] = [];
   rings.forEach((radius, i) => {
     const count = 6 + i * 6;
     for (let k = 0; k < count; k++) {
