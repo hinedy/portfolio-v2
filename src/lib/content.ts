@@ -62,8 +62,7 @@ export const CONTENT = {
         image: "/medx-preview.png",
         owned: "Frontend Engineer",
         decisionSurface: ["Zustand", "React Query", "React Hook Form", "SignalR", "MSAL", "Stripe"],
-        thesis:
-          "Building healthcare operations software means correctness matters more than elegance.",
+        thesis: "Building healthcare operations software means correctness matters more than elegance.",
         context:
           "MedX is a multi-role healthcare operations platform coordinating medical service orders between providers, patients, and administrators: handling onboarding, scheduling, escrow-style payments, claims/remits, notifications, and real-time operational workflows in a highly dynamic environment.",
         theProblem: [
@@ -114,7 +113,7 @@ export const CONTENT = {
       {
         title: "SupplyTech",
         category: "MVP",
-        mark: "supplytech-v2",
+        mark: "supplytech-v2-alt",
         url: "https://supplytechsyg.com/",
         image: "/supplytech-preview.png",
         // RESOLVED: this was a freelance engagement with a team of three developers with
