@@ -124,7 +124,7 @@ function CaseStudy({
         {cs.mark && MARKS[cs.mark as MarkKey]
           ? (() => {
               const Mark = MARKS[cs.mark as MarkKey];
-              return <Mark className="h-12 w-12 lg:h-16 lg:w-16 text-ink/70" />;
+              return <Mark className="h-12 w-12 lg:h-16 lg:w-16 text-ink opacity-70" />;
             })()
           : null}
         <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">

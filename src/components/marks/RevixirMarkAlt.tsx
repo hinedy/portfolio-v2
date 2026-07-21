@@ -1,8 +1,8 @@
-// Engineering abstraction v2 — Revixir.
+// Engineering abstraction — Revixir.
 // Continuous field of horizontal strokes. One vertical fault crossing them.
 // The crossing is the invariant: ownership exists inside one architecture.
 // Primitive: strokes only. See PORTFOLIO.md §6.
-export function RevixirMarkV2({ className }: { className?: string }) {
+export function RevixirMarkAlt({ className }: { className?: string }) {
   const rows = 11;
   const top = 8;
   const bottom = 56;

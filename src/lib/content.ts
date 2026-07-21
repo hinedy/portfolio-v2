@@ -57,12 +57,13 @@ export const CONTENT = {
       {
         title: "MedX",
         category: "Production",
-        mark: "medx-v2",
+        mark: "medx-alt",
         url: "https://medxsvc.com",
         image: "/medx-preview.png",
         owned: "Frontend Engineer",
         decisionSurface: ["Zustand", "React Query", "React Hook Form", "SignalR", "MSAL", "Stripe"],
-        thesis: "Building healthcare operations software means correctness matters more than elegance.",
+        thesis:
+          "Building healthcare operations software means correctness matters more than elegance.",
         context:
           "MedX is a multi-role healthcare operations platform coordinating medical service orders between providers, patients, and administrators: handling onboarding, scheduling, escrow-style payments, claims/remits, notifications, and real-time operational workflows in a highly dynamic environment.",
         theProblem: [
@@ -87,7 +88,7 @@ export const CONTENT = {
       {
         title: "Revixir",
         category: "Discontinued",
-        mark: "revixir-v2",
+        mark: "revixir-alt",
         image: "/revixir-preview.png",
         owned: "Frontend Engineer",
         decisionSurface: ["Next.js 14", "Zod", "Framer Motion", "RBAC (420+ permissions)"],
@@ -113,7 +114,7 @@ export const CONTENT = {
       {
         title: "SupplyTech",
         category: "MVP",
-        mark: "supplytech-v2-alt",
+        mark: "supplytech-alt",
         url: "https://supplytechsyg.com/",
         image: "/supplytech-preview.png",
         // RESOLVED: this was a freelance engagement with a team of three developers with
