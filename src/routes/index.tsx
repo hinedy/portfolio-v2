@@ -32,27 +32,25 @@ function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="scroll-mt-12">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28 [@media(max-height:900px)]:md:pt-14 [@media(max-height:900px)]:md:pb-16">
-        <div className="col-span-12 md:col-span-7 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
+        <div className="@container min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
           <div className="section-label">00 / Hero — spec sheet v2</div>
-          <h1 className="font-display leading-[0.95] text-ink text-[clamp(4rem,9.5vw,10.5rem)] [@media(max-height:900px)]:text-[clamp(3.75rem,8.4vw,8.4rem)]">
+          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,11cqi,9rem)]">
             Software gets complicated long before it gets big.
           </h1>
           <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
         </div>
 
-        <div className="col-span-12 md:col-span-5 mt-12 md:mt-0 flex flex-col items-end min-h-0">
-          <div className="w-full overflow-hidden border border-rule bg-paper p-2 max-h-[70svh] [@media(max-height:900px)]:max-h-[62svh]">
-            <div className="flex justify-center overflow-hidden">
-              <AsciiPortrait onDone={() => setPortraitDone(true)} />
-            </div>
+        <div className="flex flex-col w-full lg:w-[clamp(420px,32vw,540px)]">
+          <div className="w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
+            <AsciiPortrait onDone={() => setPortraitDone(true)} />
           </div>
-          <div className="mt-3 self-start md:self-end min-h-[1.2em]" aria-live="polite">
+          <div className="mt-3 self-start min-h-[1.2em]" aria-live="polite">
             <div className={portraitDone ? "animate-fade-in" : "opacity-0"}>
               <Annotation>{hero.portraitAnnotation}</Annotation>
             </div>
           </div>
-          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full md:w-auto">
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
             <dt>character set</dt>
             <dd className="text-ink">. - + #</dd>
             <dt>grid</dt>
