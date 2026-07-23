@@ -41,7 +41,7 @@ function Hero() {
           <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
         </div>
 
-        <div className="flex flex-col w-full lg:w-[clamp(420px,32vw,540px)]">
+        <div className="flex flex-col w-full lg:w-auto lg:max-w-[720px]">
           <div className="w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
           </div>
