@@ -42,7 +42,7 @@ function Hero() {
         </div>
 
         <div className="flex flex-col w-full lg:w-[clamp(380px,32vw,560px)]">
-          <div className="relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
+          <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
             {/* Mobile-only overlay: annotation sits directly on the portrait's
                 lower-left negative space (below shoulders) with a paper chip
