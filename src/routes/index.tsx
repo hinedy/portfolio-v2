@@ -33,16 +33,16 @@ function Hero() {
   return (
     <section id="top" className="scroll-mt-12">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28 [@media(max-height:900px)]:md:pt-14 [@media(max-height:900px)]:md:pb-16">
-        <div className="col-span-12 md:col-span-7 flex flex-col justify-between">
-          <div className="section-label mb-10 [@media(max-height:900px)]:mb-6">00 / Hero — spec sheet v2</div>
-          <h1 className="font-display text-[min(11vw,14svh,10.5rem)] leading-[0.95] text-ink">
+        <div className="col-span-12 md:col-span-7 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
+          <div className="section-label">00 / Hero — spec sheet v2</div>
+          <h1 className="font-display leading-[0.95] text-ink text-[clamp(4rem,9.5vw,10.5rem)] [@media(max-height:900px)]:text-[clamp(3.75rem,8.4vw,8.4rem)]">
             Software gets complicated long before it gets big.
           </h1>
-          <p className="mt-6 md:mt-10 [@media(max-height:900px)]:md:mt-6 max-w-xl text-lg md:text-xl leading-snug text-ink/85">{hero.sub}</p>
+          <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
         </div>
 
         <div className="col-span-12 md:col-span-5 mt-12 md:mt-0 flex flex-col items-end min-h-0">
-          <div className="w-full overflow-hidden border border-rule bg-paper p-2">
+          <div className="w-full overflow-hidden border border-rule bg-paper p-2 max-h-[70svh] [@media(max-height:900px)]:max-h-[62svh]">
             <div className="flex justify-center overflow-hidden">
               <AsciiPortrait onDone={() => setPortraitDone(true)} />
             </div>

@@ -163,11 +163,17 @@
     font-size: 7px;
   }
 }
-/* Short-viewport laptops (e.g. 1536×864 @ 125% scaling): scale portrait down
-   so the entire hero fits above the fold without touching big-screen composition. */
+/* Short-viewport laptops: scale portrait down so the hero fits above the fold.
+   Wide-but-short screens (e.g. 1536×864 @ 125% scaling) keep a slightly larger
+   character so the portrait matches the left column height. */
 @media (max-height: 900px) {
   .ascii-portrait {
     font-size: 5px;
+  }
+}
+@media (max-height: 900px) and (min-width: 1400px) {
+  .ascii-portrait {
+    font-size: 6px;
   }
 }
 
