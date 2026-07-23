@@ -163,6 +163,13 @@
     font-size: 7px;
   }
 }
+/* Short-viewport laptops (e.g. 1536×864 @ 125% scaling): scale portrait down
+   so the entire hero fits above the fold without touching big-screen composition. */
+@media (max-height: 900px) {
+  .ascii-portrait {
+    font-size: 5px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .ascii-animating {
