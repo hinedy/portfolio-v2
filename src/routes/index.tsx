@@ -32,14 +32,14 @@ function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="scroll-mt-12">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 lg:items-center pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-16 xl:gap-x-24 lg:items-start pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
         <div className="@container min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
           <div className="section-label">00 / Hero — spec sheet v2</div>
-          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,11cqi,9rem)]">
+          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,12cqi,10rem)]">
             Software gets complicated long before it gets big.
           </h1>
-          <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
-          <dl className="hidden lg:grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+          <p className="max-w-2xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
+          <dl className="hidden lg:grid grid-cols-[max-content_minmax(0,1fr)] gap-x-8 gap-y-2 border-t border-rule pt-6 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full max-w-2xl">
             {hero.metadata.map((m) => (
               <Fragment key={m.label}>
                 <dt>{m.label}</dt>
@@ -49,11 +49,11 @@ function Hero() {
           </dl>
         </div>
 
-        <div className="flex flex-col w-full lg:w-[clamp(380px,32vw,560px)]">
+        {/* Portrait as specimen plate: smaller, offset downward from headline
+            baseline to break the aligned-rectangle feel of the two columns. */}
+        <div className="flex flex-col w-full lg:w-[clamp(280px,26vw,420px)] lg:mt-24 xl:mt-32 [@media(max-height:900px)]:lg:mt-12 lg:self-start">
           <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
-            {/* Overlay: annotation sits on the portrait's lower-left negative
-                space (below shoulders) with a paper chip for legibility. */}
             <div
               className={`absolute left-3 bottom-3 pointer-events-none ${portraitDone ? "animate-fade-in" : "opacity-0"}`}
               aria-live="polite"
@@ -64,7 +64,7 @@ function Hero() {
             </div>
           </div>
         </div>
-        <dl className="lg:hidden grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+        <dl className="lg:hidden grid grid-cols-[max-content_minmax(0,1fr)] gap-x-6 gap-y-2 border-t border-rule pt-6 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
           {hero.metadata.map((m) => (
             <Fragment key={m.label}>
               <dt>{m.label}</dt>
@@ -76,6 +76,7 @@ function Hero() {
     </section>
   );
 }
+
 
 function Position() {
   return (
