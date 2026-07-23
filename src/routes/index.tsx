@@ -32,23 +32,30 @@ function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="scroll-mt-12">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 lg:items-start pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 lg:items-center pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
         <div className="@container min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
           <div className="section-label">00 / Hero — spec sheet v2</div>
           <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,11cqi,9rem)]">
             Software gets complicated long before it gets big.
           </h1>
           <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
+          <dl className="hidden lg:grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+            {hero.metadata.map((m) => (
+              <Fragment key={m.label}>
+                <dt>{m.label}</dt>
+                <dd className="text-ink normal-case tracking-normal">{m.value}</dd>
+              </Fragment>
+            ))}
+          </dl>
         </div>
 
         <div className="flex flex-col w-full lg:w-[clamp(380px,32vw,560px)]">
           <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
-            {/* Mobile-only overlay: annotation sits directly on the portrait's
-                lower-left negative space (below shoulders) with a paper chip
-                for legibility. Below-image annotation is hidden on mobile. */}
+            {/* Overlay: annotation sits on the portrait's lower-left negative
+                space (below shoulders) with a paper chip for legibility. */}
             <div
-              className={`lg:hidden absolute left-3 bottom-3 pointer-events-none ${portraitDone ? "animate-fade-in" : "opacity-0"}`}
+              className={`absolute left-3 bottom-3 pointer-events-none ${portraitDone ? "animate-fade-in" : "opacity-0"}`}
               aria-live="polite"
             >
               <div className="bg-paper px-2 py-1">
@@ -56,24 +63,15 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div className="hidden lg:block mt-3 self-start min-h-[1.2em]" aria-live="polite">
-            <div className={portraitDone ? "animate-fade-in" : "opacity-0"}>
-              <Annotation>{hero.portraitAnnotation}</Annotation>
-            </div>
-          </div>
-          {/* NOTE: metadata dl not documented in PORTFOLIO.md §11 — flagged for
-              content owner. Hidden on mobile to reclaim vertical space. */}
-          <dl className="hidden lg:grid mt-6 grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
-            <dt>character set</dt>
-            <dd className="text-ink">. - + #</dd>
-            <dt>grid</dt>
-            <dd className="text-ink">93 × 175</dd>
-            <dt>render</dt>
-            <dd className="text-ink">client, on load</dd>
-            <dt>duration</dt>
-            <dd className="text-ink">1.35s</dd>
-          </dl>
         </div>
+        <dl className="lg:hidden grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+          {hero.metadata.map((m) => (
+            <Fragment key={m.label}>
+              <dt>{m.label}</dt>
+              <dd className="text-ink normal-case tracking-normal">{m.value}</dd>
+            </Fragment>
+          ))}
+        </dl>
       </div>
     </section>
   );

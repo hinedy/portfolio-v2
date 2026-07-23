@@ -32,6 +32,14 @@ export const CONTENT = {
     // Full layout/motion/portrait spec: PORTFOLIO.md §11.
     // Portrait asset: ascii-portrait.ts (ASCII_PORTRAIT export).
     portraitAnnotation: "// rendered, not photographed",
+    // Portfolio-level metadata — all values derived from data in this file.
+    // See PORTFOLIO.md §11a for the content-sourcing rule.
+    metadata: [
+      { label: "CASE STUDIES", value: "3 — production, discontinued, mvp" },
+      { label: "PRINCIPLES", value: "10 rows — 03 / how i decide" },
+      { label: "PROVEN", value: "~49.5% bundle reduction — medx" },
+      { label: "SECTIONS", value: "7 — position through contact" },
+    ],
   },
 
   position: {

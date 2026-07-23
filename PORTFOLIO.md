@@ -219,6 +219,33 @@ Also locked:
 
 ---
 
+## §11a — Hero metadata block
+
+A four-row metadata block (`hero.metadata`) renders below the sub-copy in the
+text column (not adjacent to the portrait), at every breakpoint — in the text
+column for two-column layouts, and in the same position (after sub, before
+portrait) for stacked layouts.
+
+- Each row is a `{ label, value }` pair rendered in `Space Mono` at `11px`,
+  uppercase labels with wide tracking, values in normal case.
+- This is **portfolio-level metadata**, not portrait-render metadata. It
+  previews facts about the site itself, not the ASCII rendering process.
+- Labels/values are derived from existing data in `src/lib/content.ts`:
+
+  | Label         | Value & derivation                                                                 |
+  | ------------- | ---------------------------------------------------------------------------------- |
+  | CASE STUDIES  | `{count} — {categories}` — 3 case studies in `evidence.caseStudies`               |
+  | PRINCIPLES    | `{count} rows — 03 / how i decide` — 10 items in `decisions.items`                |
+  | PROVEN        | `~49.5% bundle reduction — medx` — from MedX `whatWeChanged`                      |
+  | SECTIONS      | `7 — position through contact` — 7 index-route sections (Position → Contact)      |
+
+- **Content rule**: every value must be derived from existing data in
+  `content.ts`. If a future edit changes case study count, decision row count,
+  section count, or the MedX bundle metric, this block must be updated in the
+  same change (see §14).
+
+---
+
 ## §12 — Decisions table (03 / HOW I DECIDE)
 
 The most opinionated section on the site. Everything here is load-bearing.
