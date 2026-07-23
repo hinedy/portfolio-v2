@@ -32,15 +32,11 @@ export const CONTENT = {
     // Full layout/motion/portrait spec: PORTFOLIO.md §11.
     // Portrait asset: ascii-portrait.ts (ASCII_PORTRAIT export).
     portraitAnnotation: "// rendered, not photographed",
-    // Hero context block — orients the reader toward how I think, rather than
-    // counting what's already visible on the page. See PORTFOLIO.md §11a.
     metadata: [
-      { label: "ROLE", value: "Product Frontend Engineer" },
-      { label: "OPTIMIZES FOR", value: "Long-lived software" },
-      { label: "WORKS ON", value: "Complex operational systems" },
-      { label: "LATEST RESULT", value: "−49.5% bundle — MedX" },
-      { label: "CURRENT RESEARCH", value: "commit-insights" },
-      { label: "BASED IN", value: "Alexandria, Egypt" },
+      { label: "CASE STUDIES", value: "3 — production, discontinued, mvp" },
+      { label: "PRINCIPLES", value: "10 rows — 03 / how i decide" },
+      { label: "PROVEN", value: "~49.5% bundle reduction — medx" },
+      { label: "SECTIONS", value: "7 — position through contact" },
     ],
   },
 
