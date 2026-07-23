@@ -219,30 +219,37 @@ Also locked:
 
 ---
 
-## §11a — Hero metadata block
+## §11a — Hero context block
 
-A four-row metadata block (`hero.metadata`) renders below the sub-copy in the
+A short context block (`hero.metadata`) renders below the sub-copy in the
 text column (not adjacent to the portrait), at every breakpoint — in the text
 column for two-column layouts, and in the same position (after sub, before
-portrait) for stacked layouts.
+portrait) for stacked layouts. A single horizontal rule sits above it,
+separating narrative copy from the labeled block.
 
 - Each row is a `{ label, value }` pair rendered in `Space Mono` at `11px`,
   uppercase labels with wide tracking, values in normal case.
-- This is **portfolio-level metadata**, not portrait-render metadata. It
-  previews facts about the site itself, not the ASCII rendering process.
-- Labels/values are derived from existing data in `src/lib/content.ts`:
+- This block is **context, not metadata**. It orients the reader toward how
+  the author thinks and what the site is about to argue — it does not count
+  things the visitor will discover naturally by scrolling (case studies,
+  principles, sections). Counting was the previous drift; it has been
+  replaced with orientation.
+- Current rows (see `content.ts`):
 
-  | Label         | Value & derivation                                                                 |
-  | ------------- | ---------------------------------------------------------------------------------- |
-  | CASE STUDIES  | `{count} — {categories}` — 3 case studies in `evidence.caseStudies`               |
-  | PRINCIPLES    | `{count} rows — 03 / how i decide` — 10 items in `decisions.items`                |
-  | PROVEN        | `~49.5% bundle reduction — medx` — from MedX `whatWeChanged`                      |
-  | SECTIONS      | `7 — position through contact` — 7 index-route sections (Position → Contact)      |
+  | Label              | Value                                    |
+  | ------------------ | ---------------------------------------- |
+  | ROLE               | Product Frontend Engineer                |
+  | OPTIMIZES FOR      | Long-lived software                      |
+  | WORKS ON           | Complex operational systems              |
+  | LATEST RESULT      | −49.5% bundle — MedX                     |
+  | CURRENT RESEARCH   | commit-insights                          |
+  | BASED IN           | Alexandria, Egypt                        |
 
-- **Content rule**: every value must be derived from existing data in
-  `content.ts`. If a future edit changes case study count, decision row count,
-  section count, or the MedX bundle metric, this block must be updated in the
-  same change (see §14).
+- **Content rule**: rows must describe stance, focus, or a single load-bearing
+  proof point. Do not reintroduce counts of on-page elements. If the latest
+  result or current research changes, update this block in the same change
+  (see §14).
+
 
 ---
 
