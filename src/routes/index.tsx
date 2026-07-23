@@ -516,8 +516,8 @@ function Contact() {
             </div>
             <ul className="space-y-1">
               {Object.entries(contact.social).map(([k, v]) => (
-                <li key={k} className="flex items-baseline gap-3">
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground w-16">
+                <li key={k} className="flex flex-col lg:flex-row lg:items-baseline gap-0.5 lg:gap-3">
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground lg:w-16">
                     {k}
                   </span>
                   <a
