@@ -1,49 +1,39 @@
-## Diagnosis
+## Goal
+Make the ~1536×864 (Windows 125% / short-laptop) hero render like the 1440×900 MacBook composition: tighter label→headline→sub stack, headline in the 126–135px range, portrait height matched to the left column, no dead vertical space.
 
-Your laptop resolves to ~**1536 × 864 CSS px** (1920×1080 at 125% Windows scaling). Two things collide there:
+## Diagnosis (confirmed against `src/routes/index.tsx` and `src/styles.css`)
+1. **`14svh` cap dominates on short viewports.** At 1536×864 the headline resolves to `min(11vw=169, 14svh=121, 10.5rem=168) = 121px` — smaller than the MacBook (126px) despite more width.
+2. **`flex justify-between` on the left column stretches gaps.** The right column height is driven by the portrait (fixed 3:5-ish aspect × column width). On a wide-but-short viewport the portrait is tall, the headline is capped small, and the leftover space becomes dead air between the section label and the headline.
+3. **Portrait `font-size: 5px` under `max-height:900px` is applied regardless of width.** It shrinks the portrait but the left column still stretches to match, so it doesn't recover the gap.
 
-1. **Tailwind's `2xl` breakpoint is exactly 1536px.** Every `lg:max-2xl:` override we tried explicitly *excludes* 1536, so on your real browser the rule silently doesn't apply. DevTools simulator at 1440 or 1512 sat inside `lg:max-2xl:` and looked fine — that's the "works in simulator, not in reality" gap.
-2. **Hero sizing only reacts to width, never height.** `clamp(3.5rem, 11vw, 10.5rem)` at 1536px width hits its 10.5rem cap (~168px). The hero stack (label + headline + subhead + portrait column) then needs well over 864px of vertical space, so it drops below the fold. Big monitors (≥1080 CSS px tall) never hit the problem.
+## Changes
 
-The previous fix attempts all played with `sm/md/lg/2xl` breakpoints, which is why results were binary ("too big" vs "too small") and edge-case fragile.
+### 1. `src/routes/index.tsx` — Hero
+- Replace headline sizing with a width-first clamp that only invokes `svh` as a hard ceiling, not the driver:  
+  `text-[clamp(4rem,9.5vw,10.5rem)] [@media(max-height:900px)]:text-[clamp(3.75rem,8.4vw,8.4rem)]`  
+  Result at 1536×864 ≈ 129px (matches MacBook); at 1440×900 ≈ 137px (unchanged feel); at 1920×1080 ≈ 182px capped by 10.5rem = 168px (unchanged).
+- Remove `flex justify-between` from the left column; use top-aligned stack with explicit gaps so the label sits directly above the headline:  
+  `flex flex-col gap-8 [@media(max-height:900px)]:gap-6`, drop `justify-between` and the per-child `mb-*` / `mt-*` overrides that existed to compensate.
+- Add `self-start` to the sub paragraph so it doesn't get pushed by parent stretch.
 
-## Fix: height-aware sizing, one rule for all viewports
+### 2. `src/routes/index.tsx` — portrait column
+- Constrain portrait height on short viewports so it matches the left column instead of forcing it taller:  
+  wrap the portrait border in `max-h-[70svh] [@media(max-height:900px)]:max-h-[62svh]` with `overflow-hidden` (already present) and `flex justify-center`.
+- Keep the annotation + spec dl below it as-is.
 
-Replace width-only `clamp()`s in the hero with expressions that also collapse when the viewport is short. No new breakpoints, no `max-2xl` edge cases, works identically in simulator and real browser.
+### 3. `src/styles.css` — portrait font-size ladder
+- Split the short-viewport rule so wide-but-short screens don't get punished the same as narrow-and-short:  
+  `@media (max-height: 900px) and (min-width: 1400px) { .ascii-portrait { font-size: 6px; } }`  
+  keep `font-size: 5px` for `max-height:900px` and narrower.
+- Leaves `@media (min-width:1280px) { font-size: 7px }` untouched for tall screens.
 
-**Scope: `Hero()` in `src/routes/index.tsx` only.** Everything else stays.
+## Verification
+- Playwright screenshots at three viewports:
+  - 1920×1080 (should match the "large screen" upload)
+  - 1440×900 (should match the "MacBook Pro" upload)
+  - 1536×864 (target — should now visually match MacBook composition: tight label/headline gap, headline ≈130px, portrait bottom aligned to sub paragraph baseline area)
+- Confirm no regression at 1280×720 (short but narrow) and mobile (<`md`).
 
-### Changes
-
-1. **Headline** (`src/routes/index.tsx`, current: `text-[clamp(3.5rem,11vw,10.5rem)]`)
-   → `text-[min(11vw,17svh,10.5rem)]`
-   - On tall screens (≥1000 CSS px height) the 11vw / 10.5rem cap still governs — your big-screen look is preserved.
-   - On your 864px-tall laptop, 17svh ≈ 147px wins, pulling the headline down ~12% so the whole hero fits.
-   - `svh` (small viewport height) is stable across mobile browser chrome too.
-
-2. **Sub-headline** (`text-lg md:text-xl`, `mt-10`)
-   → keep font size, tighten top gap on short viewports: change `mt-10` to `mt-6 md:mt-10` and add `[@media(max-height:900px)]:mt-6` to the headline+sub cluster. Small, targeted; no cascade risk.
-
-3. **Hero vertical padding** (`pt-16 pb-20 md:pt-24 md:pb-28`)
-   → add height-conditional trim: `[@media(max-height:900px)]:md:pt-14 [@media(max-height:900px)]:md:pb-16`.
-   - Preserves current padding on ≥900px-tall viewports (your big screen, and DevTools defaults).
-   - Trims ~80px total on your laptop, which is exactly the deficit.
-
-4. **Portrait column** — no cap change. The prior "cap cut the image" issue came from clamping the image itself. Instead, let the right column shrink naturally by adding `min-h-0` to the portrait wrapper so it participates in the flex height budget rather than forcing overflow.
-
-5. **Annotation spacing** — the "too much space between `//` annotation and title" was a side-effect of `md:mt-0` on the right column combined with the label sitting above the headline. Not touching it in this pass; the height-aware rules above shorten the whole stack, which naturally tightens the perceived gap. If it still reads loose after the fix, we tune `mb-10` on the section-label separately.
-
-### Why this resolves the contradiction
-
-- No `2xl` boundary involved — the rule keys off *pixel height*, which is where your device is actually different.
-- `min()` and `[@media(max-height:...)]` are supported everywhere modern Chrome/Edge run, including your ZBook.
-- DevTools simulator will now behave the same as your real browser because it also has a real height when you set device dimensions.
-
-### Verification
-
-After the edit, I'll:
-- Screenshot the hero at **1536×864** (your device) via headless Chromium — expect the portrait column bottom + subhead visible without scroll.
-- Screenshot at **1920×1200** and **2560×1440** to confirm the big-screen composition is unchanged.
-- Screenshot at **768×1024** and **375×812** to confirm mobile is untouched.
-
-No content, IA, or motif changes. No breakpoint refactor elsewhere. `PORTFOLIO.md` doesn't need an update — this is a rendering fix, not a spec change.
+## Out of scope
+- Any content, IA, or PORTFOLIO.md changes.
+- Any change to Position/Evidence/etc. sections.
