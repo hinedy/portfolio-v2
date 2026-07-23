@@ -32,25 +32,38 @@ function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="scroll-mt-12">
-      <div className="mx-auto max-w-[1440px] min-[1600px]:max-w-none px-6 md:px-10 min-[1600px]:px-16 scroll-mt-12 grid grid-cols-1 gap-y-12 min-[1600px]:grid-cols-[minmax(0,1fr)_auto] min-[1600px]:gap-x-12 pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
-        <div className="min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 lg:items-start pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
+        <div className="@container min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
           <div className="section-label">00 / Hero — spec sheet v2</div>
-          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,8.5vw,10.5rem)]">
+          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,11cqi,9rem)]">
             Software gets complicated long before it gets big.
           </h1>
           <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
         </div>
 
-        <div className="flex flex-col w-full min-[1600px]:w-auto min-[1600px]:max-w-[720px]">
-          <div className="w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
+        <div className="flex flex-col w-full lg:w-[clamp(380px,32vw,560px)]">
+          <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
+            {/* Mobile-only overlay: annotation sits directly on the portrait's
+                lower-left negative space (below shoulders) with a paper chip
+                for legibility. Below-image annotation is hidden on mobile. */}
+            <div
+              className={`lg:hidden absolute left-3 bottom-3 pointer-events-none ${portraitDone ? "animate-fade-in" : "opacity-0"}`}
+              aria-live="polite"
+            >
+              <div className="bg-paper px-2 py-1">
+                <Annotation>{hero.portraitAnnotation}</Annotation>
+              </div>
+            </div>
           </div>
-          <div className="mt-3 self-start min-h-[1.2em]" aria-live="polite">
+          <div className="hidden lg:block mt-3 self-start min-h-[1.2em]" aria-live="polite">
             <div className={portraitDone ? "animate-fade-in" : "opacity-0"}>
               <Annotation>{hero.portraitAnnotation}</Annotation>
             </div>
           </div>
-          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+          {/* NOTE: metadata dl not documented in PORTFOLIO.md §11 — flagged for
+              content owner. Hidden on mobile to reclaim vertical space. */}
+          <dl className="hidden lg:grid mt-6 grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
             <dt>character set</dt>
             <dd className="text-ink">. - + #</dd>
             <dt>grid</dt>

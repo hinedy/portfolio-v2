@@ -147,10 +147,13 @@
   text-transform: uppercase;
 }
 
-/* ASCII portrait — locked mono, tight leading, no wrap */
+/* ASCII portrait — locked mono, tight leading, no wrap.
+   Font-size scales off the portrait frame's own inline size so the 175-char
+   render always fits the container without cropping. Cap prevents runaway
+   growth at very wide desktop widths. */
 @utility ascii-portrait {
   font-family: var(--font-mono);
-  font-size: 6px;
+  font-size: min(7px, calc(100cqi / 105));
   line-height: 1.1;
   letter-spacing: 0;
   text-align: center;
@@ -158,19 +161,10 @@
   color: var(--color-ink);
   user-select: none;
 }
-@media (min-width: 1440px) {
-  .ascii-portrait {
-    font-size: 7px;
-  }
+.ascii-frame {
+  container-type: inline-size;
 }
-/* Mobile: scale portrait down so the entire hero fits within the height cap
-   without cropping. Line-height stays 1.1 to preserve character-cell aspect. */
-@media (max-width: 640px) {
-  .ascii-portrait {
-    font-size: 3.5px;
-    line-height: 1.1;
-  }
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   .ascii-animating {
