@@ -35,7 +35,7 @@ function Hero() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-12 gap-x-6 pt-16 pb-20 md:pt-24 md:pb-28 [@media(max-height:900px)]:md:pt-14 [@media(max-height:900px)]:md:pb-16">
         <div className="col-span-12 md:col-span-7 flex flex-col justify-between">
           <div className="section-label mb-10 [@media(max-height:900px)]:mb-6">00 / Hero — spec sheet v2</div>
-          <h1 className="font-display text-[min(11vw,17svh,10.5rem)] text-ink">
+          <h1 className="font-display text-[min(11vw,14svh,10.5rem)] leading-[0.95] text-ink">
             Software gets complicated long before it gets big.
           </h1>
           <p className="mt-6 md:mt-10 [@media(max-height:900px)]:md:mt-6 max-w-xl text-lg md:text-xl leading-snug text-ink/85">{hero.sub}</p>
