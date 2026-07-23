@@ -32,16 +32,16 @@ function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="scroll-mt-12">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
-        <div className="@container min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 min-[1600px]:grid-cols-[minmax(0,1fr)_auto] min-[1600px]:gap-x-12 pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
+        <div className="min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
           <div className="section-label">00 / Hero — spec sheet v2</div>
-          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,11cqi,9rem)]">
+          <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,8.5vw,10.5rem)]">
             Software gets complicated long before it gets big.
           </h1>
           <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
         </div>
 
-        <div className="flex flex-col w-full lg:w-auto lg:max-w-[720px]">
+        <div className="flex flex-col w-full min-[1600px]:w-auto min-[1600px]:max-w-[720px]">
           <div className="w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
           </div>
