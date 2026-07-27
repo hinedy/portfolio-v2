@@ -53,7 +53,7 @@ function Hero() {
 
         {/* Portrait as specimen plate: aligned near the headline baseline,
             sized to hold the fold at laptop widths without dead space. */}
-        <div className="flex flex-col w-full lg:w-[clamp(420px,42vw,720px)] lg:mt-14 [@media(max-height:900px)]:lg:mt-6 lg:self-start">
+        <div className="flex flex-col w-full lg:w-[clamp(380px,34vw,560px)] lg:mt-14 [@media(max-height:900px)]:lg:mt-6">
           <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
             {/* Overlay: annotation sits on the portrait's lower-left negative
@@ -62,7 +62,7 @@ function Hero() {
               className={`absolute left-3 bottom-3 pointer-events-none ${portraitDone ? "animate-fade-in" : "opacity-0"}`}
               aria-live="polite"
             >
-              <div className="bg-paper px-2 py-1">
+              <div className="bg-paper px-2 leading-none pb-1">
                 <Annotation>{hero.portraitAnnotation}</Annotation>
               </div>
             </div>
