@@ -153,7 +153,7 @@
    growth at very wide desktop widths. */
 @utility ascii-portrait {
   font-family: var(--font-mono);
-  font-size: min(7px, calc(100cqi / 105), calc(100cqb / (93 * 1.1)));
+  font-size: min(7px, calc(100cqi / 105));
   line-height: 1.1;
   letter-spacing: 0;
   text-align: center;
@@ -162,7 +162,7 @@
   user-select: none;
 }
 .ascii-frame {
-  container-type: size;
+  container-type: inline-size;
 }
 
 
