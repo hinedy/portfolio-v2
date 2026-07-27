@@ -51,7 +51,7 @@ function Hero() {
 
         {/* Portrait as specimen plate: aligned near the headline baseline,
             sized to hold the fold at laptop widths without dead space. */}
-        <div className="flex flex-col w-full lg:w-[clamp(340px,32vw,520px)] lg:mt-16 xl:mt-20 [@media(max-height:900px)]:lg:mt-8 lg:self-start">
+        <div className="flex flex-col w-full lg:w-[clamp(420px,42vw,720px)] lg:mt-20 xl:mt-28 [@media(max-height:900px)]:lg:mt-8 lg:self-start">
           <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
             <div
