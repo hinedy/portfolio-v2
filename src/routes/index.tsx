@@ -32,7 +32,7 @@ function Hero() {
   const [portraitDone, setPortraitDone] = useState(false);
   return (
     <section id="top" className="scroll-mt-12">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 lg:items-center pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 scroll-mt-12 grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12 lg:items-start pt-16 pb-20 lg:pt-24 lg:pb-28 [@media(max-height:900px)]:lg:pt-14 [@media(max-height:900px)]:lg:pb-16">
         <div className="@container min-w-0 flex flex-col gap-10 [@media(max-height:900px)]:gap-6">
           <div className="section-label">00 / Hero — spec sheet v2</div>
           <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,12cqi,10rem)]">
@@ -51,7 +51,7 @@ function Hero() {
 
         {/* Portrait as specimen plate: aligned near the headline baseline,
             sized to hold the fold at laptop widths without dead space. */}
-        <div className="flex flex-col w-full lg:w-[clamp(420px,42vw,720px)] lg:mt-20 xl:mt-28 [@media(max-height:900px)]:lg:mt-8 lg:self-start">
+        <div className="flex flex-col w-full lg:w-[clamp(420px,42vw,720px)] lg:mt-14 [@media(max-height:900px)]:lg:mt-6 lg:self-start">
           <div className="ascii-frame relative w-full overflow-hidden border border-rule bg-paper p-2 max-h-[50svh] lg:max-h-none flex justify-center">
             <AsciiPortrait onDone={() => setPortraitDone(true)} />
             {/* Overlay: annotation sits on the portrait's lower-left negative
