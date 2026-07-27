@@ -1,0 +1,4317 @@
+{
+  "version": "2.14",
+  "children": [
+    {
+      "type": "frame",
+      "id": "Y3IWGU",
+      "x": 0,
+      "y": 0,
+      "name": "OG Card",
+      "clip": true,
+      "width": 1200,
+      "height": 630,
+      "fill": "$bg-paper",
+      "layout": "vertical",
+      "padding": "$og-padding",
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "text",
+          "id": "Pdpzg",
+          "name": "Headline",
+          "fill": "$ink",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Software gets complicated long before it gets big.",
+          "lineHeight": 0.85,
+          "fontFamily": "Big Shoulders",
+          "fontSize": 104,
+          "fontWeight": "900",
+          "letterSpacing": -3
+        },
+        {
+          "type": "frame",
+          "id": "LoMmm",
+          "name": "Bottom Row",
+          "width": "fill_container",
+          "gap": 14,
+          "justifyContent": "end",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "qKqGk",
+              "name": "Identity",
+              "fill": "$ink",
+              "content": "Ahmed Hinedy — Product Frontend Engineer",
+              "fontFamily": "$font-mono",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "POu5H",
+              "name": "Annotation Tick",
+              "fill": "$accent-orange",
+              "width": 3,
+              "height": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "rPvUW",
+      "x": 0,
+      "y": 1282,
+      "name": "Favicon Sizes",
+      "fill": "#f0f0f0",
+      "gap": 20,
+      "padding": 20,
+      "children": [
+        {
+          "type": "frame",
+          "id": "g1mw06",
+          "name": "icon-512",
+          "clip": true,
+          "width": 512,
+          "height": 512,
+          "fill": "#ed5f18",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "FixDQ",
+              "name": "AH",
+              "fill": "#faf5f6",
+              "content": "AH",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 370,
+              "fontWeight": "900",
+              "letterSpacing": -12
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "w5s6Ia",
+          "name": "apple-touch-icon",
+          "clip": true,
+          "width": 180,
+          "height": 180,
+          "fill": "#ed5f18",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "aPcZN",
+              "name": "AH",
+              "fill": "#faf5f6",
+              "content": "AH",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 130,
+              "fontWeight": "900",
+              "letterSpacing": -4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SJZRs",
+          "name": "favicon-48",
+          "clip": true,
+          "width": 48,
+          "height": 48,
+          "fill": "#ed5f18",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "k6tudL",
+              "name": "AH",
+              "fill": "#faf5f6",
+              "content": "AH",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 34,
+              "fontWeight": "900",
+              "letterSpacing": -1
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "AN2ec",
+          "name": "favicon-32",
+          "clip": true,
+          "width": 32,
+          "height": 32,
+          "fill": "#ed5f18",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "T9XPDP",
+              "name": "AH",
+              "fill": "#faf5f6",
+              "content": "AH",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 22,
+              "fontWeight": "900"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "T60Kx",
+          "name": "favicon-16",
+          "clip": true,
+          "width": 16,
+          "height": 16,
+          "fill": "#ed5f18",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "jwPbR",
+              "name": "AH",
+              "fill": "#faf5f6",
+              "content": "AH",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 11,
+              "fontWeight": "900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "D5evxO",
+      "x": 100,
+      "y": 700,
+      "name": "MedXMark",
+      "reusable": true,
+      "clip": true,
+      "width": 240,
+      "height": 240,
+      "layout": "none",
+      "children": [
+        {
+          "type": "path",
+          "id": "hjcya",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 1",
+          "geometry": "M105 120l-60-67",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "nFdZ9",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 2",
+          "geometry": "M105 120l90-52",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "d7dLiu",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 3",
+          "geometry": "M105 120l-37 75",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "yYABS",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 4",
+          "geometry": "M105 120l83 60",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "ellipse",
+          "id": "xHyvV",
+          "x": 79,
+          "y": 94,
+          "name": "Primary",
+          "fill": "#17120d",
+          "width": 52,
+          "height": 52
+        },
+        {
+          "type": "ellipse",
+          "id": "S3Dxt",
+          "x": 32,
+          "y": 40,
+          "name": "Satellite 1",
+          "fill": "#17120d",
+          "width": 26,
+          "height": 26
+        },
+        {
+          "type": "ellipse",
+          "id": "eNtSP",
+          "x": 184,
+          "y": 57,
+          "name": "Satellite 2",
+          "fill": "#17120d",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "type": "ellipse",
+          "id": "qqI9R",
+          "x": 59,
+          "y": 186,
+          "name": "Satellite 3",
+          "fill": "#17120d",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "type": "ellipse",
+          "id": "QuDs7",
+          "x": 175,
+          "y": 167,
+          "name": "Satellite 4",
+          "fill": "#17120d",
+          "width": 26,
+          "height": 26
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "sTOPs",
+      "x": 380,
+      "y": 700,
+      "name": "RevixirMark",
+      "reusable": true,
+      "clip": true,
+      "width": 240,
+      "height": 240,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "fCpoC",
+          "x": 30,
+          "y": 45,
+          "name": "Outer Frame",
+          "fill": "#00000000",
+          "width": 180,
+          "height": 150,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "kskSo",
+          "x": 0,
+          "y": 0,
+          "name": "Vertical Partition",
+          "geometry": "M127 45l0 150",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "dsR6F",
+          "x": 0,
+          "y": 0,
+          "name": "Upper-left Horiz",
+          "geometry": "M30 112l97 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "wNk3s",
+          "x": 0,
+          "y": 0,
+          "name": "Right Horiz",
+          "geometry": "M127 142l83 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "vNzd3",
+      "x": 660,
+      "y": 700,
+      "name": "SupplyTechMark",
+      "reusable": true,
+      "clip": true,
+      "width": 240,
+      "height": 240,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "UOU2i",
+          "x": 15,
+          "y": 98,
+          "name": "Node 1",
+          "fill": "#00000000",
+          "width": 38,
+          "height": 44,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "rectangle",
+          "id": "Kl5yI",
+          "x": 75,
+          "y": 98,
+          "name": "Node 2",
+          "fill": "#00000000",
+          "width": 38,
+          "height": 44,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "rectangle",
+          "id": "EdSua",
+          "x": 139,
+          "y": 112,
+          "name": "Node 3 (bottleneck)",
+          "fill": "#00000000",
+          "width": 22,
+          "height": 16,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "rectangle",
+          "id": "tfM0C",
+          "x": 188,
+          "y": 98,
+          "name": "Node 4",
+          "fill": "#00000000",
+          "width": 38,
+          "height": 44,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "nxJEO",
+          "x": 0,
+          "y": 0,
+          "name": "Line 1",
+          "geometry": "M53 120l22 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "IfYIe",
+          "x": 0,
+          "y": 0,
+          "name": "Line 2",
+          "geometry": "M113 120l26 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "OsjKw",
+          "x": 0,
+          "y": 0,
+          "name": "Line 3",
+          "geometry": "M161 120l27 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "L5ySN2",
+          "x": 0,
+          "y": 0,
+          "name": "Arrow 1",
+          "geometry": "M68 112l7 8-7 8",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "xhOh1",
+          "x": 0,
+          "y": 0,
+          "name": "Arrow 2",
+          "geometry": "M131 112l8 8-8 8",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "id": "Y9rANN",
+          "x": 0,
+          "y": 0,
+          "name": "Arrow 3",
+          "geometry": "M180 112l8 8-8 8",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 4
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "v5LfMX",
+      "x": 1485,
+      "y": -5329,
+      "name": "Carousel Slide 1",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "St1QB",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "01",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "MOsgy",
+          "x": 72,
+          "y": 100,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "K5eSar",
+          "x": 72,
+          "y": 280,
+          "name": "Large Title",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Designing constraints\nbefore interfaces.",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 96,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "NalqH",
+          "x": 72,
+          "y": 558,
+          "name": "Flow Subtitle",
+          "opacity": 0.6,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 300,
+          "content": "Exploration\n\n↓\n\nSpecification\n\n↓\n\nImplementation\n\n↓\n\nProduction",
+          "fontFamily": "Space Mono",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "dlslf",
+          "x": 72,
+          "y": 1150,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 500,
+          "content": "The portfolio became an artifact.\nThe interesting part is the system that produced it.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Y9OBN",
+      "x": 2625,
+      "y": -5329,
+      "name": "Carousel Slide 2",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "eiq5c",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "02",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "Hj7PL",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "WQM1o",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "Exploration",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "ebMDk",
+          "x": 72,
+          "y": 1200,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 600,
+          "content": "The excalidraw board held every question that didn't yet have an answer.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "rx45N",
+          "x": 72,
+          "y": 280,
+          "name": "Focus Typography",
+          "clip": true,
+          "width": 444,
+          "height": 250,
+          "stroke": "#17120d40",
+          "strokeWidth": 1.5,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "W8R8qE",
+              "x": 8,
+              "y": 8,
+              "name": "Crop Inner",
+              "clip": true,
+              "width": 428,
+              "height": 234,
+              "stroke": "#ed5f18",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "HtCzQ",
+                  "x": -1486,
+                  "y": -142,
+                  "name": "Board Crop",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Untitled-2024-04-22-2256.png",
+                    "mode": "stretch"
+                  },
+                  "width": 2100,
+                  "height": 919
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "muAWR",
+          "x": 72,
+          "y": 558,
+          "name": "Focus Label Typography",
+          "fill": "#ed5f18",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "TYPOGRAPHY",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "G6yquw",
+          "x": 72,
+          "y": 600,
+          "name": "Focus Desc Typography",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "Big Shoulders for display, Space Mono for annotation, Inter for body — three fonts with one rule each.",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "b1S103",
+          "x": 564,
+          "y": 280,
+          "name": "Focus Annotations",
+          "clip": true,
+          "width": 444,
+          "height": 250,
+          "stroke": "#17120d40",
+          "strokeWidth": 1.5,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "HG2ij",
+              "x": 8,
+              "y": 8,
+              "name": "Crop Inner",
+              "clip": true,
+              "width": 428,
+              "height": 234,
+              "stroke": "#ed5f18",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "lfSIK",
+                  "x": -112,
+                  "y": -433,
+                  "name": "Board Crop",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Untitled-2024-04-22-2256.png",
+                    "mode": "stretch"
+                  },
+                  "width": 3345,
+                  "height": 1454
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "WSZdv",
+          "x": 564,
+          "y": 558,
+          "name": "Focus Label Annotations",
+          "fill": "#ed5f18",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "ANNOTATIONS",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "k2Sgq",
+          "x": 564,
+          "y": 600,
+          "name": "Focus Desc Annotations",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "The // comment motif turned every decision artifact into first-class content — inspired by ASCII sketching.",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "PPXqq",
+          "x": 72,
+          "y": 715,
+          "name": "Focus Iteration",
+          "clip": true,
+          "width": 444,
+          "height": 250,
+          "stroke": "#17120d40",
+          "strokeWidth": 1.5,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Z8hmSv",
+              "x": 8,
+              "y": 8,
+              "name": "Crop Inner",
+              "clip": true,
+              "width": 428,
+              "height": 234,
+              "stroke": "#ed5f18",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "J6XYW",
+                  "x": -3422,
+                  "y": -862,
+                  "name": "Board Crop",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Untitled-2024-04-22-2256.png",
+                    "mode": "stretch"
+                  },
+                  "width": 4547,
+                  "height": 1973
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "bAr2s",
+          "x": 72,
+          "y": 993,
+          "name": "Focus Label Iteration",
+          "fill": "#ed5f18",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "ITERATION",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "I0VTaW",
+          "x": 72,
+          "y": 1035,
+          "name": "Focus Desc Iteration",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "The navigation was sketched five times before it settled. Good structure comes from repetition, not revelation.",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "E6iuK4",
+          "x": 564,
+          "y": 715,
+          "name": "Focus Visual Identity",
+          "clip": true,
+          "width": 444,
+          "height": 250,
+          "stroke": "#17120d40",
+          "strokeWidth": 1.5,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "W4zG3",
+              "x": 8,
+              "y": 8,
+              "name": "Crop Inner",
+              "clip": true,
+              "width": 428,
+              "height": 234,
+              "stroke": "#ed5f18",
+              "strokeWidth": 1,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "oZfwK",
+                  "x": -910,
+                  "y": -590,
+                  "name": "Board Crop",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Untitled-2024-04-22-2256.png",
+                    "mode": "stretch"
+                  },
+                  "width": 1837,
+                  "height": 963
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "CXjNA",
+          "x": 564,
+          "y": 993,
+          "name": "Focus Label Visual Identity",
+          "fill": "#ed5f18",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "VISUAL IDENTITY",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "woqe0",
+          "x": 564,
+          "y": 1035,
+          "name": "Focus Desc Visual Identity",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 444,
+          "content": "Halftone marks, consistent photo framing, and redacted overlay text — every visual element follows a system.",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Q3Iz8T",
+      "x": 3765,
+      "y": -5329,
+      "name": "Carousel Slide 3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "t2KXcL",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "03",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "kGHqU",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "slr2w",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "Specification",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "m9hM3L",
+          "x": 72,
+          "y": 280,
+          "name": "Rule Concept",
+          "clip": true,
+          "width": 420,
+          "height": 380,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "dhO5x",
+              "x": 24,
+              "y": 24,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Concept",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "U97HF3",
+              "x": 24,
+              "y": 62,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "Engineering\ndocument.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "JOShN",
+              "x": 24,
+              "y": 260,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "content": "Not portfolio template.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "WmATi",
+              "x": 24,
+              "y": 340,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YgXAi",
+          "x": 552,
+          "y": 280,
+          "name": "Rule Illustration",
+          "clip": true,
+          "width": 420,
+          "height": 380,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "no6kx",
+              "x": 24,
+              "y": 24,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Illustration",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "XANdd",
+              "x": 24,
+              "y": 62,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "Abstract\nsystem\ndiagrams.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "BlU62",
+              "x": 24,
+              "y": 335,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "content": "Not logos.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "JUbZY",
+              "x": 24,
+              "y": 378,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xUe02",
+          "x": 72,
+          "y": 720,
+          "name": "Rule Motion",
+          "clip": true,
+          "width": 420,
+          "height": 380,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "h4IymH",
+              "x": 24,
+              "y": 24,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Motion",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "vkVTN",
+              "x": 24,
+              "y": 62,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "One bespoke\ninteraction.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "W8nRv",
+              "x": 24,
+              "y": 260,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "Everything else earns its place.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "U1vpMj",
+              "x": 24,
+              "y": 340,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fhr9E",
+          "x": 552,
+          "y": 720,
+          "name": "Rule Copy",
+          "clip": true,
+          "width": 420,
+          "height": 380,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "CdjIz",
+              "x": 24,
+              "y": 24,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Copy",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "i6v64s",
+              "x": 24,
+              "y": 62,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "State\ndecisions.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "JTtnj",
+              "x": 24,
+              "y": 260,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "content": "Not adjectives.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "ark9Z",
+              "x": 24,
+              "y": 340,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "h61gb",
+      "x": 4905,
+      "y": -5329,
+      "name": "Carousel Slide 4",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "t3hAP",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "04",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "CGQLc",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "QKk1m",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "System",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "wiPd7",
+          "x": 72,
+          "y": 300,
+          "name": "Mark Column",
+          "width": 280,
+          "height": 500,
+          "layout": "none",
+          "children": [
+            {
+              "id": "WZ01K",
+              "type": "ref",
+              "ref": "DGNXD",
+              "name": "MedXMarkAlt Instance",
+              "x": 20,
+              "y": 0,
+              "width": 240,
+              "height": 240
+            },
+            {
+              "type": "text",
+              "id": "dAfQ3",
+              "x": 20,
+              "y": 280,
+              "name": "Concept Label",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 240,
+              "content": "MedX\nConnected Dependencies",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FVu6y",
+          "x": 382,
+          "y": 300,
+          "name": "Mark Column",
+          "width": 280,
+          "height": 500,
+          "layout": "none",
+          "children": [
+            {
+              "id": "LOQHj",
+              "type": "ref",
+              "ref": "dxPWH",
+              "name": "RevixirMarkAlt Instance",
+              "x": 20,
+              "y": 0,
+              "width": 240,
+              "height": 240
+            },
+            {
+              "type": "text",
+              "id": "tHNXq",
+              "x": 20,
+              "y": 280,
+              "name": "Concept Label",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 240,
+              "content": "Revixir\nAccess Boundaries",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Wbw2K",
+          "x": 72,
+          "y": 1180,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 700,
+          "content": "Project thumbnails became engineering abstractions rather than screenshots or logos.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "AdlxN",
+          "x": 692,
+          "y": 300,
+          "name": "Mark Column SupplyTech",
+          "width": 280,
+          "height": 500,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "AEUv7",
+              "x": 20,
+              "y": 0,
+              "name": "SupplyTechMark SVG",
+              "width": 240,
+              "height": 240,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "Q0pET",
+                  "x": 11.6,
+                  "y": 34.1,
+                  "geometry": "M0.9 1.8c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-42c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40295 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-33c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-33c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-27c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-24c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-21c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-15c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-12c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m9-6c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9",
+                  "viewBox": [
+                    0,
+                    0,
+                    55.8,
+                    43.8
+                  ],
+                  "fill": "#000",
+                  "width": 209.3,
+                  "height": 164.3
+                },
+                {
+                  "type": "path",
+                  "id": "qtf6a",
+                  "x": 157.5,
+                  "y": 112.5,
+                  "geometry": "M2.4 4.8c1.32548 0 2.4-1.07452 2.4-2.4 0-1.32549-1.07452-2.4-2.4-2.4-1.32549 0-2.4 1.07452-2.4 2.4 0 1.32548 1.07452 2.4 2.4 2.4",
+                  "viewBox": [
+                    0,
+                    0,
+                    4.8,
+                    4.8
+                  ],
+                  "fill": "#F97316",
+                  "width": 18,
+                  "height": 18
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "jX7mM",
+              "x": 20,
+              "y": 280,
+              "name": "SupplyTech Label",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 240,
+              "content": "SupplyTech\nOperational Flow",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "S0bf7",
+      "x": 6045,
+      "y": -5329,
+      "name": "Carousel Slide 5",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "FSk0h",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "05",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "L2LMIK",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "a5DzM",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "Implementation",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "lP2He",
+          "x": 40,
+          "y": 260,
+          "name": "MedX Case Study",
+          "clip": true,
+          "width": 1000,
+          "height": 836,
+          "fill": "#fff",
+          "stroke": "#17120d",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "WTt4W",
+              "x": 0,
+              "y": 0,
+              "name": "Aside",
+              "width": 1000,
+              "height": 230,
+              "layout": "none",
+              "children": [
+                {
+                  "id": "gKPAY",
+                  "type": "ref",
+                  "ref": "DGNXD",
+                  "name": "MedXMarkAlt Instance",
+                  "x": 25,
+                  "y": -28,
+                  "width": 189,
+                  "height": 184,
+                  "opacity": 0.7,
+                  "flipX": false,
+                  "flipY": false,
+                  "layout": "none",
+                  "descendants": {
+                    "FVeeD": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "pzaTx": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "L3v9s6": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "m0OUQ": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "ER8zK": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 14,
+                      "height": 14,
+                      "x": 51,
+                      "y": 135
+                    },
+                    "v7GLlC": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 7,
+                      "height": 7,
+                      "x": 38.5,
+                      "y": 120.5
+                    },
+                    "EEyxB": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 6,
+                      "height": 6,
+                      "x": 79,
+                      "y": 125
+                    },
+                    "gL4HY": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 5,
+                      "height": 5,
+                      "x": 45.5,
+                      "y": 159.5
+                    },
+                    "g71xX": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 7,
+                      "height": 7,
+                      "x": 76.5,
+                      "y": 154.5
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "y8N6U",
+                  "x": 230,
+                  "y": 40,
+                  "name": "Case Label",
+                  "opacity": 0.45,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 700,
+                  "content": "Case 01 / Production",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Ifkar",
+                  "x": 230,
+                  "y": 85,
+                  "name": "Owned Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "content": "owned",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "FRxzW",
+                  "x": 330,
+                  "y": 85,
+                  "name": "Owned Value",
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 620,
+                  "content": "Frontend Engineer",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "SzUF8",
+                  "x": 230,
+                  "y": 130,
+                  "name": "Surface Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 270,
+                  "content": "surface",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "LibaP",
+                  "x": 330,
+                  "y": 131,
+                  "name": "Surface Values",
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 420,
+                  "content": "Zustand, React Query, React Hook Form, SignalR, MSAL, Stripe",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "m1EGa",
+              "x": 0,
+              "y": 230,
+              "name": "Content Area",
+              "width": 1000,
+              "height": 570,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KSIxo",
+                  "x": 30,
+                  "y": 30,
+                  "name": "Thesis",
+                  "fill": "#ed5f18",
+                  "content": "thesis",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "U9luEC",
+                  "x": 30,
+                  "y": 60,
+                  "name": "Thesis Value",
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "Building healthcare operations software means correctness matters more than elegance.",
+                  "fontFamily": "Big Shoulders",
+                  "fontSize": 36,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "rectangle",
+                  "id": "mbQV9",
+                  "x": 30,
+                  "y": 160,
+                  "name": "HR",
+                  "opacity": 0.15,
+                  "fill": "#17120d",
+                  "width": 940,
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "ocab9",
+                  "x": 30,
+                  "y": 185,
+                  "name": "Context Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "content": "context",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "tBFyy",
+                  "x": 30,
+                  "y": 215,
+                  "name": "Context Value",
+                  "opacity": 0.8,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "MedX is a multi-role healthcare operations platform coordinating medical service orders between providers, patients, and administrators: handling onboarding, scheduling, escrow-style payments, claims/remits, notifications, and real-time operational workflows in a highly dynamic environment.",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "SNKdM",
+                  "x": 30,
+                  "y": 360,
+                  "name": "Changed Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "content": "what changed",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "AcyLy",
+                  "x": 30,
+                  "y": 390,
+                  "name": "Changed Value",
+                  "opacity": 0.8,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "Route-based code splitting and lazy loading contributed to a ~49.5% reduction in main bundle size, improved First Contentful Paint, and lower Total Blocking Time. Coordinated 5 developers across several dependent workstreams branching off the service wizard architecture.",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "wK8tw",
+                  "x": 30,
+                  "y": 535,
+                  "name": "Tradeoff Annotation",
+                  "opacity": 0.4,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "// tradeoff: one centralized network layer over per-feature handling",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "KJSsb",
+          "x": 72,
+          "y": 1200,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "content": "Production. The system survives implementation.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "s89nnl",
+      "x": 60,
+      "y": 960,
+      "name": "Engineering Abstractions v2",
+      "clip": true,
+      "width": 880,
+      "height": 320,
+      "fill": "$bg-paper",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Mev9p",
+          "x": 40,
+          "y": 40,
+          "name": "MedXMark v2",
+          "reusable": true,
+          "clip": true,
+          "width": 240,
+          "height": 240,
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "K6YSS1",
+              "x": 0,
+              "y": 0,
+              "name": "H0",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "XpyrC",
+              "x": 0,
+              "y": 11.9,
+              "name": "H1",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "Mu3U8",
+              "x": 0,
+              "y": 23.8,
+              "name": "H2",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "h25QR",
+              "x": 0,
+              "y": 35.7,
+              "name": "H3",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "GPtTW",
+              "x": 0,
+              "y": 47.6,
+              "name": "H4",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "S9ygo",
+              "x": 0,
+              "y": 59.5,
+              "name": "H5",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "cCbbl",
+              "x": 0,
+              "y": 71.4,
+              "name": "H6",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "dNzwr",
+              "x": 0,
+              "y": 83.3,
+              "name": "H7",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "oelG6",
+              "x": 0,
+              "y": 95.2,
+              "name": "H8",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "Pzm1d",
+              "x": 0,
+              "y": 107.10000000000001,
+              "name": "H9",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "B7rtWB",
+              "x": 0,
+              "y": 119,
+              "name": "H10",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "GkufM",
+              "x": 0,
+              "y": 130.9,
+              "name": "H11",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "mYcRQ",
+              "x": 0,
+              "y": 142.8,
+              "name": "H12",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "twVjW",
+              "x": 0,
+              "y": 154.70000000000002,
+              "name": "H13",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "fsfTa",
+              "x": 0,
+              "y": 166.6,
+              "name": "H14",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "A3Zjs",
+              "x": 0,
+              "y": 178.5,
+              "name": "H15",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "O39Hm",
+              "x": 0,
+              "y": 190.4,
+              "name": "H16",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "N8VEm",
+              "x": 0,
+              "y": 202.3,
+              "name": "H17",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "JaT48",
+              "x": 0,
+              "y": 214.20000000000002,
+              "name": "H18",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "xnUSP",
+              "x": 0,
+              "y": 226.1,
+              "name": "H19",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "lOIUq",
+              "x": 0,
+              "y": 238,
+              "name": "H20",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "Uxj5a",
+              "x": 114,
+              "y": 60,
+              "name": "Signal",
+              "fill": "#ed5f18",
+              "width": 12,
+              "height": 120
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "f1XouP",
+          "x": 320,
+          "y": 40,
+          "name": "RevixirMark v2",
+          "reusable": true,
+          "clip": true,
+          "width": 240,
+          "height": 240,
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "OIAlS",
+              "x": 0,
+              "y": 0,
+              "name": "H0",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "m29Er",
+              "x": 0,
+              "y": 11.9,
+              "name": "H1",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "xphjL",
+              "x": 0,
+              "y": 23.8,
+              "name": "H2",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "atGQc",
+              "x": 0,
+              "y": 35.7,
+              "name": "H3",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "EDrpD",
+              "x": 0,
+              "y": 47.6,
+              "name": "H4",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "oLWRG",
+              "x": 0,
+              "y": 59.5,
+              "name": "H5",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "pDfZ8",
+              "x": 0,
+              "y": 71.4,
+              "name": "H6",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "i6mxgD",
+              "x": 0,
+              "y": 83.3,
+              "name": "H7",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "e28nkd",
+              "x": 0,
+              "y": 95.2,
+              "name": "H8",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "ytpwP",
+              "x": 0,
+              "y": 107.10000000000001,
+              "name": "H9",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "Nq2HD",
+              "x": 0,
+              "y": 119,
+              "name": "H10",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "jb79M",
+              "x": 0,
+              "y": 130.9,
+              "name": "H11",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "AgsO9",
+              "x": 0,
+              "y": 142.8,
+              "name": "H12",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "JvOie",
+              "x": 0,
+              "y": 154.70000000000002,
+              "name": "H13",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "nUP6l",
+              "x": 0,
+              "y": 166.6,
+              "name": "H14",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "PvJ5a",
+              "x": 0,
+              "y": 178.5,
+              "name": "H15",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "F6Xhg",
+              "x": 0,
+              "y": 190.4,
+              "name": "H16",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "U4yNXT",
+              "x": 0,
+              "y": 202.3,
+              "name": "H17",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "WIMlr",
+              "x": 0,
+              "y": 214.20000000000002,
+              "name": "H18",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "A7fJbQ",
+              "x": 0,
+              "y": 226.1,
+              "name": "H19",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "IrSo1",
+              "x": 0,
+              "y": 238,
+              "name": "H20",
+              "fill": "#17120d",
+              "width": 240,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "mJRDH",
+              "x": 60,
+              "y": 0,
+              "name": "P60",
+              "fill": "#17120d",
+              "width": 2,
+              "height": 240
+            },
+            {
+              "type": "rectangle",
+              "id": "qiW50",
+              "x": 120,
+              "y": 0,
+              "name": "P120",
+              "fill": "#17120d",
+              "width": 2,
+              "height": 240
+            },
+            {
+              "type": "rectangle",
+              "id": "O5iI4q",
+              "x": 180,
+              "y": 0,
+              "name": "P180",
+              "fill": "#17120d",
+              "width": 2,
+              "height": 240
+            },
+            {
+              "type": "rectangle",
+              "id": "aHxAj",
+              "x": 90,
+              "y": 113,
+              "name": "Signal",
+              "fill": "#ed5f18",
+              "width": 60,
+              "height": 4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "EnvQI",
+          "x": 600,
+          "y": 40,
+          "name": "SupplyTechMark v2",
+          "reusable": true,
+          "clip": true,
+          "width": 240,
+          "height": 240,
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "Q8hHq",
+              "x": 5,
+              "y": 0,
+              "name": "S0",
+              "fill": "#17120d",
+              "width": 230,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "mLv77",
+              "x": 23.049999999999997,
+              "y": 11.9,
+              "name": "S1",
+              "fill": "#17120d",
+              "width": 193.9,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "nuBUO",
+              "x": 39.19999999999999,
+              "y": 23.8,
+              "name": "S2",
+              "fill": "#17120d",
+              "width": 161.60000000000002,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "fyU9L",
+              "x": 53.45,
+              "y": 35.7,
+              "name": "S3",
+              "fill": "#17120d",
+              "width": 133.1,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "IiWtB",
+              "x": 65.80000000000001,
+              "y": 47.6,
+              "name": "S4",
+              "fill": "#17120d",
+              "width": 108.39999999999999,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "zwdKL",
+              "x": 76.25,
+              "y": 59.5,
+              "name": "S5",
+              "fill": "#17120d",
+              "width": 87.5,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "JTOY0",
+              "x": 84.8,
+              "y": 71.4,
+              "name": "S6",
+              "fill": "#17120d",
+              "width": 70.4,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "jt7MQ",
+              "x": 91.44999999999999,
+              "y": 83.3,
+              "name": "S7",
+              "fill": "#17120d",
+              "width": 57.10000000000002,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "d8SyY8",
+              "x": 96.2,
+              "y": 95.2,
+              "name": "S8",
+              "fill": "#17120d",
+              "width": 47.599999999999994,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "fRSgf",
+              "x": 99.05,
+              "y": 107.10000000000001,
+              "name": "S9",
+              "fill": "#17120d",
+              "width": 41.900000000000006,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "kYxG9",
+              "x": 100,
+              "y": 119,
+              "name": "Signal",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "PgRCP",
+              "x": 99.05,
+              "y": 130.9,
+              "name": "S11",
+              "fill": "#17120d",
+              "width": 41.900000000000006,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "FMmPu",
+              "x": 96.2,
+              "y": 142.8,
+              "name": "S12",
+              "fill": "#17120d",
+              "width": 47.599999999999994,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "mYVNi",
+              "x": 91.44999999999999,
+              "y": 154.70000000000002,
+              "name": "S13",
+              "fill": "#17120d",
+              "width": 57.10000000000002,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "V5dq2",
+              "x": 84.80000000000001,
+              "y": 166.6,
+              "name": "S14",
+              "fill": "#17120d",
+              "width": 70.39999999999998,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "vuMal",
+              "x": 76.25,
+              "y": 178.5,
+              "name": "S15",
+              "fill": "#17120d",
+              "width": 87.5,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "DSqgf",
+              "x": 65.79999999999998,
+              "y": 190.4,
+              "name": "S16",
+              "fill": "#17120d",
+              "width": 108.40000000000002,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "qlg6R",
+              "x": 53.45,
+              "y": 202.3,
+              "name": "S17",
+              "fill": "#17120d",
+              "width": 133.1,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "fLqgD",
+              "x": 39.19999999999999,
+              "y": 214.20000000000002,
+              "name": "S18",
+              "fill": "#17120d",
+              "width": 161.60000000000002,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "n7QkG",
+              "x": 23.05000000000001,
+              "y": 226.1,
+              "name": "S19",
+              "fill": "#17120d",
+              "width": 193.89999999999998,
+              "height": 2
+            },
+            {
+              "type": "rectangle",
+              "id": "zJhPl",
+              "x": 5,
+              "y": 238,
+              "name": "S20",
+              "fill": "#17120d",
+              "width": 230,
+              "height": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "DGNXD",
+      "x": 0,
+      "y": 1874,
+      "name": "MedXMarkAlt",
+      "reusable": true,
+      "clip": true,
+      "width": 240,
+      "height": 240,
+      "layout": "none",
+      "children": [
+        {
+          "type": "path",
+          "id": "FVeeD",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 1",
+          "geometry": "M105 120l-60-67.5",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "path",
+          "id": "pzaTx",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 2",
+          "geometry": "M105 120l90-52.5",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "path",
+          "id": "L3v9s6",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 3",
+          "geometry": "M105 120l-37.5 75",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "path",
+          "id": "m0OUQ",
+          "x": 0,
+          "y": 0,
+          "name": "Connector 4",
+          "geometry": "M105 120l82.5 60",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "ellipse",
+          "id": "ER8zK",
+          "x": 78.75,
+          "y": 93.75,
+          "name": "Primary Node",
+          "fill": "#17120d",
+          "width": 52,
+          "height": 52
+        },
+        {
+          "type": "ellipse",
+          "id": "v7GLlC",
+          "x": 31.875,
+          "y": 39.375,
+          "name": "Satellite 1",
+          "fill": "#17120d",
+          "width": 26,
+          "height": 26
+        },
+        {
+          "type": "ellipse",
+          "id": "EEyxB",
+          "x": 183.75,
+          "y": 56.25,
+          "name": "Satellite Accent",
+          "fill": "#ed5f18",
+          "width": 22,
+          "height": 22
+        },
+        {
+          "type": "ellipse",
+          "id": "gL4HY",
+          "x": 58.125,
+          "y": 185.625,
+          "name": "Satellite 3",
+          "fill": "#17120d",
+          "width": 19,
+          "height": 19
+        },
+        {
+          "type": "ellipse",
+          "id": "g71xX",
+          "x": 174.375,
+          "y": 166.875,
+          "name": "Satellite 4",
+          "fill": "#17120d",
+          "width": 26,
+          "height": 26
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "dxPWH",
+      "x": 280,
+      "y": 1874,
+      "name": "RevixirMarkAlt",
+      "reusable": true,
+      "clip": true,
+      "width": 240,
+      "height": 240,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "qXhI1",
+          "x": 22.5,
+          "y": 30,
+          "name": "Stroke 1",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "v16l2m",
+          "x": 22.5,
+          "y": 48,
+          "name": "Stroke 2",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "dUbRQ",
+          "x": 22.5,
+          "y": 66,
+          "name": "Stroke 3",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "Um5uc",
+          "x": 22.5,
+          "y": 84,
+          "name": "Stroke 4",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "gJfvc",
+          "x": 22.5,
+          "y": 102,
+          "name": "Stroke 5",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "yOCzB",
+          "x": 22.5,
+          "y": 120,
+          "name": "Stroke 6",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "iIwuF",
+          "x": 22.5,
+          "y": 138,
+          "name": "Stroke 7",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "H1uGE",
+          "x": 22.5,
+          "y": 156,
+          "name": "Stroke 8",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "GEaUm",
+          "x": 22.5,
+          "y": 174,
+          "name": "Stroke 9",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "M9x9C",
+          "x": 22.5,
+          "y": 192,
+          "name": "Stroke 10",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "T0VGp5",
+          "x": 22.5,
+          "y": 210,
+          "name": "Stroke 11",
+          "fill": "#17120d",
+          "width": 195,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "taAXV",
+          "x": 150,
+          "y": 22.5,
+          "name": "Fault Line",
+          "fill": "#ed5f18",
+          "width": 2,
+          "height": 195
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EDMqU",
+      "x": 560,
+      "y": 1874,
+      "name": "SupplyTechMarkAlt",
+      "reusable": true,
+      "clip": true,
+      "width": 240,
+      "height": 240,
+      "layout": "none",
+      "children": [
+        {
+          "type": "path",
+          "id": "xhzSB",
+          "x": 0,
+          "y": 0,
+          "name": "Channel 12",
+          "geometry": "M22.5 45q76.5 22.5 142.5 75l52.5 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "path",
+          "id": "l1XAC4",
+          "x": 0,
+          "y": 0,
+          "name": "Channel 26",
+          "geometry": "M22.5 97.5q76.5 6.75 142.5 22.5l52.5 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "path",
+          "id": "I6h7t",
+          "x": 0,
+          "y": 0,
+          "name": "Channel 38",
+          "geometry": "M22.5 142.5q76.5-6.75 142.5-22.5l52.5 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "path",
+          "id": "h2z0B",
+          "x": 0,
+          "y": 0,
+          "name": "Channel 52",
+          "geometry": "M22.5 195q76.5-22.5 142.5-75l52.5 0",
+          "viewBox": [
+            0,
+            0,
+            240,
+            240
+          ],
+          "fill": "#00000000",
+          "width": 240,
+          "height": 240,
+          "stroke": "#17120d",
+          "strokeWidth": 3
+        },
+        {
+          "type": "ellipse",
+          "id": "hIYnE",
+          "x": 156,
+          "y": 111,
+          "name": "Signal Dot",
+          "fill": "#ed5f18",
+          "width": 18,
+          "height": 18
+        },
+        {
+          "type": "ellipse",
+          "id": "vNkCk",
+          "x": 138,
+          "y": 93,
+          "name": "Clearance Ring",
+          "opacity": 0.2,
+          "fill": "#00000000",
+          "width": 54,
+          "height": 54,
+          "stroke": "#17120d",
+          "strokeWidth": 1
+        }
+      ]
+    },
+    {
+      "type": "rectangle",
+      "id": "r1Dn9c",
+      "x": 2425,
+      "y": -9466,
+      "name": "Board Crop",
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "Untitled-2024-04-22-2256.png",
+        "mode": "stretch"
+      },
+      "width": 2960,
+      "height": 1276
+    },
+    {
+      "type": "frame",
+      "id": "y0oYYO",
+      "x": 0,
+      "y": -7596,
+      "name": "Slide Footer",
+      "reusable": true,
+      "width": 200,
+      "height": 60,
+      "layout": "vertical",
+      "gap": 4,
+      "children": [
+        {
+          "type": "text",
+          "id": "dmvtb",
+          "name": "Name",
+          "opacity": 0.35,
+          "fill": "#17120d",
+          "content": "Ahmed Hinedy",
+          "fontFamily": "$font-mono",
+          "fontSize": 13,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "gwMjk",
+          "name": "Project",
+          "opacity": 0.35,
+          "fill": "#17120d",
+          "content": "Portfolio v2",
+          "fontFamily": "$font-mono",
+          "fontSize": 13,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ACRhX",
+      "x": 1485,
+      "y": -6900,
+      "name": "Carousel Slide 1 v3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "sBzbs",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "01",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "r1vCHw",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "NrX8N",
+          "x": 72,
+          "y": 360,
+          "name": "Large Title",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Designing constraints\nbefore interfaces.",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 108,
+          "fontWeight": "700",
+          "letterSpacing": 2
+        },
+        {
+          "type": "text",
+          "id": "e5wMx",
+          "x": 72,
+          "y": 920,
+          "name": "Flow Subtitle",
+          "opacity": 0.4,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 300,
+          "content": "Exploration\n\n↓\n\nSpecification\n\n↓\n\nImplementation\n\n↓\n\nProduction",
+          "fontFamily": "Space Mono",
+          "fontSize": 18,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Pm0fi",
+          "x": 72,
+          "y": 1180,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 500,
+          "content": "The portfolio became an artifact.\nThe interesting part is the system that produced it.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "bE9BO",
+      "x": 2625,
+      "y": -6900,
+      "name": "Carousel Slide 2 v3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "kcyRI",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "02",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "oXB8M",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "SX5dZ",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "Exploration",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "RHXlp",
+          "x": 72,
+          "y": 1180,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 600,
+          "content": "Questions existed before answers.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "DSfz3",
+          "x": 250,
+          "y": 260,
+          "name": "Board Crop Main",
+          "clip": true,
+          "width": 758,
+          "height": 700,
+          "stroke": "#17120d40",
+          "strokeWidth": 1.5,
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "OHi7M",
+              "x": -500,
+              "y": -400,
+              "name": "Board Image",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "Untitled-2024-04-22-2256.png",
+                "mode": "stretch"
+              },
+              "width": 2000,
+              "height": 1500
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "XlTEJ",
+          "x": 72,
+          "y": 380,
+          "name": "Callout References",
+          "fill": "#ed5f18",
+          "content": "References",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "bold"
+        },
+        {
+          "type": "ellipse",
+          "id": "nToUy",
+          "x": 55,
+          "y": 386,
+          "name": "Dot References",
+          "fill": "#ed5f18",
+          "width": 10,
+          "height": 10
+        },
+        {
+          "type": "rectangle",
+          "id": "xB03V",
+          "x": 65,
+          "y": 391,
+          "name": "Line References",
+          "fill": "#ed5f18",
+          "width": 170,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "qorwj",
+          "x": 72,
+          "y": 570,
+          "name": "Callout Open Questions",
+          "fill": "#ed5f18",
+          "content": "Open Questions",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "bold"
+        },
+        {
+          "type": "ellipse",
+          "id": "BQgyC",
+          "x": 55,
+          "y": 576,
+          "name": "Dot Open Questions",
+          "fill": "#ed5f18",
+          "width": 10,
+          "height": 10
+        },
+        {
+          "type": "rectangle",
+          "id": "DFUes",
+          "x": 65,
+          "y": 581,
+          "name": "Line Open Questions",
+          "fill": "#ed5f18",
+          "width": 170,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "hHYJ7",
+          "x": 72,
+          "y": 760,
+          "name": "Callout Wireframes",
+          "fill": "#ed5f18",
+          "content": "Wireframes",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "bold"
+        },
+        {
+          "type": "ellipse",
+          "id": "Y0PA9r",
+          "x": 55,
+          "y": 766,
+          "name": "Dot Wireframes",
+          "fill": "#ed5f18",
+          "width": 10,
+          "height": 10
+        },
+        {
+          "type": "rectangle",
+          "id": "OSZ0B",
+          "x": 65,
+          "y": 771,
+          "name": "Line Wireframes",
+          "fill": "#ed5f18",
+          "width": 170,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "kXR05",
+      "x": 3765,
+      "y": -6900,
+      "name": "Carousel Slide 3 v3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "jK0H4",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "03",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "YZzMH",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "ETRUh",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "Specification",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "sng6C",
+          "x": 72,
+          "y": 280,
+          "name": "Rule Concept",
+          "clip": true,
+          "width": 420,
+          "height": 300,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "HQSDB",
+              "x": 24,
+              "y": 20,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Concept",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "BvDxX",
+              "x": 24,
+              "y": 55,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "Engineering\ndocument.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "PJJtb",
+              "x": 24,
+              "y": 215,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "content": "Not portfolio template.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "x1NmZi",
+              "x": 24,
+              "y": 275,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fiSy5",
+          "x": 72,
+          "y": 520,
+          "name": "Rule Illustration",
+          "clip": true,
+          "width": 420,
+          "height": 360,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "GTRLC",
+              "x": 24,
+              "y": 20,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Illustration",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "nZB7N",
+              "x": 24,
+              "y": 55,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "Abstract\nsystem\ndiagrams.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "DW5kG",
+              "x": 24,
+              "y": 315,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "content": "Not logos.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "r1GaQw",
+              "x": 24,
+              "y": 340,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kBpaG",
+          "x": 72,
+          "y": 890,
+          "name": "Rule Motion",
+          "clip": true,
+          "width": 420,
+          "height": 280,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "Z14Ytn",
+              "x": 24,
+              "y": 16,
+              "name": "Rule Label",
+              "fill": "#ed5f18",
+              "content": "Motion",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "L31Sm",
+              "x": 24,
+              "y": 48,
+              "name": "Rule Title",
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "One bespoke\ninteraction.",
+              "fontFamily": "Big Shoulders",
+              "fontSize": 72,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "jzsyX",
+              "x": 24,
+              "y": 195,
+              "name": "Rule Sub",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 370,
+              "content": "Everything else earns its place.",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "Ldb8F",
+              "x": 24,
+              "y": 260,
+              "name": "Accent Line",
+              "fill": "#ed5f18",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "sFtSl",
+          "x": 72,
+          "y": 1180,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "content": "The design became explicit.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "RT576",
+      "x": 4905,
+      "y": -6900,
+      "name": "Carousel Slide 4 v3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "sBtar",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "04",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "l0arIh",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "k2Kgy",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "System",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "noybC",
+          "x": 60,
+          "y": 300,
+          "name": "Mark Column",
+          "width": 320,
+          "height": 600,
+          "layout": "none",
+          "children": [
+            {
+              "id": "EHLUW",
+              "type": "ref",
+              "ref": "DGNXD",
+              "name": "MedXMarkAlt Instance",
+              "x": 20,
+              "y": 0,
+              "width": 280,
+              "height": 280
+            },
+            {
+              "type": "text",
+              "id": "NiI6X",
+              "x": 20,
+              "y": 300,
+              "name": "Concept Label",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 280,
+              "content": "MedX\n// Connected Dependencies",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "L9FKS",
+          "x": 380,
+          "y": 300,
+          "name": "Mark Column",
+          "width": 320,
+          "height": 600,
+          "layout": "none",
+          "children": [
+            {
+              "id": "tm9EY",
+              "type": "ref",
+              "ref": "dxPWH",
+              "name": "RevixirMarkAlt Instance",
+              "x": 20,
+              "y": 0,
+              "width": 280,
+              "height": 280
+            },
+            {
+              "type": "text",
+              "id": "WgzeR",
+              "x": 20,
+              "y": 300,
+              "name": "Concept Label",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 280,
+              "content": "Revixir\n// Access Boundaries",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "B7lHf",
+          "x": 60,
+          "y": 1180,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 700,
+          "content": "Project marks became engineering artifacts. Each one encodes a system boundary, not a logo.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "n53Ild",
+          "x": 700,
+          "y": 300,
+          "name": "Mark Column SupplyTech",
+          "width": 320,
+          "height": 600,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "yezpi",
+              "x": 20,
+              "y": 0,
+              "name": "SupplyTechMark SVG",
+              "width": 280,
+              "height": 280,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "OKcff",
+                  "x": 16,
+                  "y": 40,
+                  "geometry": "M0.9 1.8c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-42c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40295 0.9 0.9 0.9m3-39c0.49706 0 0.9-0.40295 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-33c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 12c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-33c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-27c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 9c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-24c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40294-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40294 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49705 0.40294 0.9 0.9 0.9m3-21c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49706 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49705 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 6c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49705 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-15c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-12c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m9-6c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m3-3c0.49705 0 0.9-0.40294 0.9-0.9 0-0.49706-0.40295-0.9-0.9-0.9-0.49706 0-0.9 0.40294-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9m0 3c0.32154 0 0.61865-0.17154 0.77942-0.45 0.16077-0.27846 0.16077-0.62154 0-0.9-0.16077-0.27846-0.45788-0.45-0.77942-0.45-0.49706 0-0.9 0.40295-0.9 0.9 0 0.49706 0.40295 0.9 0.9 0.9",
+                  "viewBox": [
+                    0,
+                    0,
+                    55.8,
+                    43.8
+                  ],
+                  "fill": "#000",
+                  "width": 244,
+                  "height": 192
+                },
+                {
+                  "type": "path",
+                  "id": "L949b",
+                  "x": 184,
+                  "y": 131,
+                  "geometry": "M2.4 4.8c1.32548 0 2.4-1.07452 2.4-2.4 0-1.32549-1.07452-2.4-2.4-2.4-1.32549 0-2.4 1.07452-2.4 2.4 0 1.32548 1.07452 2.4 2.4 2.4",
+                  "viewBox": [
+                    0,
+                    0,
+                    4.8,
+                    4.8
+                  ],
+                  "fill": "#F97316",
+                  "width": 21,
+                  "height": 21
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "H3khBl",
+              "x": 20,
+              "y": 300,
+              "name": "SupplyTech Label",
+              "opacity": 0.5,
+              "fill": "#17120d",
+              "textGrowth": "fixed-width",
+              "width": 280,
+              "content": "SupplyTech\n// Operational Flow",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "d4Y4B",
+      "x": 6045,
+      "y": -6900,
+      "name": "Carousel Slide 5 v3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "F4zlH",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "05",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "RN107",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "j2w4A",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "Implementation",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "dVLEA",
+          "x": 40,
+          "y": 260,
+          "name": "MedX Case Study",
+          "clip": true,
+          "width": 1000,
+          "height": 670,
+          "fill": "#fff",
+          "stroke": "#17120d",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "f0v7El",
+              "x": 0,
+              "y": 0,
+              "name": "Aside",
+              "width": 1000,
+              "height": 230,
+              "layout": "none",
+              "children": [
+                {
+                  "id": "KIPYR",
+                  "type": "ref",
+                  "ref": "DGNXD",
+                  "name": "MedXMarkAlt Instance",
+                  "x": 25,
+                  "y": -28,
+                  "width": 189,
+                  "height": 184,
+                  "opacity": 0.7,
+                  "flipX": false,
+                  "flipY": false,
+                  "layout": "none",
+                  "descendants": {
+                    "FVeeD": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "pzaTx": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "L3v9s6": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "m0OUQ": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 64,
+                      "height": 64,
+                      "x": 30,
+                      "y": 110,
+                      "strokeWidth": 1
+                    },
+                    "ER8zK": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 14,
+                      "height": 14,
+                      "x": 51,
+                      "y": 135
+                    },
+                    "v7GLlC": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 7,
+                      "height": 7,
+                      "x": 38.5,
+                      "y": 120.5
+                    },
+                    "EEyxB": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 6,
+                      "height": 6,
+                      "x": 79,
+                      "y": 125
+                    },
+                    "gL4HY": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 5,
+                      "height": 5,
+                      "x": 45.5,
+                      "y": 159.5
+                    },
+                    "g71xX": {
+                      "flipX": false,
+                      "flipY": false,
+                      "width": 7,
+                      "height": 7,
+                      "x": 76.5,
+                      "y": 154.5
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "TDvzr",
+                  "x": 230,
+                  "y": 40,
+                  "name": "Case Label",
+                  "opacity": 0.45,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 700,
+                  "content": "Case 01 / Production",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Hpjxj",
+                  "x": 230,
+                  "y": 85,
+                  "name": "Owned Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "content": "owned",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Y4406",
+                  "x": 330,
+                  "y": 85,
+                  "name": "Owned Value",
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 620,
+                  "content": "Frontend Engineer",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "KmcRP",
+                  "x": 230,
+                  "y": 130,
+                  "name": "Surface Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 270,
+                  "content": "surface",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "oOuSW",
+                  "x": 330,
+                  "y": 131,
+                  "name": "Surface Values",
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 420,
+                  "content": "Zustand, React Query, React Hook Form, SignalR, MSAL, Stripe",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FG6pj",
+              "x": 0,
+              "y": 230,
+              "name": "Content Area",
+              "width": 1000,
+              "height": 410,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cUrQP",
+                  "x": 30,
+                  "y": 30,
+                  "name": "Thesis",
+                  "fill": "#ed5f18",
+                  "content": "thesis",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "MwiSm",
+                  "x": 30,
+                  "y": 60,
+                  "name": "Thesis Value",
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "Building healthcare operations software means correctness matters more than elegance.",
+                  "fontFamily": "Big Shoulders",
+                  "fontSize": 36,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "BYdfM",
+                  "x": 30,
+                  "y": 185,
+                  "name": "Changed Label",
+                  "opacity": 0.5,
+                  "fill": "#17120d",
+                  "content": "impact",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "KcTKi",
+                  "x": 30,
+                  "y": 215,
+                  "name": "Changed Value",
+                  "opacity": 0.8,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "The service wizard became the platform's architectural backbone — 5 developers coordinated across parallel workstreams branching off it. Route-based code splitting reduced main bundle by ~49.5%, improving FCP and TBT.",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "bTvO2",
+                  "x": 30,
+                  "y": 360,
+                  "name": "Tradeoff Annotation",
+                  "opacity": 0.4,
+                  "fill": "#17120d",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "// tradeoff: one centralized network layer over per-feature handling",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "BKhtd",
+          "x": 72,
+          "y": 1180,
+          "name": "Bottom Annotation",
+          "opacity": 0.45,
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "The system survived implementation. Typography, annotations, and abstraction all made it to production.",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "rectangle",
+      "id": "hSQor",
+      "x": 2985,
+      "y": -3404,
+      "name": "hero screenshot",
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "large%20screen-1784770224665.jpeg",
+        "mode": "fill"
+      },
+      "width": 2400,
+      "height": 1350
+    },
+    {
+      "type": "frame",
+      "id": "cftYK",
+      "x": 7185,
+      "y": -6900,
+      "name": "Carousel Slide 6 v3",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": "#faf5f6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "MzhSE",
+          "x": 72,
+          "y": 72,
+          "name": "Section Index",
+          "opacity": 0.5,
+          "fill": "#17120d",
+          "content": "06",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "tSQ2g",
+          "x": 72,
+          "y": 102,
+          "name": "Sep Line",
+          "opacity": 0.3,
+          "fill": "#17120d",
+          "width": 40,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "SOKoY",
+          "x": 72,
+          "y": 130,
+          "name": "Title",
+          "fill": "#17120d",
+          "content": "The result",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 64,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "m5wm1I",
+          "x": 72,
+          "y": 260,
+          "name": "Hero Screenshot",
+          "clip": true,
+          "width": 936,
+          "height": 620,
+          "stroke": "#00000000",
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "LM1fe",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Image",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "large screen-1784770224665.jpeg",
+                "mode": "fit"
+              },
+              "width": 936,
+              "height": 620
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "XtwPt",
+          "x": 72,
+          "y": 950,
+          "name": "Annotation Production",
+          "fill": "#ed5f18",
+          "content": "// Production",
+          "fontFamily": "Space Mono",
+          "fontSize": 20,
+          "fontWeight": "bold"
+        },
+        {
+          "type": "text",
+          "id": "BbCrl",
+          "x": 72,
+          "y": 1010,
+          "name": "Final Statement",
+          "fill": "#17120d",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "The constraints\nbecame the interface.",
+          "fontFamily": "Big Shoulders",
+          "fontSize": 72,
+          "fontWeight": "700"
+        },
+        {
+          "id": "PknqB",
+          "type": "ref",
+          "ref": "y0oYYO",
+          "name": "Footer",
+          "x": 72,
+          "y": 1260
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg-paper": {
+      "type": "color",
+      "value": "#faf5f6"
+    },
+    "ink": {
+      "type": "color",
+      "value": "#17120d"
+    },
+    "accent-orange": {
+      "type": "color",
+      "value": "#ed5f18"
+    },
+    "font-display": {
+      "type": "string",
+      "value": "Big Shoulders"
+    },
+    "font-mono": {
+      "type": "string",
+      "value": "Space Mono"
+    },
+    "og-padding": {
+      "type": "number",
+      "value": 72
+    }
+  },
+  "fileToken": "92923a08-4eb8-4651-8120-05608372c96b"
+}

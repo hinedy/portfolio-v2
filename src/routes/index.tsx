@@ -39,7 +39,7 @@ function Hero() {
             Software gets complicated long before it gets big.
           </h1>
           <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
-          <dl className="hidden lg:grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+          <dl className="hidden lg:grid grid-cols-[max-content_max-content] gap-x-6 gap-y-2 border-t border-rule pt-6 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-fit max-w-full">
             {hero.metadata.map((m) => (
               <Fragment key={m.label}>
                 <dt>{m.label}</dt>
@@ -66,7 +66,7 @@ function Hero() {
             </div>
           </div>
         </div>
-        <dl className="lg:hidden grid grid-cols-2 gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-full">
+        <dl className="lg:hidden grid grid-cols-[max-content_max-content] gap-x-6 gap-y-2 border-t border-rule pt-6 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-fit max-w-full">
           {hero.metadata.map((m) => (
             <Fragment key={m.label}>
               <dt>{m.label}</dt>
