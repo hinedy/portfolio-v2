@@ -221,7 +221,7 @@ Also locked:
 
 ## §11a — Hero metadata block
 
-A four-row metadata block (`hero.metadata`) renders below the sub-copy in the
+A five-row metadata block (`hero.metadata`) renders below the sub-copy in the
 text column (not adjacent to the portrait), at every breakpoint — in the text
 column for two-column layouts, and in the same position (after sub, before
 portrait) for stacked layouts.
@@ -232,17 +232,17 @@ portrait) for stacked layouts.
   previews facts about the site itself, not the ASCII rendering process.
 - Labels/values are derived from existing data in `src/lib/content.ts`:
 
-  | Label        | Value & derivation                                                           |
-  | ------------ | ---------------------------------------------------------------------------- |
-  | CASE STUDIES | `{count} — {categories}` — 3 case studies in `evidence.caseStudies`          |
-  | PRINCIPLES   | `{count} rows — 03 / how i decide` — 10 items in `decisions.items`           |
-  | PROVEN       | `~49.5% bundle reduction — medx` — from MedX `whatWeChanged`                 |
-  | SECTIONS     | `7 — position through contact` — 7 index-route sections (Position → Contact) |
+  | Label    | Value & derivation                                                         |
+  | -------- | -------------------------------------------------------------------------- |
+  | DOCUMENT | Portfolio Specification — describes the page itself                        |
+  | SYSTEMS  | `Operational • Multi-tenant • Data-heavy` — system traits across case studies |
+  | DOMAINS  | `Healthcare • Logistics • Marketplace` — domains in MedX, SupplyTech, Revixir |
+  | EVIDENCE | `3 production case studies` — count of items in `evidence.caseStudies`     |
+  | AUTHOR   | `Ahmed Hinedy` — from `meta.name`                                          |
 
 - **Content rule**: every value must be derived from existing data in
-  `content.ts`. If a future edit changes case study count, decision row count,
-  section count, or the MedX bundle metric, this block must be updated in the
-  same change (see §14).
+  `content.ts`. If a future edit changes case study count or author name,
+  this block must be updated in the same change (see §14).
 
 ---
 

@@ -33,10 +33,11 @@ export const CONTENT = {
     // Portrait asset: ascii-portrait.ts (ASCII_PORTRAIT export).
     portraitAnnotation: "// rendered, not photographed",
     metadata: [
-      { label: "CASE STUDIES", value: "3 — production, discontinued, mvp" },
-      { label: "PRINCIPLES", value: "10 rows — 03 / how i decide" },
-      { label: "PROVEN", value: "~49.5% bundle reduction — medx" },
-      { label: "SECTIONS", value: "7 — position through contact" },
+      { label: "DOCUMENT", value: "Portfolio Specification" },
+      { label: "SYSTEMS", value: "Operational • Multi-tenant • Data-heavy" },
+      { label: "DOMAINS", value: "Healthcare • Logistics • Marketplace" },
+      { label: "EVIDENCE", value: "3 production case studies" },
+      { label: "AUTHOR", value: "Ahmed Hinedy" },
     ],
   },
 
