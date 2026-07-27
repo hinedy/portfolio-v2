@@ -38,7 +38,9 @@ function Hero() {
           <h1 className="font-display leading-[0.95] text-ink text-[clamp(3.5rem,12cqi,10rem)]">
             Software gets complicated long before it gets big.
           </h1>
-          <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">{hero.sub}</p>
+          <p className="max-w-xl text-lg md:text-xl leading-snug text-ink/85 self-start">
+            {hero.sub}
+          </p>
           <dl className="hidden lg:grid grid-cols-[max-content_max-content] gap-x-6 gap-y-2 border-t border-rule pt-6 font-mono text-[11px] uppercase tracking-wider text-muted-foreground w-fit max-w-full">
             {hero.metadata.map((m) => (
               <Fragment key={m.label}>
@@ -78,7 +80,6 @@ function Hero() {
     </section>
   );
 }
-
 
 function Position() {
   return (
@@ -530,7 +531,10 @@ function Contact() {
             </div>
             <ul className="space-y-1">
               {Object.entries(contact.social).map(([k, v]) => (
-                <li key={k} className="flex flex-col lg:flex-row lg:items-baseline gap-0.5 lg:gap-3">
+                <li
+                  key={k}
+                  className="flex flex-col lg:flex-row lg:items-baseline gap-0.5 lg:gap-3"
+                >
                   <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground lg:w-16">
                     {k}
                   </span>
