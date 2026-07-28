@@ -523,7 +523,9 @@ function Contact() {
             <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
               Direct
             </div>
-            <div className="text-ink font-mono">{contact.tel}</div>
+            <a href={`tel:${contact.tel}`} className="text-ink hover:text-accent transition-colors underline-offset-2 hover:underline font-mono">
+              {contact.tel}
+            </a>
           </div>
           <div>
             <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-2">
